@@ -56,9 +56,10 @@ if(action_flag.equals("login")){
                     </div>
 <%if(dao.is_first_login()){%>
                     <div class="form-group">
-                         * The initial admin name and password is 'admin' and 'admin'.
-                         * Tutorial is available for you here:
-                         <a target='_blank' href='http://www.nxfilter.org'>http://www.nxfilter.org</a>.
+                        <ul>
+                           <li>Initial name & password is 'admin' & 'admin'</li>
+                           <li>Tutorial is available here: <a target='_blank' href='http://www.nxfilter.org'>NxFilter</a></li>
+                        </ul>
                     </div>
 <%}%>          
                 </div>

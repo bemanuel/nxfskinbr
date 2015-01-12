@@ -160,7 +160,6 @@ LicenseData data = dao.select_one();
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li class="active"><a href="../../pages/config/license.jsp"><i class="fa fa-angle-double-right"></i> License</a></li>
                                 <li><a href="../../pages/config/config.jsp"><i class="fa fa-angle-double-right"></i> Settings</a></li>
                                 <li><a href="../../pages/config/alert.jsp"><i class="fa fa-angle-double-right"></i> Alerts</a></li>
                                 <li><a href="../../pages/config/block_page.jsp"><i class="fa fa-angle-double-right"></i> Block Page</a></li>
@@ -170,6 +169,7 @@ LicenseData data = dao.select_one();
                                 <li><a href="../../pages/config/cluster.jsp"><i class="fa fa-angle-double-right"></i> Cluster</a></li>
                                 <li><a href="../../pages/config/backup.jsp"><i class="fa fa-angle-double-right"></i> Backup</a></li>
                                 <li><a href="../../pages/config/profile.jsp"><i class="fa fa-angle-double-right"></i> Profile</a></li>
+                                <li class="active"><a href="../../pages/config/license.jsp"><i class="fa fa-angle-double-right"></i> License</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
