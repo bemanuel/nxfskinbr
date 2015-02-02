@@ -11,4 +11,4 @@ Edit /nxd/conf/cfg.properties and add "www_dir = skins/nxfadmin" at the bottom.
 
 Save the file and restart NxFilter to activate the new GUI.  
 
-**To change back to the original GUI, just remove the "www_dir = xxxxx" parameter from cfg.properties and restart NxFilter.**
+**To change back to the default GUI, just remove the "www_dir = xxxxx" parameter from cfg.properties and restart NxFilter.**
