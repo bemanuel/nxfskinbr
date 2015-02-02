@@ -528,7 +528,11 @@ for(int i = 0; i < data_list.size(); i++){
 	String fmt_ctime = strftime_new_fmt("yyyyMMddHHmm", "MM/dd HH:mm", data.ctime);
 
 	// Only show first category.
-	String category_line = data.category.replaceFirst(",.*", "");
+	//String category_line = data.category.replaceFirst(",.*", "");
+	String category_line = data.category;
+	if(category_line.length() > 30){
+		category_line = safe_substring(data.category, 30) + "..";
+	}
 
 	// Only show first grp.
 	String grp_line = data.grp.replaceFirst(",.*", "");

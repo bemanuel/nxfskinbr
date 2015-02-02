@@ -8,11 +8,11 @@ void update(CategorySystemDao dao){
 	}
 
 	int blacklist_type = param_int("blacklist_type");
-	if(blacklist_type == 3 && !dao.has_zvelo_license()){
-		err_list.add("Zvelo license required!");
+	if(blacklist_type == 4 && !dao.has_komodia_license()){
+		err_list.add("Komodia license required!");
 		return;
 	}
-
+	
 	if(dao.update_blacklist_type(blacklist_type)){
            succ_list.add("Blacklist Settings updated. Restart of NxFilter required to apply this change.");
 	}
@@ -40,10 +40,10 @@ if(action_flag.equals("update")){
 // Global.
 int g_count = dao.select_count();
 
-// 1 = Shallalist, 2 = URLBlacklist, 3 = Zvelo.
+// 1 = Shallalist, 2 = URLBlacklist, 3 = Zvelo, 4 = Komodia
 int g_blacklist_type = dao.get_blacklist_type();
-String g_zvelo_end_date = dao.get_zvelo_end_date();
-int g_zvelo_max_user = dao.get_zvelo_max_user();
+String g_license_end_date = dao.get_license_end_date();
+int g_license_max_user = dao.get_license_max_user();
 
 // Check if it's imported.
 if(g_blacklist_type < 3 && !dao.is_blacklist_imported()
@@ -307,9 +307,7 @@ if(g_blacklist_type < 3 && !dao.is_blacklist_imported()
                                             <dl class="dl-horizontal">
                                                 <dt>Shallalist</dt>
                                                 <dd>Free for non-commercial use</dd>
-                                                <dt>URLBlacklist</dt>
-                                                <dd>Commercial blacklist</dd>
-                                                <dt>Zvelo</dt>
+                                                <dt>Komodia</dt>
                                                 <dd>Commercial cloud service blacklist. No update or import needed.</dd>
                                             </dl>
                                         </div>
@@ -322,18 +320,12 @@ if(g_blacklist_type < 3 && !dao.is_blacklist_imported()
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group">
-                                                <label class="control-label pull-right" for="blacklist_type">&nbsp;URLBlacklist</label>
-                                                <input type="radio" class="flat-green" id="blacklist_type2" name="blacklist_type" value="2" <%if(g_blacklist_type == 2){out.print("checked");}%> >
+                                                <label class="control-label pull-right" for="blacklist_type">&nbsp;Komodia</label>
+                                                <input type="radio" class="flat-green" id="blacklist_type4" name="blacklist_type" value="4" <%if(g_blacklist_type == 4){out.print("checked");}%> >
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                            <div class="input-group">
-                                                <label class="control-label pull-right" for="blacklist_type">&nbsp;Zvelo</label>
-                                                <input type="radio" class="flat-green" id="blacklist_type3" name="blacklist_type" value="3" <%if(g_blacklist_type == 3){out.print("checked");}%> >
-                                            </div>
-                                        </div>
-                                        <%if(g_blacklist_type == 3){%>
-                                        <p class="help-block">End date = <%= g_zvelo_end_date%> : Max users = <%= g_zvelo_max_user%></p>
+                                        <%if(g_blacklist_type == 4){%>
+                                        <p class="help-block">End date = <%= g_license_end_date%> : Max users = <%= g_license_max_user%></p>
                                         <%}%>
                                     </form><!-- end form -->
                                 </div><!-- /.box-body -->
