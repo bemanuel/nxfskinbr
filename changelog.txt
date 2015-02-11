@@ -1,5 +1,5 @@
 *****************************************************************
-NxFAdmin v2.6.0
+NxFAdmin v2.6.1
  Author: Rob Asher
 
 *****************************************************************
@@ -7,7 +7,11 @@ NxFAdmin v2.6.0
            NxFilter is a property of Jahastech.
 
 
+2015/02/06, v2.6.1
+- Version updated.
+- No files changed. 
+
 2015/02/02, v2.6.0
-- Version numbering changed to match that NxFilter.
+- Version numbering changed to match that of NxFilter.
 - Updated categories/system.jsp for Komodia blacklist.
 - Updated logs/requests.jsp for category string length.
