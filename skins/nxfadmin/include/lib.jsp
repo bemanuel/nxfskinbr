@@ -316,6 +316,21 @@ boolean system_output(String cmd, StringBuilder res_buf) {
 String system_output(String cmd) {
         return wLib.system_output(cmd);
 }
+
+//-----------------------------------------------
+String read_map_file_val(String filename, String kw){
+	return wLib.read_map_file_val(filename, kw);
+}
+
+//-----------------------------------------------
+void write_map_file_val(String filename, String kw, String val){
+	wLib.write_map_file_val(filename, kw, val);
+}
+
+//-----------------------------------------------
+String http_get(String url, int timeout){
+	return wLib.http_get(url, timeout);
+}
 // From wLib.
 
 //-----------------------------------------------

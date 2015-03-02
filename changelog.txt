@@ -1,10 +1,16 @@
 *****************************************************************
-NxFAdmin v2.6.2
+NxFAdmin v2.6.3
  Author: Rob Asher
 
 *****************************************************************
 
            NxFilter is a property of Jahastech.
+
+2015/03/02, v2.6.3
+- Version updated.
+- Updated backup.jsp for downloading of configuration zip.
+- Updated lib.jsp for new functions.
+- Added download.jsp to download generated zip file.
 
 2015/02/11, v2.6.2
 - Version updated.

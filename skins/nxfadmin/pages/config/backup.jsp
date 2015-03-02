@@ -14,9 +14,17 @@ ConfigDao dao = new ConfigDao();
 
 // Action.
 String action_flag = param_str("action_flag");
-if(!demo_flag && action_flag.equals("backup") && dao.backup()){
-	succ_list.add("Configuration backup created successfully!");
+if(!demo_flag && action_flag.equals("backup")){
+	String filename = dao.backup();
+	if(is_not_empty(filename)){
+		response.sendRedirect("../../pages/config/download.jsp?filename=" + filename);
+		return;
+    }
 }
+
+//if(!demo_flag && action_flag.equals("backup") && dao.backup()){
+//	succ_list.add("Configuration backup created successfully!");
+//}
 %>
 
 
@@ -273,8 +281,8 @@ if(!demo_flag && action_flag.equals("backup") && dao.backup()){
                                         <div class="form-group">
                                             <div class="alert alert-info alert-dismissable">
                                                 <i class="fa fa-info"></i>
-                                                <b>Backup file will be created in '/nxfilter/backup' directory as a zip file.  When you restore the backup file, first stop NxFilter<br>
-and then extract 'config.h2.db' from the zip archive and overwrite the '/nxfilter/db/config.h2.db' file.</b>
+                                                <b>A zip archive file of your configuration will be downloaded when you click the Backup Current Configuration button below.  If you wish to restore from a backup file, <br>
+                                                first stop NxFilter and then extract the 'config.h2.db' file from the dated zip archive and overwrite the existing '/nxfilter/db/config.h2.db' file.</b>
                                             </div>
 
                                     </div><!-- /.box-body -->
