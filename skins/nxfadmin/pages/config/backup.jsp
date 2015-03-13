@@ -22,9 +22,6 @@ if(!demo_flag && action_flag.equals("backup")){
     }
 }
 
-//if(!demo_flag && action_flag.equals("backup") && dao.backup()){
-//	succ_list.add("Configuration backup created successfully!");
-//}
 %>
 
 
@@ -229,9 +226,9 @@ if(!demo_flag && action_flag.equals("backup")){
                                 <li><a href="../../pages/logs/netflow.jsp"><i class="fa fa-angle-double-right"></i> Netflow</a></li>
                             </ul>
                         </li>
-                        <li class="active">
+                        <li>
                             <a href="../../pages/system/restart.jsp">
-                                <i class="fa fa-power-off"></i> <span>Restart</span> <small class="badge pull-right bg-green">new</small>
+                                <i class="fa fa-power-off"></i> <span>Restart</span>
                             </a>
                         </li>
                     </ul>

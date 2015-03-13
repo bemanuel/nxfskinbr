@@ -1,10 +1,14 @@
 *****************************************************************
-NxFAdmin v2.6.3
+NxFAdmin v2.6.5
  Author: Rob Asher
 
 *****************************************************************
 
            NxFilter is a property of Jahastech.
+
+2015/03/13, v2.6.5
+- Version updated.
+- "New" badge removed from Restart menu.
 
 2015/03/02, v2.6.3
 - Version updated.

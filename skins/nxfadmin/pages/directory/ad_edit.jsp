@@ -266,7 +266,7 @@ LdapData data = dao.select_one(param_int("id"));
                         </li>
                         <li>
                             <a href="../../pages/system/restart.jsp">
-                                <i class="fa fa-power-off"></i> <span>Restart</span> <small class="badge pull-right bg-green">new</small>
+                                <i class="fa fa-power-off"></i> <span>Restart</span>
                             </a>
                         </li>
                     </ul>
