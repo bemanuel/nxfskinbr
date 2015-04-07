@@ -365,7 +365,7 @@ CategoryData data = dao.select_one(param_int("id"));
                                 <div class="box-body">
                                     <div class="callout callout-info">
                                         <h4>Custom Category Domains</h4>
-                                        <p>You may add up to a 1,000 domains, separated by spaces, to a category.</p>
+                                        <p>You may add multiple domains, separated by spaces, to a category.</p>
                                     </div>
 
                                     <div class="form-group">

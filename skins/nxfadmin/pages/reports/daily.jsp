@@ -10,13 +10,11 @@ if(!check_permission()){
 }
 
 // If there's a user it becomes user specific report.
-String etime = param_str("etime");
+String stime = param_str("stime");
 String user = param_str("user");
-String fmtEtime = etime;
-etime = etime.replaceAll("\\D","");
 
 // Create data access object.
-H24ReportDao dao = new H24ReportDao(etime, user);
+D1ReportDao dao = new D1ReportDao(stime, user);
 ReportStatsData stats = dao.get_stats();
 ReportChartData request_trend = dao.get_request_trend();
 ReportChartData domain_top = dao.get_domain_top(5);
@@ -25,9 +23,9 @@ ReportChartData user_top = dao.get_user_top(5);
 ReportChartData clt_ip_top = dao.get_clt_ip_top(5);
 
 // Global.
-String g_curr_time12 = strftime("yyyyMMddHHmm");
-String g_stime = strftime_new_fmt("yyyyMMddHH", "MM/dd HH:mm", dao.stime);
-String g_etime = strftime_new_fmt("yyyyMMddHH", "MM/dd HH:mm", dao.etime);
+String g_stime = strftime_add("yyyyMMdd", -86400);
+String g_stime_show = strftime_new_fmt("yyyyMMdd", "yyyy/MM/dd", dao.stime);
+
 String g_time_option = param_str("time_option", "yesterday");
 String g_user = param_str("user");
 %>
@@ -283,23 +281,23 @@ String g_user = param_str("user");
 
                    
                                         <div class="form-group">
-                                            <label class="control-label col-xs-12">Report End</label>
+                                            <label class="control-label col-xs-12">Report From</label>
                                         </div>
 
                                         <div class="form-group">
                                             <div class="col-xs-12">
                                                 <div class="form-inline">
                                                     <div class="form-group">
-                                                        <input type="text" class="form-control" id="etime" name="etime" value="<%= fmtEtime%>" maxlength="10">
+                                                        <input type="text" class="form-control" id="stime" name="stime" value="<%= dao.stime%>" maxlength="10">
                                                     </div>
                                                 </div>
                                             </div>
                                         </div> 
-                                        <p class="help-block">&nbsp;Time Format - YYYY/MM/DD</p>
+                                        <p class="help-block">&nbsp;Time Format - YYYYMMDD</p>
                                         <div class="form-group">
-                                            <div class="radio-inline" id="intervals">
+                                            <div style="display: none;" class="radio-inline" id="intervals">
                                                 <label class="radio">
-                                                    <input type="radio" class="flat-green interval" name="time_option" value="last24" <%if(g_time_option.equals("last24")){out.print("checked");}%>>&nbsp;Last 24 Hours
+                                                    <input type="radio" class="flat-green interval" name="time_option" value="userdef" <%if(g_time_option.equals("userdef")){out.print("checked");}%>>&nbsp;User Defined
                                                 </label>
                                             </div>
                                             <div class="radio-inline">
@@ -388,7 +386,7 @@ for(String uname : user_list){
                                 <div class="box-header">
                                     <i class="fa fa-calendar"></i>
                                     <h3 class="box-title">
-                                        Daily Report from: <%= g_stime%> ~ <%= g_etime%>
+                                        Daily Report from: <%= g_stime_show%>
                                         <%
                                         if(!is_empty(g_user)){
 	                                    out.print(" for " + g_user);
@@ -692,7 +690,7 @@ for(String uname : user_list){
                 $('#submitBtn').click(function() {
                     document.forms["search_form"].action_flag.value = "";
                     document.getElementById("search_form").submit();
-                    $(".Etime").text(etime);        
+                    $(".Etime").text(stime);        
                 });
                 
                 $('#resetBtn').click(function() {
@@ -735,50 +733,52 @@ for(String uname : user_list){
                 	'contentLocation': '../../js/plugins/tipue/tipue_content.json'
             	});
             	
-                jQuery('#etime').datetimepicker({
-                    step:60,
-                    mask:true,
-                    allowTimes:['00:00'],
+                jQuery('#stime').datetimepicker({
+                    timepicker:false,
+                    format:'Ymd',
                     theme:'dark'
                 });
 
                  $('input[type="radio"][name="time_option"]').on('ifChanged', function(event){
                      var interval = $("input[name=time_option]:checked").val()
-                     var etime = moment('<%= g_curr_time12%>', 'YYYYMMDDHHmm').format('YYYY/MM/DD 00:00');
+                     var stime = moment('<%= g_stime%>', 'YYYYMMDD').format('YYYYMMDD');
                      if(interval != undefined) {
-                         //alert(event.type + " value = " + interval);
+                         //console.log("Changed interval = " + interval);
                          if (interval == "2days") {
-	                     etime = moment('<%= g_curr_time12%>', 'YYYYMMDDHHmm').add('hours', -24).format('YYYY/MM/DD 00:00');
+	                     stime = moment('<%= g_stime%>', 'YYYYMMDD').add(-24, 'hours').format('YYYYMMDD');
                          } else if (interval == "3days") {
-	                     etime = moment('<%= g_curr_time12%>', 'YYYYMMDDHHmm').add('hours', -48).format('YYYY/MM/DD 00:00');
-                         } else if (interval == "last24") {
-	                     etime = moment('<%= g_curr_time12%>', 'YYYYMMDDHHmm').format('YYYY/MM/DD HH:00');
+	                     stime = moment('<%= g_stime%>', 'YYYYMMDD').add(-48, 'hours').format('YYYYMMDD');
+                         } else if (interval == "userdef") {
+	                     stime = moment('<%= g_stime%>', 'YYYYMMDD').format('YYYYMMDD');
                          }
                      }
-                     $('#etime').val(etime);
+                     $('#stime').val(stime);
                  });
 
+/*
                  function initTimeOpt(timeOpt){
                      var interval = timeOpt.val()
-                     var etime = moment('<%= g_curr_time12%>', 'YYYYMMDDHHmm').format('YYYY/MM/DD 00:00');
+                     var stime = moment('<%= g_stime%>', 'YYYYMMDD').format('YYYYMMDD');
                      if(interval != undefined) {
-                         //alert(event.type + " value = " + interval);
+                         //console.log("Init interval = " + interval);
                          if (interval == "2days") {
-	                     etime = moment('<%= g_curr_time12%>', 'YYYYMMDDHHmm').add('hours', -24).format('YYYY/MM/DD 00:00');
+	                     stime = moment('<%= g_stime%>', 'YYYYMMDD').add(-24, 'hours').format('YYYYMMDD');
                          } else if (interval == "3days") {
-	                     etime = moment('<%= g_curr_time12%>', 'YYYYMMDDHHmm').add('hours', -48).format('YYYY/MM/DD 00:00');
-                         } else if (interval == "last24") {
-	                     etime = moment('<%= g_curr_time12%>', 'YYYYMMDDHHmm').format('YYYY/MM/DD HH:00');
+	                     stime = moment('<%= g_stime%>', 'YYYYMMDD').add(-48, 'hours').format('YYYYMMDD');
+                         } else if (interval == "userdef") {
+	                     stime = moment('<%= g_stime%>', 'YYYYMMDD').format('YYYYMMDD');
                          }
                      }
-                     $('#etime').val(etime);
-                     $(".Etime").text(etime);
+                     $('#stime').val(stime);
+                     $(".Etime").text(stime);
                  } 
                  initTimeOpt($("input[name=time_option]:checked"));
+*/
                                   
-                 $('#etime').on('change keyup paste', function() {
-                     //alert('text box changed');
-                     $('.interval').prop('checked', false);
+                 $('#stime').on('change keyup paste', function() {
+                     //console.log("Time changed " + $('#stime').val());
+                     $('.interval')[0].checked = true;
+                     //$('.interval').prop('checked', false);
                      $('input').iCheck('update');
                  });
 
@@ -786,14 +786,14 @@ for(String uname : user_list){
                 /* jQueryKnob */
 
                $(".knob").knob({
-                   /*change : function (value) {
-                   //console.log("change : " + value);
+                   /* change : function (value) {
+                      console.log("change : " + value);
                    },
                    release : function (value) {
-                   console.log("release : " + value);
+                      console.log("release : " + value);
                    },
                    cancel : function () {
-                   console.log("cancel : " + this.value);
+                      console.log("cancel : " + this.value);
                    },*/
     
                    draw: function() {

@@ -11,10 +11,16 @@ if(!check_permission()){
 %>
 <%
 // end time
-String etime = param_str("etime");
+//String etime = param_str("etime");
 
 // Create data access object for 24hr stats.
-H24ReportDao dao = new H24ReportDao(etime, "");
+//H24ReportDao dao = new H24ReportDao(etime, "");
+
+// If there's a user it becomes user specific report.
+String stime = param_str("stime");
+
+// Create data access object for 24hr stats.
+D1ReportDao dao = new D1ReportDao(stime, "");
 ReportStatsData stats24 = dao.get_stats();
 
 // Create data access object for chart.
@@ -41,6 +47,7 @@ request_dao.block_flag = true;
 
 // Version check.
 chk_new_version();
+chk_new_message();
 
 // Global.
 String g_stime = strftime_new_fmt("yyyyMMddHHmm", "MM/dd HH:mm", report_dao.stime);

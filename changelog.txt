@@ -1,10 +1,16 @@
 *****************************************************************
-NxFAdmin v2.6.5
+NxFAdmin v2.7.1
  Author: Rob Asher
 
 *****************************************************************
 
            NxFilter is a property of Jahastech.
+
+2015/04/07, v2.7.1
+- Version updated.
+- Updated to work with structural changes introduced with NxFilter v2.7.x
+- Daily report and weekly report being generated based on start date.
+- Custom category domain limit changed.
 
 2015/03/13, v2.6.5
 - Version updated.

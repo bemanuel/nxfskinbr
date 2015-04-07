@@ -10,13 +10,14 @@ if(!check_permission()){
 }
 
 // If there's a user it becomes user specific report.
-String etime = param_str("etime");
+String stime = param_str("stime");
 String user = param_str("user");
-String fmtEtime = etime;
-etime = etime.replaceAll("\\D","");
+
+//String fmtEtime = etime;
+//etime = etime.replaceAll("\\D","");
 
 // Create data access object.
-D7ReportDao dao = new D7ReportDao(etime, user);
+D7ReportDao dao = new D7ReportDao(stime, user);
 ReportStatsData stats = dao.get_stats();
 ReportChartData request_trend = dao.get_request_trend();
 ReportChartData domain_top = dao.get_domain_top(5);
@@ -25,11 +26,22 @@ ReportChartData user_top = dao.get_user_top(5);
 ReportChartData clt_ip_top = dao.get_clt_ip_top(5);
 
 // Global.
+String g_stime = strftime_add("yyyyMMdd", 86400 * -7);
+String g_stime_show = strftime_new_fmt("yyyyMMdd", "yyyy/MM/dd", dao.stime);
+
+String g_etime_show = strftime_add("yyyyMMdd", dao.etime, - 86400);
+g_etime_show = strftime_new_fmt("yyyyMMdd", "yyyy/MM/dd", g_etime_show);
+
+String g_time_option = param_str("time_option", "last7days");
+String g_user = param_str("user");
+
+/*
 String g_curr_time8 = strftime("yyyyMMdd");
 String g_stime = strftime_new_fmt("yyyyMMdd", "MM/dd 00:00", dao.stime);
 String g_etime = strftime_new_fmt("yyyyMMdd", "MM/dd 00:00", dao.etime);
 String g_time_option = param_str("time_option", "last7days");
 String g_user = param_str("user");
+*/
 
 %>
 
@@ -284,21 +296,26 @@ String g_user = param_str("user");
 
                    
                                         <div class="form-group">
-                                            <label class="control-label col-xs-12">Report End</label>
+                                            <label class="control-label col-xs-12">Report Start</label>
                                         </div>
 
                                         <div class="form-group">
                                             <div class="col-xs-12">
                                                 <div class="form-inline">
                                                     <div class="form-group">
-                                                        <input type="text" class="form-control" id="etime" name="etime" value="<%= fmtEtime%>" maxlength="10">
+                                                        <input type="text" class="form-control" id="stime" name="stime" value="<%= dao.stime%>" maxlength="10">
                                                     </div>
                                                 </div>
                                             </div>
                                         </div> 
-                                        <p class="help-block">&nbsp;Time Format - YYYY/MM/DD</p>
+                                        <p class="help-block">&nbsp;Time Format - YYYYMMDD</p>
                                         <div class="form-group">
-                                            <div class="radio-inline" id="intervals">
+                                            <div style="display: none;" class="radio-inline" id="intervals">
+                                                <label class="radio">
+                                                    <input type="radio" class="flat-green interval" name="time_option" value="userdef" <%if(g_time_option.equals("userdef")){out.print("checked");}%>>&nbsp;User Defined
+                                                </label>
+                                            </div>
+                                            <div class="radio-inline">
                                                 <label class="radio">
                                                     <input type="radio" class="flat-green interval" name="time_option" value="last7days" <%if(g_time_option.equals("last7days")){out.print("checked");}%>>&nbsp;Last 7 Days
                                                 </label>
@@ -389,7 +406,7 @@ for(String uname : user_list){
                                 <div class="box-header">
                                     <i class="fa fa-calendar"></i>
                                     <h3 class="box-title">
-                                        Weekly Report from: <%= g_stime%> ~ <%= g_etime%>
+                                        Weekly Report from: <%= g_stime_show%> ~ <%= g_etime_show%>
                                         <%
                                         if(!is_empty(g_user)){
 	                                    out.print(" for " + g_user);
@@ -693,7 +710,7 @@ for(String uname : user_list){
                 $('#submitBtn').click(function() {
                     document.forms["search_form"].action_flag.value = "";
                     document.getElementById("search_form").submit();
-                    $(".Etime").text(etime);        
+                    $(".Etime").text(stime);        
                 });
                 
                 $('#resetBtn').click(function() {
@@ -736,50 +753,53 @@ for(String uname : user_list){
                 	'contentLocation': '../../js/plugins/tipue/tipue_content.json'
             	});
             	
-                jQuery('#etime').datetimepicker({
+                jQuery('#stime').datetimepicker({
                     mask:true,
                     timepicker:false,
-                    format:'Y/m/d',
+                    format:'Ymd',
                     theme:'dark'
                 });
 
                  $('input[type="radio"][name="time_option"]').on('ifChanged', function(event){
                      var interval = $("input[name=time_option]:checked").val()
-                     var etime = moment('<%= g_curr_time8%>', 'YYYYMMDD').format('YYYY/MM/DD');
+                     var stime = moment('<%= g_stime%>', 'YYYYMMDD').format('YYYYMMDD');
                      if(interval != undefined) {
                          //alert(event.type + " value = " + interval);
                          if (interval == "1week") {
-	                     etime = moment('<%= g_curr_time8%>', 'YYYYMMDD').add('days', -7).format('YYYY/MM/DD');
+	                     stime = moment('<%= g_stime%>', 'YYYYMMDD').add(-7, 'days').format('YYYYMMDD');
                          } else if (interval == "2weeks") {
-	                     etime = moment('<%= g_curr_time8%>', 'YYYYMMDD').add('days', -14).format('YYYY/MM/DD');
+	                     stime = moment('<%= g_stime%>', 'YYYYMMDD').add(-14, 'days').format('YYYYMMDD');
                          } else if (interval == "3weeks") {
-	                     etime = moment('<%= g_curr_time8%>', 'YYYYMMDD').add('days', -21).format('YYYY/MM/DD');
+	                     stime = moment('<%= g_stime%>', 'YYYYMMDD').add(-12, 'days').format('YYYYMMDD');
                          }
                      }
-                     $('#etime').val(etime);
+                     $('#stime').val(stime);
                  });
 
+/*
                  function initTimeOpt(timeOpt){
                      var interval = timeOpt.val()
-                     var etime = moment('<%= g_curr_time8%>', 'YYYYMMDD').format('YYYY/MM/DD');
+                     var stime = moment('<%= g_stime%>', 'YYYYMMDD').format('YYYY/MM/DD');
                      if(interval != undefined) {
                          //alert(event.type + " value = " + interval);
                          if (interval == "1week") {
-	                     etime = moment('<%= g_curr_time8%>', 'YYYYMMDD').add('days', -7).format('YYYY/MM/DD');
+	                     stime = moment('<%= g_stime%>', 'YYYYMMDD').add(-7, 'days').format('YYYYMMDD');
                          } else if (interval == "2weeks") {
-	                     etime = moment('<%= g_curr_time8%>', 'YYYYMMDD').add('days', -14).format('YYYY/MM/DD');
+	                     stime = moment('<%= g_stime%>', 'YYYYMMDD').add(-14, 'days').format('YYYYMMDD');
                          } else if (interval == "3weeks") {
-	                     etime = moment('<%= g_curr_time8%>', 'YYYYMMDD').add('days', -21).format('YYYY/MM/DD');
+	                     stime = moment('<%= g_stime%>', 'YYYYMMDD').add(-21, 'days').format('YYYYMMDD');
                          }
                      }
-                     $('#etime').val(etime);
-                     $(".Etime").text(etime);
+                     $('#stime').val(stime);
+                     $(".Etime").text(stime);
                  } 
                  initTimeOpt($("input[name=time_option]:checked"));
+*/
                                   
-                 $('#etime').on('change keyup paste', function() {
-                     //alert('text box changed');
-                     $('.interval').prop('checked', false);
+                 $('#stime').on('change keyup paste', function() {
+                     //console.log("Time change " + $('#stime').val());
+                     //$('.interval').prop('checked', false);
+                     $('.interval')[0].checked = true;
                      $('input').iCheck('update');
                  });
 

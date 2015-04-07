@@ -11,8 +11,11 @@ if(!check_permission()){
 
 // Global.
 String g_user = param_str("user");
-String g_etime = strftime("MM/dd") + " 00:00";
-String g_stime = strftime_add("MM/dd", 86400 * -30) + " 00:00";
+String g_etime = strftime_add("yyyy/MM/dd", 86400 * -1);
+String g_stime = strftime_add("yyyy/MM/dd", 86400 * -30);
+
+//String g_etime = strftime("MM/dd") + " 00:00";
+//String g_stime = strftime_add("MM/dd", 86400 * -30) + " 00:00";
 
 %>
 
@@ -281,7 +284,7 @@ String g_stime = strftime_add("MM/dd", 86400 * -30) + " 00:00";
                                                         <select class="form-control" id="selUser" name="selUser" onchange="javascript:this.form.user.value=this.value">
 			                                    <option value=''> Select User
 <%
-List<String> user_list = new H24ReportDao("20000101", "").get_log_user_list();
+List<String> user_list = new D1ReportDao("20000101", "").get_log_user_list();
 for(String uname : user_list){
 	printf("<option value='%s'>%s", uname, uname);
 }
@@ -395,11 +398,12 @@ var data =
 [
 <%
 for(int i = 0; i < 30; i++){
-	String etime = strftime_add("yyyyMMdd", 86400 * i * -1) + "00";
+	//String etime = strftime_add("yyyyMMdd", 86400 * i * -1) + "00";
 	String stime = strftime_add("yyyyMMdd", (86400 * i * -1) - 1);
-	String stime_show = strftime_add("yyyy-MM-dd", (86400 * i * -1) - 1);
+	String stime_show = strftime_new_fmt("yyyyMMdd", "yyyy/MM/dd", stime);
+	//String stime_show = strftime_add("yyyy-MM-dd", (86400 * i * -1) - 1);
 
-	H24ReportDao dao = new H24ReportDao(etime, g_user);
+	D1ReportDao dao = new D1ReportDao(stime, g_user);
 	ReportStatsData stats = dao.get_stats();
 
 	// When we use group account user_cnt from log data and
@@ -432,7 +436,7 @@ for(int i = 0; i < 30; i++){
                 $('#submitBtn').click(function() {
                     document.forms["search_form"].action_flag.value = "";
                     document.getElementById("search_form").submit();
-                    $(".Etime").text(etime);        
+                    $(".Etime").text(stime);        
                 });
                 
                 $('#resetBtn').click(function() {
