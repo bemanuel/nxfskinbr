@@ -469,14 +469,16 @@ void chk_new_version(){
 
 //-----------------------------------------------
 void chk_new_message(){
-	if(admin_login_dao.has_new_message()){
-		String new_msg = GlobalDao.get_new_message();
+    if(admin_login_dao.has_new_message()){
+        String new_msg = GlobalDao.get_new_message();
 
-		String[] arr = new_msg.split("\n");
-		for(String a : arr){
-			succ_list.add(a.trim());
-		}
-	}
+        String[] arr = new_msg.split("\n");
+        for(String a : arr){
+            if(is_not_empty(a)){
+                succ_list.add(a.trim());
+            }
+        }
+    }
 }
 
 //-----------------------------------------------

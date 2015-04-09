@@ -10,11 +10,6 @@ if(!check_permission()){
 }
 %>
 <%
-// end time
-//String etime = param_str("etime");
-
-// Create data access object for 24hr stats.
-//H24ReportDao dao = new H24ReportDao(etime, "");
 
 // If there's a user it becomes user specific report.
 String stime = param_str("stime");

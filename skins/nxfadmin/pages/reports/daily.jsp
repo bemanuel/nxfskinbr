@@ -745,11 +745,11 @@ for(String uname : user_list){
                      if(interval != undefined) {
                          //console.log("Changed interval = " + interval);
                          if (interval == "2days") {
-	                     stime = moment('<%= g_stime%>', 'YYYYMMDD').add(-24, 'hours').format('YYYYMMDD');
+	                         stime = moment('<%= g_stime%>', 'YYYYMMDD').add(-24, 'hours').format('YYYYMMDD');
                          } else if (interval == "3days") {
-	                     stime = moment('<%= g_stime%>', 'YYYYMMDD').add(-48, 'hours').format('YYYYMMDD');
+	                         stime = moment('<%= g_stime%>', 'YYYYMMDD').add(-48, 'hours').format('YYYYMMDD');
                          } else if (interval == "userdef") {
-	                     stime = moment('<%= g_stime%>', 'YYYYMMDD').format('YYYYMMDD');
+	                         stime = moment('<%= g_stime%>', 'YYYYMMDD').format('YYYYMMDD');
                          }
                      }
                      $('#stime').val(stime);
