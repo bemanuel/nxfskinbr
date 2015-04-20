@@ -303,19 +303,19 @@ AlertData data = dao.select_one();
                                         <div class="form-group">
                                             <div class="input-group col-xs-3">
                                                 <label class="control-label" for="admin_email">Admin Email</label>
-                                                <input type="text" class="form-control" id="admin_email" name="admin_email" placeholder="Email...">
+                                                <input type="text" class="form-control" id="admin_email" name="admin_email" value="<%= data.admin_email%>" placeholder="Email...">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group col-xs-3">
                                                 <label class="control-label" for="smtp_host">SMTP Host</label>
-                                                <input type="text" class="form-control" id="smtp_host" name="smtp_host" placeholder="SMTP Host...">
+                                                <input type="text" class="form-control" id="smtp_host" name="smtp_host" value="<%= data.smtp_host%>" placeholder="SMTP Host...">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group col-xs-1">
                                                 <label class="control-label" for="smtp_port">SMTP Port</label>
-                                                <input type="text" class="form-control" id="smtp_port" name="smtp_port" placeholder="25" >
+                                                <input type="text" class="form-control" id="smtp_port" name="smtp_port" value="<%= data.smtp_port%>" placeholder="25" >
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -328,7 +328,7 @@ AlertData data = dao.select_one();
                                         <div class="form-group">
                                             <div class="input-group col-xs-3">
                                                 <label class="control-label" for="smtp_user">SMTP Username</label>
-                                                <input type="text" class="form-control" id="smtp_user" name="smtp_user" placeholder="SMTP User...">
+                                                <input type="text" class="form-control" id="smtp_user" name="smtp_user" value="<%= data.smtp_user%>" placeholder="SMTP User...">
                                             </div>
                                         </div>
                                         <div class="form-group">

@@ -328,11 +328,11 @@ String popup_html = admin_login_dao.get_popup();
                                     <div class="row">
                                         <div class="col-xs-2 col-md-3 text-center">
                                             <input type="text" class="knob" data-skin="tron" data-readonly="true" value="<%= stats.req_sum%>" data-min="0" data-max="<%= rMaxSum %>" data-width="120" data-height="120" data-thickness="0.2" data-fgColor="#3c8dbc"/>
-                                            <div class="knob-label">New Requests</div>
+                                            <div class="knob-label">Total Requests</div>
                                         </div><!-- ./col -->
                                         <div class="col-xs-2 col-md-3 text-center">
                                             <input type="text" class="knob" data-skin="tron" data-readonly="true" value="<%= stats.req_cnt%>" data-min="0" data-max="<%= rMaxCnt %>" data-width="120" data-height="120" data-thickness="0.2" data-fgColor="#85144b"/>
-                                            <div class="knob-label">Domains Requested</div>
+                                            <div class="knob-label">Unique Requests</div>
                                         </div><!-- ./col -->
                                         <div class="col-xs-2 col-md-3 text-center">
                                             <input type="text" class="knob" data-skin="tron"  data-readonly="true" value="<%= stats.block_sum%>" data-min="0" data-max="<%= bMaxSum %>" data-width="120" data-height="120" data-thickness="0.2" data-fgColor="#f56954"/>

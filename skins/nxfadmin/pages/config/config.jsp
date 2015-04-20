@@ -489,7 +489,7 @@ ConfigData data = dao.select_one();
                                                 <label class="control-label" for="max_cache_size">Response Cache Size</label>
                                                 <input type="text" class="form-control" id="max_cache_size" name="max_cache_size" value="<%= data.max_cache_size%>" >
                                             </div>
-                                            <p class="help-block">50,000 ~ 1,000,000</p>
+                                            <p class="help-block">100,000 ~ 2,000,000</p>
                                         </div>
                                     </div><!-- /.box-body -->
 
