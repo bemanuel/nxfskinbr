@@ -1,10 +1,14 @@
 *****************************************************************
-NxFAdmin v2.7.1
+NxFAdmin v2.7.3
  Author: Rob Asher
 
 *****************************************************************
 
            NxFilter is a property of Jahastech.
+
+2015/04/20, v2.7.3
+- Version updated.
+- Fixed issue with alert.jsp not displaying saved changes.
 
 2015/04/07, v2.7.1
 - Version updated.
