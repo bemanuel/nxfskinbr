@@ -30,15 +30,15 @@ boolean chk_param(UserData data){
 void update(UserDao dao){
 	UserData data = new UserData();
 
-    String expire = param_str("exp_date");
-    expire = expire.replaceAll("\\s","");
+    //String expire = param_str("exp_date");
+    //expire = expire.replaceAll("\\s","");
 
 	data.id = param_int("id");
 	data.passwd = param_str("passwd");
 	data.policy_id = param_int("policy_id");
 	data.ft_policy_id = param_int("ft_policy_id");
-    data.exp_date = expire;
-//	data.exp_date = param_str("exp_ymd") + param_str("exp_hm");
+        data.exp_date = param_str("exp_date");
+//    data.exp_date = expire;
 	data.token = param_str("token");
 	data.description = param_str("description");
 
@@ -120,6 +120,7 @@ if(action_flag.equals("delete_ip")){
 // Global.
 UserData data = dao.select_one(param_int("id"));
 
+/*
 String expDate = "";
 if(!is_empty(data.get_exp_ymd())){
 	expDate = data.get_exp_ymd();
@@ -129,7 +130,7 @@ if(!is_empty(data.get_exp_ymd())){
         expDate = expDate + " 0000";
     }
 }
-
+*/
 
 // Get policy list.
 List<PolicyData> g_policy_list = new PolicyDao().select_list();
@@ -436,7 +437,7 @@ for(PolicyData pd : g_policy_list){
                                         <div class="form-group">
                                             <div class="input-group col-xs-2">
                                                 <label class="control-label" for="exp_date">Expiration Date</label>
-                                                <input type="text" class="form-control" id="exp_date" name="exp_date" value="<%= expDate %>" >
+                                                <input type="text" class="form-control" id="exp_date" name="exp_date" value="<%= data.get_exp_date()%>" >
                                             </div>
                                         </div>
 
@@ -636,11 +637,18 @@ for(PolicyData pd : g_policy_list){
                     radioClass: 'iradio_flat-green'
                 });
 
+                var disableDate = new Date();
                 jQuery('#exp_date').datetimepicker({
-                    format:'Y-m-d H:i',
+                    format:'Y/m/d H:i',
                     minDate:0,
                     minTime:0,
-                    step:5,
+                    step:1,
+                    beforeShowDay: function(date) {
+                        if (date.getMonth() > disableDate.getMonth()) {
+                            return [false, ""]
+                        }
+                            return [true, ""];
+                    },
                     theme:'dark'
                 });
                 
@@ -670,7 +678,8 @@ for(int i = 0; i < data.ip_list.size(); i++){
 
 $(function () {
     $('#table').bootstrapTable({
-        data: data
+        data: data,
+        pageList: [10, 25, 50, "All"]
     });
     
     $('#btnDelYes').click(function () {

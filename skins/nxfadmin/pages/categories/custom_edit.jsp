@@ -549,7 +549,8 @@ for(int i = 0; i < data.domain_list.size(); i++){
 
 $(function () {
     $('#table').bootstrapTable({
-        data: data
+        data: data,
+        pageList: [10, 25, 50, "All"]
     });
     
     $('#btnDelYes').click(function () {

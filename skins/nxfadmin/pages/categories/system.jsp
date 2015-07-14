@@ -1,6 +1,13 @@
 <%@include file="../../include/lib.jsp"%>
 <%!
 //-----------------------------------------------
+void delete(CategorySystemDao dao){
+	if(dao.delete(param_int("id"))){
+		succ_list.add("System category deleted!");
+	}
+}
+
+//-----------------------------------------------
 void update(CategorySystemDao dao){
 	if(demo_flag){
 		err_list.add("Updating blacklist not allowed on demo site!");
@@ -35,6 +42,9 @@ CategorySystemDao dao = new CategorySystemDao();
 String action_flag = param_str("action_flag");
 if(action_flag.equals("update")){
 	update(dao);
+}
+if(action_flag.equals("delete")){
+	delete(dao);
 }
 
 // Global.
@@ -347,14 +357,52 @@ if(g_blacklist_type < 3 && !dao.is_blacklist_imported()
                                 <div class="box-body">
 
                                     <!-- start table -->
-                                    <table id="table" data-pagination="true" data-search="true" data-classes="table table-hover table-condensed">
+                                    <table id="table" data-pagination="true" data-search="true" data-classes="table table-hover table-condensed" data-row-style="rowStyle">
                                         <thead>
                                         <tr>
+                                            <th data-field="id" data-visible="false">ID</th>
                                             <th data-field="name" data-sortable="true">Name</th>
                                             <th data-field="description" data-sortable="true">Description</th>
+                                            <th data-field="operate" data-formatter="operateFormatter" data-events="operateEvents" data-align="center">Actions</th>
                                         </tr>
                                         </thead>
                                     </table>
+                                    <!-- end table -->
+                                    
+					<!-- start: Delete Record Modal -->
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+									<h3 class="modal-title" id="myModalLabel">Confirm?</h3>
+								</div>
+								<div class="modal-body">
+									<h4>Are you sure you want to delete this record?</h4>
+                                                                        <p class="text-red" id="warn"></p>
+								</div>
+								<!--/modal-body-collapse -->
+								<div class="modal-footer">
+									<button type="button" class="btn btn-danger" id="btnDelYes" href="#">Yes</button>
+									<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+								</div>
+								<!--/modal-footer-collapse -->
+							</div>
+							<!-- /.modal-content -->
+						</div>
+						<!-- /.modal-dialog -->
+					</div>
+					<!-- /.modal -->
+
+				    <!-- go_form -->
+                                    <form action="<%= get_page_name()%>" name="go_form" method="get">
+                                        <input type='hidden' name='mode' value=''>
+                                        <input type='hidden' name='action_flag' value=''>
+                                        <input type='hidden' name='id' value=''>
+                                        <input type='hidden' name='name' value=''>
+                                    </form>
+                    <!-- /go_form -->
+                    
                                 </div><!-- /.box-body -->
 
                             </div><!-- /.box -->
@@ -460,19 +508,81 @@ var data =
 List<CategoryData> data_list = dao.select_list();
 for(int i = 0; i < data_list.size(); i++){
     CategoryData data = data_list.get(i);
-
-    out.println("{\"name\": \"" + data.name + "\",\"description\": \"" + data.description + "\"},");
+    
+	String name = data.name;
+	int domain_cnt = data.get_domain_count();
+	if(domain_cnt > 0){
+		name = name + " - " + domain_cnt;
+	}
+	
+    out.println("{\"id\": " + data.id + ",\"name\": \"" + name + "\",\"description\": \"" + data.description + "\"},");
 
 }
 %>   
 ];
 
+
 $(function () {
     $('#table').bootstrapTable({
-        data: data
+        data: data,
+        pageList: [10, 25, 50, "All"]
+    });
+    
+    $('#btnDelYes').click(function () {
+        var id = $('#myModal').data('id');
+        //var name = $('#myModal').data('name');
+        //alert("Name = " + name);
+        $('#table').bootstrapTable('remove', {
+            field: 'id',
+            values: [id]
+        });
+        $('#myModal').modal('hide');
+        goForm(id, name, "delete", "<%= get_page_name()%>");
     });
 });
-        
+
+function rowStyle(row, index) {
+    var exp = 'success';
+
+    if (row.name.lastIndexOf("*", 0) === 0) {
+        return {
+            classes: exp
+        };
+    }
+    return {};
+}
+  
+function goForm(id, name, flag, action) {
+    var form = document.go_form;
+    form.action = action;
+    form.action_flag.value = flag;
+    form.id.value = id;
+    form.name.value = name;
+    form.submit();
+}
+
+function operateFormatter(value, row, index) {
+    return [
+        '<a class="edit" href="javascript:void(0)" title="Edit">',
+        '<i class="ion ion-edit"></i>',
+        '</a>&nbsp;&nbsp;',
+        '<a class="remove ml10" href="javascript:void(0)" title="Delete">',
+        '<i class="ion ion-close-circled text-red"></i>',
+        '</a>'
+    ].join('');
+}
+
+window.operateEvents = {
+    'click .edit': function (e, value, row, index) {
+        //alert('Clicked edit icon, row: ' + JSON.stringify(row));
+        goForm(row.id, row.name, "", "system_edit.jsp");
+    },
+    'click .remove': function (e, value, row, index) {
+        $('#myModal').data('id', row.id);
+        $('#warn').html("The System Category \"" + row.name + "\" will be removed from all policies!");
+        $('#myModal').modal('show');
+    }
+};                     
         </script>
         
     </body>

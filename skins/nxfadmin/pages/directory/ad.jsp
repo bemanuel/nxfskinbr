@@ -8,7 +8,6 @@ void insert(AdapDao dao){
 	data.passwd = param_str("passwd");
 	data.basedn = param_str("basedn");
 	data.domain = param_str("domain");
-	data.zone_transfer = param_bool("zone_transfer");
 	data.period = param_int("period");
 
 	// Param validation.
@@ -24,11 +23,6 @@ void insert(AdapDao dao){
 
 	if (is_empty(data.basedn)) {
 		err_list.add("AD Base DN is missing!");
-		return;
-	}
-
-	if (data.zone_transfer && is_empty(data.domain)) {
-		err_list.add("AD Zone-transfer needs a domain name!");
 		return;
 	}
 
@@ -380,14 +374,6 @@ int g_count = dao.select_count();
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group">
-                                                <label class="control-label" for="zone_transfer">Zone Transfer</label>
-                                                <br />
-                                                <input type="checkbox" class="flat-green" id="zone_transfer" name="zone_transfer">
-                                            </div>
-                                            <p class="help-block">Import Active Directory DNS zone information</p>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="input-group">
                                                 <label class="control-label" for="period">Auto Sync Interval</label>
                                                 <select class="form-control" id="period" name="period">
 <%
@@ -586,7 +572,8 @@ for(int i = 0; i < data_list.size(); i++){
 
 $(function () {
     $('#table').bootstrapTable({
-        data: data
+        data: data,
+        pageList: [10, 25, 50, "All"]
     });
     
     $('#btnDelYes').click(function () {

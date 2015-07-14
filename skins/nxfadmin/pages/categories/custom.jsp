@@ -380,7 +380,7 @@ int g_count = dao.select_count();
                                         <input type='hidden' name='id' value=''>
                                         <input type='hidden' name='name' value=''>
                                     </form>
-                                    <!-- /go_form -->
+                    <!-- /go_form -->
 
                                 </div><!-- /.box-body -->
 
@@ -494,6 +494,11 @@ for(int i = 0; i < data_list.size(); i++){
 		name = "*" + name;
 	}
 
+	int domain_cnt = data.get_domain_count();
+	if(domain_cnt > 0){
+		name = name + " - " + domain_cnt;
+	}
+	
 	String domain_line = data.get_domain_line();
 	if(domain_line.length() > 100){
 		domain_line = domain_line.substring(0, 100) + "..";
@@ -507,7 +512,8 @@ for(int i = 0; i < data_list.size(); i++){
 
 $(function () {
     $('#table').bootstrapTable({
-        data: data
+        data: data,
+        pageList: [10, 25, 50, "All"]
     });
     
     $('#btnDelYes').click(function () {

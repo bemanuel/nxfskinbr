@@ -353,7 +353,6 @@ for(String uname : user_list){
                                             <th data-field="block_cnt" data-sortable="true">Unique Blocked</th>
                                             <th data-field="domain_cnt" data-sortable="true">Domain Count</th>
                                             <th data-field="user_cnt" data-sortable="true">User Count</th>
-                                            <th data-field="real_user_cnt" data-sortable="true">Real User Count</th>
                                             <th data-field="clt_ip_cnt" data-sortable="true">Client IP Count</th>
                                         </tr>
                                         </thead>
@@ -375,7 +374,8 @@ for(String uname : user_list){
         <script src="../../js/jquery.noty.packaged.min.js" type="text/javascript" ></script>
         <script src="../../js/plugins/bootstrap-table/bootstrap-table.min.js" type="text/javascript"></script>
         <script src="../../js/plugins/tableExport/tableExport.js" type="text/javascript"></script>
-        <script src="../../js/plugins/tableExport/jquery.base64.js" type="text/javascript"></script>
+        <script src="../../js/plugins/tableExport/FileSaver.min.js" type="text/javascript"></script>
+        <script src="../../js/plugins/tableExport/html2canvas.js" type="text/javascript"></script>
         <script src="../../js/plugins/tableExport/bootstrap-table-Export.js" type="text/javascript"></script>
               
         <!-- datetimepicker -->
@@ -398,22 +398,14 @@ var data =
 [
 <%
 for(int i = 0; i < 30; i++){
-	//String etime = strftime_add("yyyyMMdd", 86400 * i * -1) + "00";
 	String stime = strftime_add("yyyyMMdd", (86400 * i * -1) - 1);
 	String stime_show = strftime_new_fmt("yyyyMMdd", "yyyy/MM/dd", stime);
-	//String stime_show = strftime_add("yyyy-MM-dd", (86400 * i * -1) - 1);
 
 	D1ReportDao dao = new D1ReportDao(stime, g_user);
 	ReportStatsData stats = dao.get_stats();
-
-	// When we use group account user_cnt from log data and
-	// distinct logged-in username count could be different from each other.
-	// This is for actual logged-in username count without group account
-	// or group token part.
-	int real_user_cnt = dao.get_real_user_cnt(stime);
-    
+  
     // write data in json format for table.
-    out.println("{\"time\": \"" + stime_show + "\",\"req_sum\": \"" + stats.req_sum + "\",\"req_cnt\": \"" + stats.req_cnt + "\",\"block_sum\": \"" + stats.block_sum + "\",\"block_cnt\": \"" + stats.block_cnt + "\",\"domain_cnt\": \"" + stats.domain_cnt + "\",\"user_cnt\": \"" + stats.user_cnt + "\",\"real_user_cnt\": \"" + real_user_cnt + "\",\"clt_ip_cnt\": \"" + stats.clt_ip_cnt + "\"},");
+    out.println("{\"time\": \"" + stime_show + "\",\"req_sum\": \"" + stats.req_sum + "\",\"req_cnt\": \"" + stats.req_cnt + "\",\"block_sum\": \"" + stats.block_sum + "\",\"block_cnt\": \"" + stats.block_cnt + "\",\"domain_cnt\": \"" + stats.domain_cnt + "\",\"user_cnt\": \"" + stats.user_cnt + "\",\"clt_ip_cnt\": \"" + stats.clt_ip_cnt + "\"},");
 }
 %> 
 ];
@@ -481,7 +473,9 @@ for(int i = 0; i < 30; i++){
             	
                 $('#table').bootstrapTable({
                     data: data,
-                    pageList: [10, 25, 50]
+                    pageList: [10, 25, 50, "All"],
+                    exportTypes: ['png', 'xml', 'csv', 'txt', 'sql', 'excel', 'doc'],
+                    exportOptions: {fileName: 'NxFilter_Usage'}
                 });
                 
             });

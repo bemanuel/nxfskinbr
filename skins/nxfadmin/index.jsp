@@ -16,20 +16,15 @@ if(dao.is_invalid_request()){
 	return;
 }
 
-// hack to add path for skins directory
-//String fp = request.getServletPath();
-//int sep = fp.lastIndexOf("/");
-//out.println("Path : " + fp.substring(0, sep));
-
 if(dao.is_logout_domain()){
-    response.sendRedirect("http://" + dao.get_logout_domain() + "/login.jsp?action_flag=logout");
-	//response.sendRedirect("http://" + dao.get_logout_domain() + fp.substring(0, sep) + "/login.jsp?action_flag=logout");
+	response.sendRedirect("http://" + dao.get_logout_domain() + "/block,login.jsp?action_flag=logout");
+	//response.sendRedirect("http://" + dao.get_logout_domain() + "/login.jsp?action_flag=logout");
 	return;
 }
 
 if(dao.is_login_required()){
-    response.sendRedirect("http://" + dao.get_login_domain() + "/login.jsp");
-	//response.sendRedirect("http://" + dao.get_login_domain() + fp.substring(0, sep) + "/login.jsp");
+	response.sendRedirect("http://" + dao.get_login_domain() + "/block,login.jsp");
+	//response.sendRedirect("http://" + dao.get_login_domain() + "/login.jsp");
 	return;
 }
 

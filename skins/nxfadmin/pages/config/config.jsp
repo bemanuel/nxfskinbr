@@ -17,6 +17,13 @@ boolean chk_param(ConfigData data){
 	    }
 	}
 
+	if (is_not_empty(data.ipv6_block_redi_ip)) {
+	    if (!is_valid_ipv6(data.ipv6_block_redi_ip)) {
+		    err_list.add("Invalid IPv6 redirection IP!");
+			return false;
+	    }
+	}
+	
 	// Login, logout domain.
 	if (!pv.is_valid_domain(data.login_domain)) {
 		err_list.add("Invalid login domain!");
@@ -87,6 +94,7 @@ void update(ConfigDao dao){
 	// Block and authentication.
     data.block_redi_ip = param_str("block_redi_ip");
     data.rf_block_redi_ip = param_str("rf_block_redi_ip");
+    data.ipv6_block_redi_ip = param_str("ipv6_block_redi_ip");
     data.enable_login = param_bool("enable_login");
     data.login_domain = param_str("login_domain");
     data.logout_domain = param_str("logout_domain");
@@ -410,6 +418,12 @@ ConfigData data = dao.select_one();
                                             <div class="input-group col-xs-2">
                                                 <label class="control-label" for="rf_block_redi_ip">External Redirection IP</label>
                                                 <input type="text" class="form-control" id="rf_block_redi_ip" name="rf_block_redi_ip" value="<%= data.rf_block_redi_ip%>" data-inputmask="'alias': 'ip'" data-mask/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group col-xs-2">
+                                                <label class="control-label" for="ipv6_block_redi_ip">IPv6 Redirection IP</label>
+                                                <input type="text" class="form-control" id="ipv6_block_redi_ip" name="ipv6_block_redi_ip" value="<%= data.ipv6_block_redi_ip%>" />
                                             </div>
                                         </div>
                                         <div class="form-group">

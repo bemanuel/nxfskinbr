@@ -509,7 +509,8 @@ for(Map.Entry<String,String> entry : proto_map.entrySet()){
         <script src="../../js/plugins/input-mask/jquery.inputmask.extensions.js" type="text/javascript"></script>
         <script src="../../js/plugins/bootstrap-table/bootstrap-table.min.js" type="text/javascript"></script>
         <script src="../../js/plugins/tableExport/tableExport.js" type="text/javascript"></script>
-        <script src="../../js/plugins/tableExport/jquery.base64.js" type="text/javascript"></script>
+        <script src="../../js/plugins/tableExport/FileSaver.min.js" type="text/javascript"></script>
+        <script src="../../js/plugins/tableExport/html2canvas.js" type="text/javascript"></script>
         <script src="../../js/plugins/tableExport/bootstrap-table-Export.js" type="text/javascript"></script>
         <!-- datetimepicker -->
         <script src="../../js/plugins/datetimepicker/jquery.datetimepicker.js" type="text/javascript"></script>
@@ -628,7 +629,9 @@ for(int i = 0; i < data_list.size(); i++){
 
                 $('#table').bootstrapTable({
                     data: data,
-                    pageList: [10, 25, 50, 100, 250]
+                    pageList: [10, 25, 50, "All"],
+                    exportTypes: ['png', 'xml', 'csv', 'txt', 'sql', 'excel', 'doc'],
+                    exportOptions: {fileName: 'NxFilter_Netflow'}
                 });
 
                 jQuery('#stime').datetimepicker({

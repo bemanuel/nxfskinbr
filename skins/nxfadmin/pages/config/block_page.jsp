@@ -376,16 +376,6 @@ BlockPageData data = dao.select_one();
                             </div><!-- /.box box-danger -->  
 
                         <div class="box-footer">
-                            <div class="callout callout-warning">
-                                <h4 class="text-red">*NOTE: The default login page HTML form action must be edited to work with this GUI. </h4>
-                                <p>To edit the default login page, you need to change the following:</p>
-                                <dl class="dl-horizontal">
-                                    <dt>Find:</dt>
-                                    <dd>" form action='block,login.jsp' method='post' "</dd>
-                                    <dt>Change to:</dt>
-                                    <dd>" form action='login.jsp' method='post' "</dd>
-                                </dl>
-                            </div>
                             <div class="btn-group">
                                 <button id="submitBtn" type="submit" form="pages" class="btn btn-info margin">Update All Pages</button>
                                 <button id="resetBtn" class="btn btn-warning margin">Reset Forms</button>

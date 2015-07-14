@@ -1,10 +1,17 @@
 *****************************************************************
-NxFAdmin v2.7.3
+NxFAdmin v2.8.1
  Author: Rob Asher
 
 *****************************************************************
 
            NxFilter is a property of Jahastech.
+2015/07/14, v2.8.1
+- Version updated.
+- Fixed issue with table display number limit(upgraded plugin to show "All").
+- Renamed login.jsp -> block,login.jsp to help skin setup confusion.
+- Added system_edit.jsp to match NxFilter changes.
+- "Real User Count" removed from usage report.
+- Added PNG and DOC export options for tables.
 
 2015/04/20, v2.7.3
 - Version updated.

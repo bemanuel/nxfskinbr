@@ -293,6 +293,11 @@ boolean is_valid_ip(String ip){
 }
 
 //-----------------------------------------------
+boolean is_valid_ipv6(String ip){
+	return wLib.is_valid_ipv6(ip);
+}
+
+//-----------------------------------------------
 boolean is_valid_domain(String domain){
 	return wLib.is_valid_domain(domain);
 }
