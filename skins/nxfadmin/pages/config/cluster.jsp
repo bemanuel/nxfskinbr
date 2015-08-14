@@ -48,7 +48,7 @@ if(action_flag.equals("delete")){
 
 // Global.
 ClusterData data = dao.select_one();
-int g_node_count = dao.select_node_count();
+int g_node_count = dao.select_count();
 %>
 
 <!DOCTYPE html>
@@ -419,7 +419,7 @@ int g_node_count = dao.select_node_count();
 var data = 
 [
 <%
-List<NodeData> data_list = dao.select_node_list();
+List<NodeData> data_list = dao.select_list();
  
 for(int i = 0; i < data_list.size(); i++){
     NodeData nd = data_list.get(i);

@@ -741,13 +741,13 @@ for(String uname : user_list){
 
                  $('input[type="radio"][name="time_option"]').on('ifChanged', function(event){
                      var interval = $("input[name=time_option]:checked").val()
-                     var stime = moment('<%= g_stime%>', 'YYYYMMDD').format('YYYYMMDD');
+                     var stime = moment('<%= g_stime%>', 'YYYYMMDD').add(-24, 'hours').format('YYYYMMDD');
                      if(interval != undefined) {
                          //console.log("Changed interval = " + interval);
                          if (interval == "2days") {
-	                         stime = moment('<%= g_stime%>', 'YYYYMMDD').add(-24, 'hours').format('YYYYMMDD');
-                         } else if (interval == "3days") {
 	                         stime = moment('<%= g_stime%>', 'YYYYMMDD').add(-48, 'hours').format('YYYYMMDD');
+                         } else if (interval == "3days") {
+	                         stime = moment('<%= g_stime%>', 'YYYYMMDD').add(-72, 'hours').format('YYYYMMDD');
                          } else if (interval == "userdef") {
 	                         stime = moment('<%= g_stime%>', 'YYYYMMDD').format('YYYYMMDD');
                          }

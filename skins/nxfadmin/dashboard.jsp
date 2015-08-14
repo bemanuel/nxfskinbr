@@ -42,14 +42,13 @@ request_dao.block_flag = true;
 
 // Version check.
 chk_new_version();
-chk_new_message();
 
 // Global.
-String g_stime = strftime_new_fmt("yyyyMMddHHmm", "MM/dd HH:mm", report_dao.stime);
-String g_etime = strftime_new_fmt("yyyyMMddHHmm", "MM/dd HH:mm", report_dao.etime);
+//String g_stime = strftime_new_fmt("yyyyMMddHHmm", "MM/dd HH:mm", report_dao.stime);
+//String g_etime = strftime_new_fmt("yyyyMMddHHmm", "MM/dd HH:mm", report_dao.etime);
 
 // Get popup.
-String popup_html = admin_login_dao.get_popup();
+//String popup_html = admin_login_dao.get_popup();
 %>
 
 
@@ -288,7 +287,7 @@ String popup_html = admin_login_dao.get_popup();
                             <div class="box box-solid">
                                 <div class="box-header">
                                     <i class="fa fa-calendar"></i>
-                                    <h3 class="box-title">Statistics from: <%= g_stime%> ~ <%= g_etime%></h3>
+                                    <h3 class="box-title">Statistics from: <%= report_dao.get_stime()%> ~ <%= report_dao.get_etime()%></h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                         <button class="btn btn-default btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
@@ -452,35 +451,29 @@ String popup_html = admin_login_dao.get_popup();
                                                         </tr>
 <%
 List<RequestData> data_list = request_dao.select_list();
-//if(data_list.isEmpty()){
-//	out.println("                                                        <tr class='row'>");
-//	out.println("                                                            <td colspan='11' align='center'>No data</td>");
-//	out.println("                                                        </tr>");
-//}
 
 for(int i = 0; i < data_list.size(); i++){
-	RequestData recent = data_list.get(i);
 
-	String fmt_ctime = strftime_new_fmt("yyyyMMddHHmm", "MM/dd HH:mm", recent.ctime);
+	RequestData data = data_list.get(i);
 
-	// Only first category.
-	String category_line = recent.category.replaceFirst(",.*", "");
-
-	// Only first grp.
-	String grp_line = recent.grp.replaceFirst(",.*", "");
+	String category_line = data.category;
+	if(category_line.length() > 30){
+		category_line = safe_substring(data.category, 30) + "..";
+	}
+	
 %>
                                                         <tr>
-                                                            <td><%= fmt_ctime%></td>
-                                                            <td><%= recent.get_block_yn()%></td>
-                                                            <td><%= recent.cnt%></td>
-                                                            <td><%= recent.get_type_code()%></td>
-                                                            <td><a href='javascript:window_open("http://" + "<%= recent.domain%>")'><%= recent.domain%></a></td>
-                                                            <td><%= recent.user%></td>
-                                                            <td><%= recent.clt_ip%></td>
-                                                            <td title='<%= recent.grp%>'><%= grp_line%></td>
-                                                            <td><%= recent.policy%></td>
-                                                            <td title='<%= recent.category%>'><%= category_line%></td>
-                                                            <td><%= recent.get_reason()%></td>
+                                                            <td><%= data.get_ctime()%></td>
+                                                            <td><%= data.get_block_yn()%></td>
+                                                            <td><%= data.cnt%></td>
+                                                            <td><%= data.get_type_code()%></td>
+                                                            <td><a href='javascript:window_open("http://" + "<%= data.domain%>")'><%= data.domain%></a></td>
+                                                            <td><%= data.user%></td>
+                                                            <td><%= data.clt_ip%></td>
+                                                            <td title='<%= data.grp%>'><%= data.get_first_grp()%></td>
+                                                            <td><%= data.policy%></td>
+                                                            <td title='<%= data.category%>'><%= category_line%></td>
+                                                            <td><%= data.get_reason()%></td>
                                                         </tr>
 <%}%>
 
@@ -686,7 +679,6 @@ for(int i = 0; i < arr_list.size(); i++){
             });
 
         </script>
-        
-<%= popup_html%>
+
     </body>
 </html>

@@ -32,11 +32,11 @@ void init_lib(PageContext pc){
 	param = new NxParam(request);
 	permission = new PermissionData();
 	admin_login_dao = new AdminLoginDao(request);
-        license_dao= new LicenseDao(err_list);
+    license_dao= new LicenseDao(err_list);
 
 	demo_flag = GlobalDao.get_demo_flag();
-	err_list = new ArrayList<String>();
-	succ_list = new ArrayList<String>();
+	err_list = new ArrayList<>();
+	succ_list = new ArrayList<>();
 }
 
 //-----------------------------------------------
@@ -378,7 +378,7 @@ void init_signal_flag() {
 
 //-----------------------------------------------
 List<String> get_hh_list() {
-	List<String> list = new ArrayList<String>();
+	List<String> list = new ArrayList<>();
 	for (int i = 0; i <= 24; i++) {
 		String hh = i + "";
 		if (i < 10) {
@@ -393,7 +393,7 @@ List<String> get_hh_list() {
 
 //-----------------------------------------------
 List<String> get_mm_list() {
-	List<String> list = new ArrayList<String>();
+	List<String> list = new ArrayList<>();
 	for (int i = 0; i < 60; i++) {
 		String mm = i + "";
 		if (i < 10) {
@@ -433,7 +433,7 @@ String get_admin_name(){
 
 //-----------------------------------------------
 Map<Integer, String> get_ldap_period_map(){
-	Map<Integer, String> m = new LinkedHashMap<Integer, String>();
+	Map<Integer, String> m = new LinkedHashMap<>();
 	m.put(0, "No sync");
 	m.put(1, "Every minute");
 	m.put(15, "Every 15 minutes");
@@ -452,7 +452,7 @@ String get_ldap_period_string(int period){
 
 //-----------------------------------------------
 Map<Integer, String> get_alert_period_map(){
-	Map<Integer, String> m = new LinkedHashMap<Integer, String>();
+	Map<Integer, String> m = new LinkedHashMap<>();
 	m.put(0, "No alert");
 	m.put(5, "Every 5 minutes");
 	m.put(15, "Every 15 minutes");
@@ -464,26 +464,17 @@ Map<Integer, String> get_alert_period_map(){
 
 //-----------------------------------------------
 void chk_new_version(){
-	if(admin_login_dao.has_new_version()){
-		String new_ver = GlobalDao.get_new_version();
-
-		succ_list.add("A new version of NxFilter is available!");
-		succ_list.add("The newest version of NxFilter is " + new_ver + ".");
+	if(admin_login_dao.has_new_version() && !GlobalDao.is_customized()){
+		String text = String.format("A new version of %s is available! The newest version of %s is %s.",
+			GlobalDao.get_nx_name(), GlobalDao.get_nx_name(), GlobalDao.get_new_version());
+		succ_list.add(text);
 	}
 }
 
 //-----------------------------------------------
+@Deprecated
 void chk_new_message(){
-    if(admin_login_dao.has_new_message()){
-        String new_msg = GlobalDao.get_new_message();
-
-        String[] arr = new_msg.split("\n");
-        for(String a : arr){
-            if(is_not_empty(a)){
-                succ_list.add(a.trim());
-            }
-        }
-    }
+    return;
 }
 
 //-----------------------------------------------

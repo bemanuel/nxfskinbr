@@ -53,7 +53,7 @@ if(!check_permission()){
 
 // Create data access object.
 GroupDao dao = new GroupDao();
-dao.limit = 50;
+dao.limit = 5000;
 dao.page = param_int("page", 1);
 dao.add_kw(param_str("kw"));
 

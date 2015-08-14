@@ -1,10 +1,14 @@
 *****************************************************************
-NxFAdmin v2.8.1
+NxFAdmin v2.8.5
  Author: Rob Asher
 
 *****************************************************************
 
            NxFilter is a property of Jahastech.
+2015/08/14, v2.8.5
+- Version updated.
+- Fixed problem with custom categories edit list not showing.
+
 2015/07/14, v2.8.1
 - Version updated.
 - Fixed issue with table display number limit(upgraded plugin to show "All").

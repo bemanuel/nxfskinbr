@@ -23,7 +23,7 @@ if(action_flag.equals("login")){
 <html class="bg-black">
     <head>
         <meta charset="UTF-8">
-        <title>NxFilter v<%= GlobalDao.get_nx_version()%> | Log in</title>
+        <title><%= GlobalDao.get_nx_name()%> v<%= GlobalDao.get_nx_version()%> | Log in</title>
         <meta http-equiv='Expires' content='-1'> 
         <meta http-equiv='Pragma' content='no-cache'> 
         <meta http-equiv='Cache-Control' content='no-cache'> 
@@ -58,7 +58,7 @@ if(action_flag.equals("login")){
                     <div class="form-group">
                         <ul>
                            <li>Initial name & password is 'admin' & 'admin'</li>
-                           <li>Tutorial is available here: <a target='_blank' href='http://www.nxfilter.org'>NxFilter</a></li>
+                           <li>Tutorial is available here: <a target='_blank' href='<%= GlobalDao.get_nx_tutorial()%>'>NxFilter</a></li>
                         </ul>
                     </div>
 <%}%>          

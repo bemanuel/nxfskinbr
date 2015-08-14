@@ -23,6 +23,12 @@ if(action_flag.equals("login")){
 // Get login-page.
 BlockPageDao bp_dao = new BlockPageDao();
 BlockPageData data = bp_dao.select_one_local();
-out.print(data.login_page);
+
+String login_page = data.login_page;
+
+// nx_name.
+login_page = login_page.replaceAll("#\\{nx_name\\}", GlobalDao.get_nx_name());
+
+out.print(login_page);
 
 %>

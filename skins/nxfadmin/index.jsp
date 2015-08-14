@@ -58,5 +58,8 @@ block_page = block_page.replaceAll("#\\{group\\}", group);
 block_page = block_page.replaceAll("#\\{policy\\}", policy);
 block_page = block_page.replaceAll("#\\{category\\}", category);
 
+// nx_name.
+block_page = block_page.replaceAll("#\\{nx_name\\}", GlobalDao.get_nx_name());
+
 out.print(block_page);
 %>

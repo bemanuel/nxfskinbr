@@ -15,7 +15,7 @@ void insert(UserDao dao){
 	}
 	
 	if(!pv.is_valid_username_char(data.name)){
-		err_list.add(ParamValidator.ERR_NAME_CHAR);
+		err_list.add(ParamValidator.ERR_USERNAME_CHAR);
 		return;
 	}
 

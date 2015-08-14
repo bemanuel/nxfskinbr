@@ -539,6 +539,7 @@ CategoryData data = dao.select_one(param_int("id"));
 var data = 
 [
 <%
+List<CategoryDomainData> domain_list = data.get_domain_list();
 for(int i = 0; i < data.domain_list.size(); i++){
     CategoryDomainData cd = data.domain_list.get(i);
 

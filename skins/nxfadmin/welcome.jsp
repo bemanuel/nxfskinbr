@@ -12,5 +12,8 @@ String welcome_page = data.welcome_page;
 // Replace template params.
 welcome_page = welcome_page.replaceAll("#\\{user\\}", user);
 
+// nx_name.
+welcome_page = welcome_page.replaceAll("#\\{nx_name\\}", GlobalDao.get_nx_name());
+
 out.print(welcome_page);
 %>
