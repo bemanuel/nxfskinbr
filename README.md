@@ -1,15 +1,18 @@
-NxFAdmin
+NxFSkinBR
 ========
 
-Web administration template for NxFilter.
+Skin em ptBR do NxFilter
 
-Extract archive contents to a location under your base NxFilter installation.  
+Extraia o conteudo para uma pasta dentro da sua instação do NxFilter
 
-For instance on linux and your NxFilter files are located in /nxfilter, then something like "tar zxf nxfadmin-master.tar.gz -C /nxfilter/" will create /nxfilter/skins/nxfadmin containing the new GUI files.  
+Ex.:
+Se sua instalação estiver localizada na pasta /nxfilter, então você irá proceder da seguinte forma
+```
+$ tar xf ~/Downloads/nxfskinbr.tar.gz -C /nxfilter/
+```
 
-Edit /nxfilter/conf/cfg.properties and add "www_dir = skins/nxfadmin" at the bottom.  
+Altere o arquivo /nxfilter/conf/cfg.properties e adicione o parâmetro "www_dir = skins/nxfskinbr" na última linha.  
 
-Save the file and restart NxFilter to activate the new GUI.  
+Grave o arquivo e reinicie o NxFilter
 
-================================================================================================================
 
