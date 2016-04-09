@@ -384,26 +384,26 @@ ConfigData data = dao.select_one();
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group col-xs-2">
-                                                <label class="control-label" for="block_redi_ip">IP Direcionado por bloqueio</label>
+                                                <label class="control-label" for="block_redi_ip">IP Destino - Bloqueio interno</label>
                                                 <input type="text" class="form-control" id="block_redi_ip" name="block_redi_ip" value="<%= data.block_redi_ip%>" />
                                                 <!-- input type="text" class="form-control" id="block_redi_ip" name="block_redi_ip" value="<%= data.block_redi_ip%>" data-inputmask="'alias': 'ip'" data-mask/ -->
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group col-xs-2">
-                                                <label class="control-label" for="rf_block_redi_ip">External Redirection IP</label>
+                                                <label class="control-label" for="rf_block_redi_ip">IP Destino - Bloqueio Externo</label>
                                                 <input type="text" class="form-control" id="rf_block_redi_ip" name="rf_block_redi_ip" value="<%= data.rf_block_redi_ip%>" data-inputmask="'alias': 'ip'" data-mask/>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group col-xs-2">
-                                                <label class="control-label" for="ipv6_block_redi_ip">IPv6 Redirection IP</label>
+                                                <label class="control-label" for="ipv6_block_redi_ip">IPv6 Destino - Bloqueio</label>
                                                 <input type="text" class="form-control" id="ipv6_block_redi_ip" name="ipv6_block_redi_ip" value="<%= data.ipv6_block_redi_ip%>" />
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group col-xs-3">
-                                                <label class="control-label" for="login_domain">Login Domain</label>
+                                                <label class="control-label" for="login_domain">FQDN Login - Ex.: login.nxfbrasil.internal</label>
                                                 <input type="text" class="form-control" id="login_domain" name="login_domain" value="<%= data.login_domain%>" >
                                             </div>
                                             <p class="help-block">Domain for user authentication</p>
