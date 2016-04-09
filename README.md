@@ -15,5 +15,6 @@ Altere o arquivo /nxfilter/conf/cfg.properties e adicione o parâmetro "www_dir 
 
 Grave o arquivo e reinicie o NxFilter
 
-Fork do Projeto - NxFAdmin by Rob Asher - https://bitbucket.org/DeepWoods/nxfadmin
+Fork do Projeto - NxFAdmin by Rob Asher - https://bitbucket.org/DeepWoods/nxfadmin.
+
 NxFilter is a project of Jahastech. 
