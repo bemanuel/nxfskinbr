@@ -207,7 +207,7 @@ AdminData data = dao.select_one();
                             <div class="box box-solid">
                                 <div class="box-header">
                                     <i class="fa fa-pencil"></i>
-                                    <h3 class="box-title">Admin Password</h3>
+                                    <h3 class="box-title">Senha do Administrador</h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                     </div>
@@ -218,26 +218,26 @@ AdminData data = dao.select_one();
                                     <input type="hidden" name="action_flag" value="admin_pw">
                                         <div class="form-group">
                                             <div class="input-group col-xs-3">
-                                                <label class="control-label" for="admin_pw">Password</label>
-                                                <input type="password" class="form-control" id="admin_pw" name="admin_pw" placeholder="Current Password...">
+                                                <label class="control-label" for="admin_pw">Senha atual</label>
+                                                <input type="password" class="form-control" id="admin_pw" name="admin_pw" placeholder="Senha atual...">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group col-xs-3">
-                                                <label class="control-label" for="new_pw">New Password</label>
-                                                <input type="password" class="form-control" id="new_pw" name="new_pw" placeholder="New Password...">
+                                                <label class="control-label" for="new_pw">Nova senha</label>
+                                                <input type="password" class="form-control" id="new_pw" name="new_pw" placeholder="Nova senha...">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group col-xs-3">
-                                                <label class="control-label" for="new_pw2">Confirm New Password</label>
-                                                <input type="password" class="form-control" id="new_pw2" name="new_pw2" placeholder="New Password Again..." >
+                                                <label class="control-label" for="new_pw2">Confirmar nova senha</label>
+                                                <input type="password" class="form-control" id="new_pw2" name="new_pw2" placeholder="Repita a nova senha..." >
                                             </div>
                                         </div>
                                     </form><!-- end form -->
                                 </div><!-- /.box-body -->
                                 <div class="box-footer">
-                                    <button id="chpass" type="submit" form="chgPasswd" class="btn btn-info">Change Password</button>
+                                    <button id="chpass" type="submit" form="chgPasswd" class="btn btn-info">Confirma altera&ccedi;&atilde;o</button>
                                 </div>
                             </div><!-- /.box -->
                         </div><!-- /.col -->
@@ -249,7 +249,7 @@ AdminData data = dao.select_one();
                             <div class="box box-solid">
                                 <div class="box-header">
                                     <i class="fa fa-user"></i>
-                                    <h3 class="box-title">Admin Username</h3>
+                                    <h3 class="box-title">Usu&aacute;rio do administrador</h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                     </div>
@@ -260,15 +260,15 @@ AdminData data = dao.select_one();
                                     <input type="hidden" name="action_flag" value="update">
                                         <div class="form-group">
                                             <div class="input-group col-xs-3">
-                                                <label class="control-label" for="admin_name">Current Username</label>
+                                                <label class="control-label" for="admin_name">Usu&aacute;rio atual</label>
                                                 <input type="text" class="form-control" id="admin_name" name="admin_name" value="<%= data.name%>">
                                             </div>
-                                            <p class="help-block text-blue"><b>Note:</b>  Username changes will be updated on next login.</p>
+                                            <p class="help-block text-blue"><b>Obs:</b>  Usu&aacute;rio ser&aacute; mudado no pr&oacute;ximo login.</p>
                                         </div>
                                     </form><!-- end form -->
                                 </div><!-- /.box-body -->
                                 <div class="box-footer">
-                                    <button id="chadmin" type="submit" form="chgAdmin" class="btn btn-info">Change Username</button>
+                                    <button id="chadmin" type="submit" form="chgAdmin" class="btn btn-info">Confirmar mudan&accedil;a de usu&aacute;rio</button>
                                 </div>
                             </div><!-- /.box -->
                         </div><!-- /.col -->
