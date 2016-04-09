@@ -1,6 +1,6 @@
     <head>
         <meta charset="UTF-8">
-        <title>NxFilter v<%= GlobalDao.get_nx_version()%> | ${param.page}</title>
+        <title>NxFilter v${param.version} | ${param.page}</title>
         <meta http-equiv='Expires' content='-1'> 
         <meta http-equiv='Pragma' content='no-cache'> 
         <meta http-equiv='Cache-Control' content='no-cache'>
