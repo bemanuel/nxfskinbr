@@ -268,7 +268,7 @@ AdminData data = dao.select_one();
                                     </form><!-- end form -->
                                 </div><!-- /.box-body -->
                                 <div class="box-footer">
-                                    <button id="chadmin" type="submit" form="chgAdmin" class="btn btn-info">Confirmar mudan&accedil;a de usu&aacute;rio</button>
+                                    <button id="chadmin" type="submit" form="chgAdmin" class="btn btn-info">Confirmar mudan&ccedil;a de usu&aacute;rio</button>
                                 </div>
                             </div><!-- /.box -->
                         </div><!-- /.col -->
