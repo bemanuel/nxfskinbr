@@ -232,7 +232,7 @@ ConfigData data = dao.select_one();
                     <!-- search form -->
                     <form action="../search.jsp" method="get" class="sidebar-form" name="search">
                         <div class="input-group">
-                            <input type="text" name="q" class="form-control" placeholder="Search..." id="tipue_drop_input" autocomplete="off" required/>
+                            <input type="text" name="q" class="form-control" placeholder="Pesquisar..." id="tipue_drop_input" autocomplete="off" required/>
                             <span class="input-group-btn">
                                 <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
                             </span>
@@ -253,6 +253,7 @@ ConfigData data = dao.select_one();
                             </a>
                             <ul class="treeview-menu">
                                 <li class="active"><a href="../../pages/config/config.jsp"><i class="fa fa-angle-double-right"></i> Propriedades</a></li>
+                                <li class="active"><a href="../../pages/config/dns.jsp"><i class="fa fa-angle-double-right"></i> DNS</a></li>
                                 <li><a href="../../pages/config/alert.jsp"><i class="fa fa-angle-double-right"></i> Alertas</a></li>
                                 <li><a href="../../pages/config/block_page.jsp"><i class="fa fa-angle-double-right"></i> P&aacute;g Bloqueio</a></li>
                                 <li><a href="../../pages/config/allowed_ip.jsp"><i class="fa fa-angle-double-right"></i> IP's Permitidos</a></li>
