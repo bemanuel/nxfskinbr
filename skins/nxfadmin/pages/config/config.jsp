@@ -157,32 +157,7 @@ ConfigData data = dao.select_one();
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>NxFilter v<%= GlobalDao.get_nx_version()%> | Settings</title>
-        <meta http-equiv='Expires' content='-1'> 
-        <meta http-equiv='Pragma' content='no-cache'> 
-        <meta http-equiv='Cache-Control' content='no-cache'>
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-        <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="../../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-        <link href="../../css/tipue/tipuedrop.css" rel="stylesheet" type="text/css" />
-        <!-- Ionicons -->
-        <link href="../../css/ionicons.min.css" rel="stylesheet" type="text/css" />
-        <!-- iCheck for checkboxes and radio inputs -->
-        <link href="../../css/iCheck/all.css" rel="stylesheet" type="text/css" />
-
-        <!-- Theme style -->
-        <link href="../../css/NxF.css" rel="stylesheet" type="text/css" />
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-    </head>
+    <%@include file="header.html"%>
     <body class="skin-black">
 
         <!-- header logo: style can be found in header.less -->
@@ -371,13 +346,13 @@ ConfigData data = dao.select_one();
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Configuration
-                        <small>Settings</small>
+                        Configura&ccedil;&tilde;o
+                        <small>Propriedades</small>
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="../../dashboard.jsp"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li><a href="#">Configuration</a></li>
-                        <li class="active">Settings</li>
+                        <li><a href="#">Configura&ccedil;o</a></li>
+                        <li class="active">Propriedades</li>
                     </ol>
                 </section>
 
@@ -394,7 +369,7 @@ ConfigData data = dao.select_one();
                             <div class="box box-lime">
                                 <div class="box-header">
                                     <i class="fa fa-sign-in"></i>
-                                    <h3 class="box-title">Authentication</h3>
+                                    <h3 class="box-title">Autentica&ccedil;&atilde;o</h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                     </div>
@@ -402,14 +377,14 @@ ConfigData data = dao.select_one();
                                     <div class="box-body">
                                         <div class="form-group">
                                             <div class="input-group">
-                                                <label class="control-label" for="enable_login">Enable Authentication</label>
+                                                <label class="control-label" for="enable_login">Habilitar autentica&ccedil;&atilde;o</label>
                                                 <br />
                                                 <input type="checkbox" class="flat-green" id="enable_login" name="enable_login" <%if(data.enable_login){out.print("checked");}%> >
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group col-xs-2">
-                                                <label class="control-label" for="block_redi_ip">Block Redirection IP</label>
+                                                <label class="control-label" for="block_redi_ip">IP Direcionado por bloqueio</label>
                                                 <input type="text" class="form-control" id="block_redi_ip" name="block_redi_ip" value="<%= data.block_redi_ip%>" />
                                                 <!-- input type="text" class="form-control" id="block_redi_ip" name="block_redi_ip" value="<%= data.block_redi_ip%>" data-inputmask="'alias': 'ip'" data-mask/ -->
                                             </div>
