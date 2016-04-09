@@ -277,47 +277,47 @@ ConfigData data = dao.select_one();
                         </li>
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-pencil"></i> <span>Policies</span>
+                                <i class="fa fa-pencil"></i> <span>Pol&iacute;ticas</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="../../pages/policies/policy.jsp"><i class="fa fa-angle-double-right"></i> Policy</a></li>
-                                <li><a href="../../pages/policies/free_time.jsp"><i class="fa fa-angle-double-right"></i> Free Time</a></li>
-                                <li><a href="../../pages/policies/application.jsp"><i class="fa fa-angle-double-right"></i> Application</a></li>
+                                <li><a href="../../pages/policies/policy.jsp"><i class="fa fa-angle-double-right"></i> Pol&iacute;tica</a></li>
+                                <li><a href="../../pages/policies/free_time.jsp"><i class="fa fa-angle-double-right"></i> Per&iacute;odo livre</a></li>
+                                <li><a href="../../pages/policies/application.jsp"><i class="fa fa-angle-double-right"></i> Aplica&ccedil;&atilde;o</a></li>
                                 <li><a href="../../pages/policies/proxy.jsp"><i class="fa fa-angle-double-right"></i> Proxy</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-book"></i> <span>Categories</span>
+                                <i class="fa fa-book"></i> <span>Categorias</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="../../pages/categories/custom.jsp"><i class="fa fa-angle-double-right"></i> Custom</a></li>
+                                <li><a href="../../pages/categories/custom.jsp"><i class="fa fa-angle-double-right"></i> Customizar</a></li>
                                 <li class="treeview">
                                     <a href="#">
-                                        <i class="fa fa-angle-double-right"></i> <span>Whitelists</span>
+                                        <i class="fa fa-angle-double-right"></i> <span>Listas Brancas</span>
                                         <i class="fa fa-angle-left pull-right"></i>
                                     </a>
                                     <ul class="treeview-menu">
-                                        <li><a href="../../pages/categories/domain.jsp"><i class="fa fa-angle-double-right"></i> By Domain</a></li>
-                                        <li><a href="../../pages/categories/keyword.jsp"><i class="fa fa-angle-double-right"></i> By Keyword</a></li>
+                                        <li><a href="../../pages/categories/domain.jsp"><i class="fa fa-angle-double-right"></i> Por Dom&iacute;nio</a></li>
+                                        <li><a href="../../pages/categories/keyword.jsp"><i class="fa fa-angle-double-right"></i> Por Chave</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="../../pages/categories/system.jsp"><i class="fa fa-angle-double-right"></i> System</a></li>
-                                <li><a href="../../pages/categories/domain_test.jsp"><i class="fa fa-angle-double-right"></i> Domain Test</a></li>
+                                <li><a href="../../pages/categories/system.jsp"><i class="fa fa-angle-double-right"></i> Sistema</a></li>
+                                <li><a href="../../pages/categories/domain_test.jsp"><i class="fa fa-angle-double-right"></i> Testar Dom&iacute;nio</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-bar-chart"></i>
-                                <span>Reports</span>
+                                <span>Relat&oacute;rios</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="../../pages/reports/daily.jsp"><i class="fa fa-angle-double-right"></i> Daily</a></li>
-                                <li><a href="../../pages/reports/weekly.jsp"><i class="fa fa-angle-double-right"></i> Weekly</a></li>
-                                <li><a href="../../pages/reports/usage.jsp"><i class="fa fa-angle-double-right"></i> Usage</a></li>
+                                <li><a href="../../pages/reports/daily.jsp"><i class="fa fa-angle-double-right"></i> Di&aacute;rio</a></li>
+                                <li><a href="../../pages/reports/weekly.jsp"><i class="fa fa-angle-double-right"></i> Semana</a></li>
+                                <li><a href="../../pages/reports/usage.jsp"><i class="fa fa-angle-double-right"></i> Uso</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
