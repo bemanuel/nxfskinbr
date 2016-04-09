@@ -186,21 +186,8 @@ AdminData data = dao.select_one();
             <aside class="right-side">
                 <!-- Content Header (Page header) -->
 	        <jsp:include page="content-header.jsp">
-		   <jsp:param name="page" value="Profile"/>
+		   <jsp:param name="page" value="Perfil"/>
 	        </jsp:include>
-
-                <section class="content-header">
-                    <h1>
-                        Configuration
-                        <small>Profile</small>
-                    </h1>
-                    <ol class="breadcrumb">
-                        <li><a href="../../dashboard.jsp"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li><a href="#">Configuration</a></li>
-                        <li class="active">Profile</li>
-                    </ol>
-                </section>
-
 
                 <!-- Main content -->
                 <section class="content">

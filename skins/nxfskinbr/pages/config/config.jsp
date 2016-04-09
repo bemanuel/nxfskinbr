@@ -157,7 +157,10 @@ ConfigData data = dao.select_one();
 
 <!DOCTYPE html>
 <html>
-    <%@include file="header.html"%>
+    <jsp:include page="header.jsp">
+       <jsp:param name="page" value="Propriedades"/>
+    </jsp:include>
+    <%@include file="header.jsp"%>
     <body class="skin-black">
 
         <!-- header logo: style can be found in header.less -->
@@ -222,18 +225,9 @@ ConfigData data = dao.select_one();
             <!-- Right side column. Contains the navbar and content of the page -->
             <aside class="right-side">
                 <!-- Content Header (Page header) -->
-                <section class="content-header">
-                    <h1>
-                        Configura&ccedil;&atilde;o
-                        <small>Propriedades</small>
-                    </h1>
-                    <ol class="breadcrumb">
-                        <li><a href="../../dashboard.jsp"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li><a href="#">Configura&ccedil;&atilde;o</a></li>
-                        <li class="active">Propriedades</li>
-                    </ol>
-                </section>
-
+	        <jsp:include page="content-header.jsp">
+		   <jsp:param name="page" value="Propriedades"/>
+	        </jsp:include>
 
                 <!-- Main content -->
                 <section class="content">       
