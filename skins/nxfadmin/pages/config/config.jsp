@@ -128,7 +128,7 @@ void update(ConfigDao dao){
 
 	// Validate and update it.
 	if(chk_param(data) && dao.update(data)){
-		succ_list.add("Configuration Settings updated!");
+		succ_list.add("Propriedades atualizadas!");
 	}
 }
 %>
@@ -248,11 +248,11 @@ ConfigData data = dao.select_one();
                         </li>
                         <li class="treeview active">
                             <a href="#">
-                                <i class="fa fa-gears"></i> <span>Configuration</span>
+                                <i class="fa fa-gears"></i> <span>Configura&ccedil;&atilde;o</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li class="active"><a href="../../pages/config/config.jsp"><i class="fa fa-angle-double-right"></i> Settings</a></li>
+                                <li class="active"><a href="../../pages/config/config.jsp"><i class="fa fa-angle-double-right"></i> Propriedades</a></li>
                                 <li><a href="../../pages/config/alert.jsp"><i class="fa fa-angle-double-right"></i> Alerts</a></li>
                                 <li><a href="../../pages/config/block_page.jsp"><i class="fa fa-angle-double-right"></i> Block Page</a></li>
                                 <li><a href="../../pages/config/allowed_ip.jsp"><i class="fa fa-angle-double-right"></i> Allowed IP's</a></li>
@@ -346,7 +346,7 @@ ConfigData data = dao.select_one();
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Configura&ccedil;&tilde;o
+                        Configura&ccedil;&atilde;o
                         <small>Propriedades</small>
                     </h1>
                     <ol class="breadcrumb">
