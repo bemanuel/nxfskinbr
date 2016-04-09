@@ -15,4 +15,4 @@ Altere o arquivo /nxfilter/conf/cfg.properties e adicione o parâmetro "www_dir 
 
 Grave o arquivo e reinicie o NxFilter
 
-
+Fork do Projeto - NxFAdmin - https://bitbucket.org/DeepWoods/nxfadmin

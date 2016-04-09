@@ -1,4 +1,4 @@
-License for NxFAdmin
+License for NxFSkinBR based on License for NxFAdmin
 
 License Summary
 
