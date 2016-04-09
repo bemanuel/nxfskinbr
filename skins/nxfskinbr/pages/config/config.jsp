@@ -160,7 +160,6 @@ ConfigData data = dao.select_one();
     <jsp:include page="header.jsp">
        <jsp:param name="page" value="Propriedades"/>
     </jsp:include>
-    <%@include file="header.jsp"%>
     <body class="skin-black">
 
         <!-- header logo: style can be found in header.less -->
