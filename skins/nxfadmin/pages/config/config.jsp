@@ -406,22 +406,22 @@ ConfigData data = dao.select_one();
                                                 <label class="control-label" for="login_domain">FQDN Login - Ex.: login.nxfbrasil.internal</label>
                                                 <input type="text" class="form-control" id="login_domain" name="login_domain" value="<%= data.login_domain%>" >
                                             </div>
-                                            <p class="help-block">Endere&ccedil;o para autentica&ccedi;&atilde;o/login do usu&aacute;rio</p>
+                                            <p class="help-block">Endere&ccedil;o para autentica&ccedil;&atilde;o/login do usu&aacute;rio</p>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group col-xs-3">
                                                 <label class="control-label" for="logout_domain">FQDN Logout - Ex.: logout.nxfbrasil.internal</label>
                                                 <input type="text" class="form-control" id="logout_domain" name="logout_domain" value="<%= data.logout_domain%>" >
                                             </div>
-                                            <p class="help-block">Domain used to log out user</p>
+                                            <p class="help-block">Endere&ccedil;o para logout</p>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label" for="login_session_ttl">Login Session TTL</label>
+                                            <label class="control-label" for="login_session_ttl">TTL da Sess&atilde;o de Login</label>
                                             <div class="input-group col-xs-2">
                                                 <input type="text" class="form-control" id="login_session_ttl" name="login_session_ttl" value="<%= data.login_session_ttl%>" maxlength="4" >
-                                                <span class="input-group-addon">minutes</span>
+                                                <span class="input-group-addon">minutos</span>
                                             </div>
-                                            <p class="help-block">Login session inactivity expire time.  5 ~ 1440 minutes </p>
+                                            <p class="help-block">Prazo para expira&ccedil;&atilde;o da sess&atilde;o de login por inatividade.  5 ~ 1440 minutos </p>
                                         </div>
                                     </div><!-- /.box-body -->
 
