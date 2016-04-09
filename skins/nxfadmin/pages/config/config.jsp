@@ -333,7 +333,7 @@ ConfigData data = dao.select_one();
                         </li>
                         <li>
                             <a href="../../pages/system/restart.jsp">
-                                <i class="fa fa-power-off"></i> <span>Restart</span>
+                                <i class="fa fa-power-off"></i> <span>Reiniciar</span>
                             </a>
                         </li>
                     </ul>
