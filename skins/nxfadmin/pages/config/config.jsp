@@ -218,6 +218,7 @@ ConfigData data = dao.select_one();
         <div class="wrapper row-offcanvas row-offcanvas-left">
             <!-- Left side column. contains the logo and sidebar -->
 	    <%@include file="sidebar.jsp" %>
+
             <!-- Right side column. Contains the navbar and content of the page -->
             <aside class="right-side">
                 <!-- Content Header (Page header) -->
