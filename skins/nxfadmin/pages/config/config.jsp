@@ -404,17 +404,17 @@ ConfigData data = dao.select_one();
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group col-xs-3">
-                                                <label class="control-label" for="login_domain">FQDN Login - Ex.: login.nxfbrasil.internal</label>
+                                                <label class="control-label" for="login_domain">FQDN Login</label>
                                                 <input type="text" class="form-control" id="login_domain" name="login_domain" value="<%= data.login_domain%>" >
                                             </div>
-                                            <p class="help-block">Endere&ccedil;o para autentica&ccedil;&atilde;o/login do usu&aacute;rio</p>
+                                            <p class="help-block">Endere&ccedil;o para autentica&ccedil;&atilde;o/login do usu&aacute;rio - Ex.: login.nxfbrasil.internal</p>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group col-xs-3">
-                                                <label class="control-label" for="logout_domain">FQDN Logout - Ex.: logout.nxfbrasil.internal</label>
+                                                <label class="control-label" for="logout_domain">FQDN Logout</label>
                                                 <input type="text" class="form-control" id="logout_domain" name="logout_domain" value="<%= data.logout_domain%>" >
                                             </div>
-                                            <p class="help-block">Endere&ccedil;o para logout</p>
+                                            <p class="help-block">Endere&ccedil;o para logout - Ex.: logout.nxfbrasil.internal</p>
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label" for="login_session_ttl">TTL da Sess&atilde;o de Login</label>
