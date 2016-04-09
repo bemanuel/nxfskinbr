@@ -66,7 +66,7 @@ if(!demo_flag && action_flag.equals("backup")){
                             <div class="box box-success">
                                 <div class="box-header">
                                     <i class="fa fa-download"></i>
-                                    <h3 class="box-title">Backup Configuration</h3>
+                                    <h3 class="box-title">Configura&ccedil;&atilde;o do Backup</h3>
                                 </div><!-- /.box-header -->
                                 <div class="box-body">
 
@@ -77,14 +77,14 @@ if(!demo_flag && action_flag.equals("backup")){
                                         <div class="form-group">
                                             <div class="alert alert-info alert-dismissable">
                                                 <i class="fa fa-info"></i>
-                                                <b>A zip archive file of your configuration will be downloaded when you click the Backup Current Configuration button below.  If you wish to restore from a backup file, <br>
-                                                first stop NxFilter and then extract the 'config.h2.db' file from the dated zip archive and overwrite the existing '/nxfilter/db/config.h2.db' file.</b>
+                                                <b>Ser&aacute; feito o download de um arquivo zip contendo sua configura&ccedil;&atilde;o quando vocEecirc; clicar no bot&atilde;o abaixo. Se desejar fazer o restore a partir do arquivo de backup, <br>
+                                                primeiro pare o servi&ccedil;o do NxFilter e só ent&atilde;o descompacte o arquivo 'config.h2.db' a partir do arquivo zip e sobreescreva o arquivo existente em '/nxfilter/db/config.h2.db'.</b>
                                             </div>
 
                                     </div><!-- /.box-body -->
 
                                     <div class="box-footer">
-                                        <button type="submit" class="btn btn-info btn-lg"><strong>Backup Current Configuration</strong></button>
+                                        <button type="submit" class="btn btn-info btn-lg"><strong>Backup da Configura&ccedi;&atilde;o Atual</strong></button>
                                     </div>
                                 </form>
                                 
