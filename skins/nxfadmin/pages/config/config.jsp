@@ -351,7 +351,7 @@ ConfigData data = dao.select_one();
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="../../dashboard.jsp"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li><a href="#">Configura&ccedil;o</a></li>
+                        <li><a href="#">Configura&ccedil;&atilde;o</a></li>
                         <li class="active">Propriedades</li>
                     </ol>
                 </section>
