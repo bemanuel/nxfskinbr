@@ -406,11 +406,11 @@ ConfigData data = dao.select_one();
                                                 <label class="control-label" for="login_domain">FQDN Login - Ex.: login.nxfbrasil.internal</label>
                                                 <input type="text" class="form-control" id="login_domain" name="login_domain" value="<%= data.login_domain%>" >
                                             </div>
-                                            <p class="help-block">Domain for user authentication</p>
+                                            <p class="help-block">Endere&ccedil;o para autentica&ccedi;&atilde;o/login do usu&aacute;rio</p>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group col-xs-3">
-                                                <label class="control-label" for="logout_domain">Logout Domain</label>
+                                                <label class="control-label" for="logout_domain">FQDN Logout - Ex.: logout.nxfbrasil.internal</label>
                                                 <input type="text" class="form-control" id="logout_domain" name="logout_domain" value="<%= data.logout_domain%>" >
                                             </div>
                                             <p class="help-block">Domain used to log out user</p>
