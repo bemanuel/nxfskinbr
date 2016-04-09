@@ -237,7 +237,7 @@ AdminData data = dao.select_one();
                                     </form><!-- end form -->
                                 </div><!-- /.box-body -->
                                 <div class="box-footer">
-                                    <button id="chpass" type="submit" form="chgPasswd" class="btn btn-info">Confirma altera&ccedi;&atilde;o</button>
+                                    <button id="chpass" type="submit" form="chgPasswd" class="btn btn-info">Confirma altera&ccedil;&atilde;o</button>
                                 </div>
                             </div><!-- /.box -->
                         </div><!-- /.col -->
