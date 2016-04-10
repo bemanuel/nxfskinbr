@@ -218,7 +218,6 @@ String dFim = sdfBrazil.format(dEnd);
                             <div class="box box-solid">
                                 <div class="box-header">
                                     <i class="fa fa-calendar"></i>
-                                    <h3 class="box-title">Dados de: <%= report_dao.get_stime()%> ~ <%= report_dao.get_etime()%></h3>
                                     <h3 class="box-title">Dados de: <%= dInicio %> ~ <%= dFim %></h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
