@@ -8,19 +8,6 @@
 
 	<display-name>NxFilter</display-name>
 
-	<context-param>
-		<param-name>javax.servlet.jsp.jstl.fmt.LocalizationContext</param-name>
-		<param-value>messages</param-value>
-	</context-param>
-
-	<jsp-config>
-		<taglib>
-			<taglib-uri>http://java.sun.com/jsp/jstl/fmt</taglib-uri>
-			<taglib-location>/WEB-INF/jsp/fmt.tld</taglib-location>
-		</taglib>
-	</jsp-config>
-
-
 	<servlet>
 		<servlet-name>jsp</servlet-name>
 		<servlet-class>org.apache.jasper.servlet.JspServlet</servlet-class>
