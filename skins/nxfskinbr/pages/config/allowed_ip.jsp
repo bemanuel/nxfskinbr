@@ -43,7 +43,7 @@ AllowedIpData data = dao.select_one();
 
 <!DOCTYPE html>
 <html>
-    <jsp:include page="header.jsp">
+    <jsp:include page="../../include/header.jsp">
        <jsp:param name="page" value="IPs Permitidos"/>
        <jsp:param name="version" value="GlobalDao.get_nx_version()"/>
     </jsp:include>
@@ -51,19 +51,19 @@ AllowedIpData data = dao.select_one();
 
         <!-- header logo: style can be found in header.less -->
         <header class="header">
-	    <jsp:include page="inside-header.jsp">
+	    <jsp:include page="../../include/inside-header.jsp">
 		<jsp:param name="version" value="GlobalDao.get_nx_version()"/>
 		<jsp:param name="admin_name" value="get_admin_name()" />
 	    </jsp:include>
         </header>
         <div class="wrapper row-offcanvas row-offcanvas-left">
             <!-- Left side column. contains the logo and sidebar -->
-	    <%@include file="sidebar.jsp" %>
+	    <%@include file="../../include/sidebar.jsp" %>
 
             <!-- Right side column. Contains the navbar and content of the page -->
             <aside class="right-side">
                 <!-- Content Header (Page header) -->
-	        <jsp:include page="content-header.jsp">
+	        <jsp:include page="../../include/content-header.jsp">
 		   <jsp:param name="page" value="IP's Permitidos"/>
 	        </jsp:include>
 
