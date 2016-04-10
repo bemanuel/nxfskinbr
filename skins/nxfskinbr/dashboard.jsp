@@ -51,7 +51,7 @@ chk_new_version();
 //String popup_html = admin_login_dao.get_popup();
 //Formato da data
 String formatoPadrao = "MM/dd hh:mm";
-String formatoBrazil = "dd/MM HH24:mm";
+String formatoBrazil = "dd/MM HH:mm";
 java.text.SimpleDateFormat sdfOrig = new java.text.SimpleDateFormat(formatoPadrao);
 java.text.SimpleDateFormat sdfBrazil = new java.text.SimpleDateFormat(formatoBrazil);
 Date dStart = sdfOrig.parse(report_dao.get_stime());
