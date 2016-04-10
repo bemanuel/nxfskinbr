@@ -3,7 +3,7 @@
 //-----------------------------------------------
 void update(AllowedIpDao dao){
 	if(demo_flag){
-		err_list.add("Update not allowed on demo site!");
+		err_list.add("Atualiza&ccedil;&otilde;es no site demo n&atilde;o s&atilde;o permitidas!");
 		return;
 	}
 
@@ -14,7 +14,7 @@ void update(AllowedIpDao dao){
 	data.gui_allowed = param_str("gui_allowed");
 
 	if(dao.update(data)){
-		succ_list.add("IP access control settings updated successfully!");
+		succ_list.add("Configura&ccedil;&otilde;es na área de permiss&otilde;es de acesso atualizadas com sucesso!");
 	}
 }
 %>
@@ -43,88 +43,18 @@ AllowedIpData data = dao.select_one();
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>NxFilter v<%= GlobalDao.get_nx_version()%> | Allowed IP</title>
-        <meta http-equiv='Expires' content='-1'> 
-        <meta http-equiv='Pragma' content='no-cache'> 
-        <meta http-equiv='Cache-Control' content='no-cache'>
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-        <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="../../css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-        <link href="../../css/tipue/tipuedrop.css" rel="stylesheet" type="text/css" />
-        <!-- Ionicons -->
-        <link href="../../css/ionicons.min.css" rel="stylesheet" type="text/css" />
-        <!-- iCheck for checkboxes and radio inputs -->
-        <link href="../../css/iCheck/all.css" rel="stylesheet" type="text/css" />
-
-        <!-- Theme style -->
-        <link href="../../css/NxF.css" rel="stylesheet" type="text/css" />
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-    </head>
+    <jsp:include page="header.jsp">
+       <jsp:param name="page" value="IPs Permitidos"/>
+       <jsp:param name="version" value="GlobalDao.get_nx_version()"/>
+    </jsp:include>
     <body class="skin-black">
 
         <!-- header logo: style can be found in header.less -->
         <header class="header">
-            <a href="../../dashboard.jsp" class="logo">
-                <!-- Add the class icon to your logo image or logo icon to add the margining -->
-                NxFilter v<%= GlobalDao.get_nx_version()%>
-            </a>
-            <!-- Header Navbar: style can be found in header.less -->
-            <nav class="navbar navbar-static-top" role="navigation">
-                <!-- Sidebar toggle button-->
-                <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
-                <div class="navbar-right">
-                    <ul class="nav navbar-nav">
-                        <!-- Notifications: style can be found in dropdown.less -->
-                        <li class="dropdown notifications-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-warning"></i>
-                            </a>
-                        </li>
-                        <!-- User Account: style can be found in dropdown.less -->
-                        <li class="dropdown user user-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="glyphicon glyphicon-user"></i>
-                                <span><%= get_admin_name()%> <i class="caret"></i></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <!-- User image -->
-                                <li class="user-header bg-light-blue">
-                                    <img src="../../img/avatar6.png" class="img-circle" alt="User Image" />
-                                    <p>
-                                        <%= get_admin_name()%> - NxF Admin
-                                        <small>Member since Oct. 2014</small>
-                                    </p>
-                                </li>
-                                <!-- Menu Body -->
-
-                                <!-- Menu Footer-->
-                                <li class="user-footer">
-                                    <div class="pull-left">
-                                        <a href="../../pages/config/profile.jsp" class="btn btn-default btn-flat">Profile</a>
-                                    </div>
-                                    <div class="pull-right">
-                                        <a href="../../admin.jsp?action_flag=logout" class="btn btn-default btn-flat">Sign out</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+	    <jsp:include page="inside-header.jsp">
+		<jsp:param name="version" value="GlobalDao.get_nx_version()"/>
+		<jsp:param name="admin_name" value="get_admin_name()" />
+	    </jsp:include>
         </header>
         <div class="wrapper row-offcanvas row-offcanvas-left">
             <!-- Left side column. contains the logo and sidebar -->
@@ -133,32 +63,23 @@ AllowedIpData data = dao.select_one();
             <!-- Right side column. Contains the navbar and content of the page -->
             <aside class="right-side">
                 <!-- Content Header (Page header) -->
-                <section class="content-header">
-                    <h1>
-                        Configuration
-                        <small>Allowed IP</small>
-                    </h1>
-                    <ol class="breadcrumb">
-                        <li><a href="../../dashboard.jsp"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li><a href="#">Configuration</a></li>
-                        <li class="active">Allowed IP</li>
-                    </ol>
-                </section>
-
+	        <jsp:include page="content-header.jsp">
+		   <jsp:param name="page" value="IP's Permitidos"/>
+	        </jsp:include>
 
                 <!-- Main content -->
                 <section class="content">       
                     <div id="tipue_drop_content"></div>
 
                     <div class="callout callout-info">
-                        <h4>IP based access restriction functions for DNS, Web GUI, and login redirection.</h4>
-                        <p class="text-yellow"><strong>If you add IP addresses here, then any unregistered IP will be blocked.</strong></p>
-                        <p>You can add IP addresses in the following forms.</p>
+                        <h4>Restri&ccedil;&otilde;es de acesso por IP a fun&ccedil;&otilde;es como Consulta DNS, GUI de Administra&ccedil;&atilde;o e redireciomento de login.</h4>
+                        <p class="text-yellow"><strong>Se voc&ecirc; adicionar um endere&ccedil;o IP aqui, ent&atilde;o qualquer IP que n&atilde;o esteja registrado ser&aacute; bloqueado.</strong></p>
+                        <p>Voc&ecirc; pode ainda adicionar endere&ccedil;os IP da seguinte forma:</p>
                         <dl class="dl-horizontal">
                             <dt>192.168.1</dt>
-                            <dd>All IP address which start with "192.168.1"</dd>
+                            <dd>Todos os IPs come&ccedil;ados com "192.168.1"</dd>
                             <dt>192.168.1 192.168.2</dt>
-                            <dd>Multiple IP addresses separated by spaces.</dd>
+                            <dd>V&aacute;rios endere&ccedil;os IP separados por espa&ccedil;o.</dd>
                         </dl>
                     </div>
 
@@ -170,7 +91,7 @@ AllowedIpData data = dao.select_one();
                             <div class="box box-purple">
                                 <div class="box-header">
                                     <i class="fa fa-thumbs-up"></i>
-                                    <h3 class="box-title">IP's Allowed DNS Service</h3>
+                                    <h3 class="box-title">IP's que podem fazer consultas DNS</h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                     </div>
@@ -178,10 +99,10 @@ AllowedIpData data = dao.select_one();
                                     <div class="box-body">
 
                                         <div class="form-group">
-                                            <label class="control-label" for="dns_allowed">Allowed IP's for DNS</label>
+                                            <label class="control-label" for="dns_allowed">IP's permitidos para consulta DNS</label>
                                             <div class="input-group col-xs-12">
                                                 <textarea class="form-control" id="dns_allowed" name="dns_allowed" rows="4"><%= escape_html(data.dns_allowed)%></textarea>
-                                                <p class="help-block">If there are no entries here, everyone can access your DNS services.</p>
+                                                <p class="help-block">Se n&atilde;o tiver nenhum registro aqui, qualquer um pode usar os servic&ccedil;os de DNS.</p>
                                             </div>
                                         </div>
 
@@ -192,7 +113,7 @@ AllowedIpData data = dao.select_one();
                             <div class="box box-lime">
                                 <div class="box-header">
                                     <i class="fa fa-thumbs-down"></i>
-                                    <h3 class="box-title">IP's Blocked from DNS Service</h3>
+                                    <h3 class="box-title">IP's bloqueados para o uso dos servi&ccedil;os DNS</h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                     </div>
@@ -200,10 +121,10 @@ AllowedIpData data = dao.select_one();
                                     <div class="box-body">
 
                                         <div class="form-group">
-                                            <label class="control-label" for="dns_blocked">Blocked IP's for DNS</label>
+                                            <label class="control-label" for="dns_blocked">IP's bloqueados para consultas DNS</label>
                                             <div class="input-group col-xs-12">
                                                 <textarea class="form-control" id="dns_blocked" name="dns_blocked" rows="4"><%= escape_html(data.dns_blocked)%></textarea>
-                                                <p class="help-block">Blacklist for access control of DNS services.  Overrides entries in "Allowed IP's for DNS".</p>
+                                                <p class="help-block">Lista negra de acesso aos servi&ccedil;os DNS. Sobrep&otilde;e os registros em "IP's permitidos".</p>
                                             </div>
                                         </div>
 
@@ -214,7 +135,7 @@ AllowedIpData data = dao.select_one();
                             <div class="box box-maroon">
                                 <div class="box-header">
                                     <i class="fa fa-thumbs-o-up"></i>
-                                    <h3 class="box-title">IP's Allowed GUI Access</h3>
+                                    <h3 class="box-title">IP's que podem acessar a GUI de Administra&ccedil;&atilde;o</h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                     </div>
@@ -222,10 +143,10 @@ AllowedIpData data = dao.select_one();
                                     <div class="box-body">
 
                                         <div class="form-group">
-                                            <label class="control-label" for="gui_allowed">Allowed IP's for GUI</label>
+                                            <label class="control-label" for="gui_allowed">IP's com acesso a GUI</label>
                                             <div class="input-group col-xs-12">
                                                 <textarea class="form-control" id="gui_allowed" name="gui_allowed" rows="4"><%= escape_html(data.gui_allowed)%></textarea>
-                                                <p class="help-block">IP list allowed access to web admin GUI.  'localhost' or '127.0.0.1' are always allowed access. </p>
+                                                <p class="help-block">Lista de IP's com permiss&atilde;o de acesso a GUI.  'localhost' ou '127.0.0.1' sempre tem permiss&atilde;o de acesso. </p>
                                             </div>
                                         </div>
 
@@ -236,7 +157,7 @@ AllowedIpData data = dao.select_one();
                             <div class="box box-teal">
                                 <div class="box-header">
                                     <i class="fa fa-retweet"></i>
-                                    <h3 class="box-title">IP's Allowed for Login Redirection</h3>
+                                    <h3 class="box-title">IP's que podem se autenticar</h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                     </div>
@@ -244,10 +165,10 @@ AllowedIpData data = dao.select_one();
                                     <div class="box-body">
 
                                         <div class="form-group">
-                                            <label class="control-label" for="login_allowed">Allowed IP's for Login</label>
+                                            <label class="control-label" for="login_allowed">IP's com permiss&atilde;o de login</label>
                                             <div class="input-group col-xs-12">
                                                 <textarea class="form-control" id="login_allowed" name="login_allowed" rows="4"><%= escape_html(data.login_allowed)%></textarea>
-                                                <p class="help-block">If there are no entries here, all unauthenticated users will be redirect to the login page.</p>
+                                                <p class="help-block">Se n&atilde;o houverem registros aqui, todos os usu&aacute;rios sem autentica&ccedil;&atilde;o ser&atilde;o redirecionados para a p&aacute;gina de login.</p>
                                             </div>
                                         </div>
 
@@ -257,8 +178,8 @@ AllowedIpData data = dao.select_one();
 
                         <div class="box-footer">
                             <div class="btn-group">
-                                <button id="submitBtn" type="submit" form="acl" class="btn btn-info margin">Update Settings</button>
-                                <button id="resetBtn" class="btn btn-warning margin">Reset</button>
+                                <button id="submitBtn" type="submit" form="acl" class="btn btn-info margin">Atualizar registros</button>
+                                <button id="resetBtn" class="btn btn-warning margin">Resetar</button>
                             </div>
                         </div>
 
