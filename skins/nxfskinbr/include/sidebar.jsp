@@ -34,7 +34,6 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li class="active"><a href="../../pages/config/config.jsp"><i class="fa fa-angle-double-right"></i> Propriedades</a></li>
-                                <li class="active"><a href="../../pages/config/dns.jsp"><i class="fa fa-angle-double-right"></i> DNS</a></li>
                                 <li><a href="../../pages/config/alert.jsp"><i class="fa fa-angle-double-right"></i> Alertas</a></li>
                                 <li><a href="../../pages/config/block_page.jsp"><i class="fa fa-angle-double-right"></i> P&aacute;g Bloqueio</a></li>
                                 <li><a href="../../pages/config/allowed_ip.jsp"><i class="fa fa-angle-double-right"></i> IP's Permitidos</a></li>
