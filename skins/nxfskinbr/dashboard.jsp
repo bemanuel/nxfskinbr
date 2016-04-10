@@ -101,76 +101,76 @@ chk_new_version();
                         </li>
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-gears"></i> <span>Configuration</span>
+                                <i class="fa fa-gears"></i> <span>Configura&ccedil;&atilde;o</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="pages/config/config.jsp"><i class="fa fa-angle-double-right"></i> Settings</a></li>
-                                <li><a href="pages/config/alert.jsp"><i class="fa fa-angle-double-right"></i> Alerts</a></li>
-                                <li><a href="pages/config/block_page.jsp"><i class="fa fa-angle-double-right"></i> Block Page</a></li>
-                                <li><a href="pages/config/allowed_ip.jsp"><i class="fa fa-angle-double-right"></i> Allowed IP's</a></li>
-                                <li><a href="pages/config/redirection.jsp"><i class="fa fa-angle-double-right"></i> Redirection</a></li>
-                                <li><a href="pages/config/zone_transfer.jsp"><i class="fa fa-angle-double-right"></i> Zone Transfer</a></li>
+                                <li><a href="pages/config/config.jsp"><i class="fa fa-angle-double-right"></i> Propriedades</a></li>
+                                <li><a href="pages/config/alert.jsp"><i class="fa fa-angle-double-right"></i> Alertas</a></li>
+                                <li><a href="pages/config/block_page.jsp"><i class="fa fa-angle-double-right"></i> P&aacute;g Bloqueio</a></li>
+                                <li><a href="pages/config/allowed_ip.jsp"><i class="fa fa-angle-double-right"></i> IP's Permitidos</a></li>
+                                <li><a href="pages/config/redirection.jsp"><i class="fa fa-angle-double-right"></i> Redirecionamento</a></li>
+                                <li><a href="pages/config/zone_transfer.jsp"><i class="fa fa-angle-double-right"></i> Transfer&ecirc;ncia de Zona</a></li>
                                 <li><a href="pages/config/cluster.jsp"><i class="fa fa-angle-double-right"></i> Cluster</a></li>
                                 <li><a href="pages/config/backup.jsp"><i class="fa fa-angle-double-right"></i> Backup</a></li>
-                                <li><a href="pages/config/profile.jsp"><i class="fa fa-angle-double-right"></i> Profile</a></li>
+                                <li><a href="pages/config/profile.jsp"><i class="fa fa-angle-double-right"></i> Perfil</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-user"></i> <span>Users & Groups</span>
+                                <i class="fa fa-user"></i> <span>Usu&aacute;rios/Grupos</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="pages/directory/users.jsp"><i class="fa fa-angle-double-right"></i> Users</a></li>
-                                <li><a href="pages/directory/groups.jsp"><i class="fa fa-angle-double-right"></i> Groups</a></li>
+                                <li><a href="pages/directory/users.jsp"><i class="fa fa-angle-double-right"></i> Usu&aacute;rio</a></li>
+                                <li><a href="pages/directory/groups.jsp"><i class="fa fa-angle-double-right"></i> Grupos</a></li>
                                 <li><a href="pages/directory/ad.jsp"><i class="fa fa-angle-double-right"></i> Active Directory</a></li>
                                 <li><a href="pages/directory/ldap.jsp"><i class="fa fa-angle-double-right"></i> LDAP</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-pencil"></i> <span>Policies</span>
+                                <i class="fa fa-pencil"></i> <span>Pol&iacute;ticas</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="pages/policies/policy.jsp"><i class="fa fa-angle-double-right"></i> Policy</a></li>
-                                <li><a href="pages/policies/free_time.jsp"><i class="fa fa-angle-double-right"></i> Free Time</a></li>
-                                <li><a href="pages/policies/application.jsp"><i class="fa fa-angle-double-right"></i> Application</a></li>
+                                <li><a href="pages/policies/policy.jsp"><i class="fa fa-angle-double-right"></i> Pol&iacute;tica</a></li>
+                                <li><a href="pages/policies/free_time.jsp"><i class="fa fa-angle-double-right"></i> Per&iacute;odo Livre</a></li>
+                                <li><a href="pages/policies/application.jsp"><i class="fa fa-angle-double-right"></i> Aplica&ccedil;&atilde;o</a></li>
                                 <li><a href="pages/policies/proxy.jsp"><i class="fa fa-angle-double-right"></i> Proxy</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-book"></i> <span>Categories</span>
+                                <i class="fa fa-book"></i> <span>Categorias</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="pages/categories/custom.jsp"><i class="fa fa-angle-double-right"></i> Custom</a></li>
+                                <li><a href="pages/categories/custom.jsp"><i class="fa fa-angle-double-right"></i> Customizar</a></li>
                                 <li class="treeview">
                                     <a href="#">
-                                        <i class="fa fa-angle-double-right"></i> <span>Whitelists</span>
+                                        <i class="fa fa-angle-double-right"></i> <span>Listas Brancas</span>
                                         <i class="fa fa-angle-left pull-right"></i>
                                     </a>
                                     <ul class="treeview-menu">
-                                        <li><a href="pages/categories/domain.jsp"><i class="fa fa-angle-double-right"></i> By Domain</a></li>
-                                        <li><a href="pages/categories/keyword.jsp"><i class="fa fa-angle-double-right"></i> By Keyword</a></li>
+                                        <li><a href="pages/categories/domain.jsp"><i class="fa fa-angle-double-right"></i> Por Dom&iacute;nio</a></li>
+                                        <li><a href="pages/categories/keyword.jsp"><i class="fa fa-angle-double-right"></i> Por Palavra-Chave</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="pages/categories/system.jsp"><i class="fa fa-angle-double-right"></i> System</a></li>
-                                <li><a href="pages/categories/domain_test.jsp"><i class="fa fa-angle-double-right"></i> Domain Test</a></li>
+                                <li><a href="pages/categories/system.jsp"><i class="fa fa-angle-double-right"></i> Sistema</a></li>
+                                <li><a href="pages/categories/domain_test.jsp"><i class="fa fa-angle-double-right"></i> Testar Dom&iacute;nio</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-bar-chart"></i>
-                                <span>Reports</span>
+                                <span>Relat&oacute;rios</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="pages/reports/daily.jsp"><i class="fa fa-angle-double-right"></i> Daily</a></li>
-                                <li><a href="pages/reports/weekly.jsp"><i class="fa fa-angle-double-right"></i> Weekly</a></li>
-                                <li><a href="pages/reports/usage.jsp"><i class="fa fa-angle-double-right"></i> Usage</a></li>
+                                <li><a href="pages/reports/daily.jsp"><i class="fa fa-angle-double-right"></i> Di&aacute;rio</a></li>
+                                <li><a href="pages/reports/weekly.jsp"><i class="fa fa-angle-double-right"></i> Semanal</a></li>
+                                <li><a href="pages/reports/usage.jsp"><i class="fa fa-angle-double-right"></i> Por Uso</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
@@ -179,14 +179,14 @@ chk_new_version();
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="pages/logs/requests.jsp"><i class="fa fa-angle-double-right"></i> Requests</a></li>
-                                <li><a href="pages/logs/signal.jsp"><i class="fa fa-angle-double-right"></i> Signal</a></li>
+                                <li><a href="pages/logs/requests.jsp"><i class="fa fa-angle-double-right"></i> Requisi&ccedil;&otilde;es</a></li>
+                                <li><a href="pages/logs/signal.jsp"><i class="fa fa-angle-double-right"></i> Sinal</a></li>
                                 <li><a href="pages/logs/netflow.jsp"><i class="fa fa-angle-double-right"></i> Netflow</a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="pages/system/restart.jsp">
-                                <i class="fa fa-power-off"></i> <span>Restart</span>
+                                <i class="fa fa-power-off"></i> <span>Reiniciar</span>
                             </a>
                         </li>
                     </ul>
@@ -197,17 +197,9 @@ chk_new_version();
             <!-- Right side column. Contains the navbar and content of the page -->
             <aside class="right-side">
                 <!-- Content Header (Page header) -->
-                <section class="content-header">
-                    <h1>
-                        Dashboard
-                        <small>Control panel</small>
-                    </h1>
-                    <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li class="active">Dashboard</li>
-                    </ol>
-                </section>
-
+	        <jsp:include page="../../include/content-header.jsp">
+		   <jsp:param name="page" value="Painel de Controle"/>
+	        </jsp:include>
 
                 <!-- Main content -->
                 <section class="content">       
@@ -217,7 +209,7 @@ chk_new_version();
                             <div class="box box-solid">
                                 <div class="box-header">
                                     <i class="fa fa-calendar"></i>
-                                    <h3 class="box-title">Statistics from: <%= report_dao.get_stime()%> ~ <%= report_dao.get_etime()%></h3>
+                                    <h3 class="box-title">Dados de: <%= report_dao.get_stime()%> ~ <%= report_dao.get_etime()%></h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                         <button class="btn btn-default btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
@@ -231,7 +223,7 @@ chk_new_version();
                                            <!-- domains tile -->
                                            <div class="box box-solid bg-olive">
                                                <div class="box-body text-center">
-                                                   <h3><%= stats.domain_cnt%> Domains</h3>
+                                                   <h3><%= stats.domain_cnt%> Dom&iacute;nio(s)</h3>
                                                </div><!-- /.box-body -->
                                            </div><!-- /.box -->
                                        </div><!-- /.col -->
@@ -239,7 +231,7 @@ chk_new_version();
                                            <!-- users tile -->
                                            <div class="box box-solid bg-olive">
                                                <div class="box-body text-center">
-                                                   <h3><%= stats.user_cnt%> Users</h3>
+                                                   <h3><%= stats.user_cnt%> Usu&aacute;rio(s)</h3>
                                                </div><!-- /.box-body -->
                                            </div><!-- /.box -->
                                        </div><!-- /.col -->
@@ -247,7 +239,7 @@ chk_new_version();
                                             <!-- client-ip time -->
                                             <div class="box box-solid bg-olive">
                                                 <div class="box-body text-center">
-                                                    <h3><%= stats.clt_ip_cnt%> Client IP's</h3>
+                                                    <h3><%= stats.clt_ip_cnt%> IP's Cliente</h3>
                                                 </div><!-- /.box-body -->
                                             </div><!-- /.box -->
                                         </div><!-- /.col -->
@@ -257,19 +249,19 @@ chk_new_version();
                                     <div class="row">
                                         <div class="col-xs-2 col-md-3 text-center">
                                             <input type="text" class="knob" data-skin="tron" data-readonly="true" value="<%= stats.req_sum%>" data-min="0" data-max="<%= rMaxSum %>" data-width="120" data-height="120" data-thickness="0.2" data-fgColor="#3c8dbc"/>
-                                            <div class="knob-label">Total Requests</div>
+                                            <div class="knob-label">Total de Requisi&ccedil;&otilde;es</div>
                                         </div><!-- ./col -->
                                         <div class="col-xs-2 col-md-3 text-center">
                                             <input type="text" class="knob" data-skin="tron" data-readonly="true" value="<%= stats.req_cnt%>" data-min="0" data-max="<%= rMaxCnt %>" data-width="120" data-height="120" data-thickness="0.2" data-fgColor="#85144b"/>
-                                            <div class="knob-label">Unique Requests</div>
+                                            <div class="knob-label">Requisi&ccedil;&atilde;o &Uacute;nica</div>
                                         </div><!-- ./col -->
                                         <div class="col-xs-2 col-md-3 text-center">
                                             <input type="text" class="knob" data-skin="tron"  data-readonly="true" value="<%= stats.block_sum%>" data-min="0" data-max="<%= bMaxSum %>" data-width="120" data-height="120" data-thickness="0.2" data-fgColor="#f56954"/>
-                                            <div class="knob-label">Blocked Requests</div>
+                                            <div class="knob-label">Requisi&ccedil;&otilde;es Bloqueadas</div>
                                         </div><!-- ./col -->
                                         <div class="col-xs-2 col-md-3 text-center">
                                             <input type="text" class="knob" data-skin="tron" data-readonly="true" value="<%= stats.block_cnt%>" data-min="0" data-max="<%= bMaxCnt %>" data-width="120" data-height="120" data-thickness="0.2" data-fgColor="#f012be"/>
-                                            <div class="knob-label">Blocked Domains</div>
+                                            <div class="knob-label">Dom&iacute;nio(s) Bloqueados</div>
                                         </div><!-- ./col -->
                                     </div><!-- /.row -->
 
@@ -284,7 +276,7 @@ chk_new_version();
                             <div class="box box-solid">
                                 <div class="box-header">
                                     <i class="fa fa-pie-chart"></i>
-                                    <h3 class="box-title">Activity Trends</h3>
+                                    <h3 class="box-title">Estat&iacute;sticas</h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                         <button class="btn btn-default btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
@@ -301,10 +293,10 @@ chk_new_version();
                                             <div class="nav-tabs-custom">
                                                 <!-- Tabs within a box -->
                                                 <ul class="nav nav-tabs pull-right">
-                                                    <li class="active"><a href="#trend-chart" data-toggle="tab" data-identifier="area">Graph</a></li>
-                                                    <li><a href="#top5-domain-chart" data-toggle="tab" data-identifier="donut">Top 5 Domains</a></li>
-                                                    <li><a href="#top5-cat-chart" data-toggle="tab" data-identifier="donut">Top 5 Categories</a></li>
-                                                    <li class="pull-left header"><i class="fa fa-area-chart"></i> Requests</li>
+                                                    <li class="active"><a href="#trend-chart" data-toggle="tab" data-identifier="area">Gr&aacute;fico(s)</a></li>
+                                                    <li><a href="#top5-domain-chart" data-toggle="tab" data-identifier="donut">Dom&iacute;nios - Top 5</a></li>
+                                                    <li><a href="#top5-cat-chart" data-toggle="tab" data-identifier="donut">Categorias - Top 5</a></li>
+                                                    <li class="pull-left header"><i class="fa fa-area-chart"></i> Requisi&ccedil;&otilde;es</li>
                                                 </ul>
                                                 <div class="tab-content no-padding">
                                                     <!-- Morris chart - trends -->
@@ -324,10 +316,10 @@ chk_new_version();
                                             <div class="nav-tabs-custom">
                                                 <!-- Tabs within a box -->
                                                 <ul class="nav nav-tabs pull-right">
-                                                    <li class="active"><a href="#blocked-chart" data-toggle="tab" data-identifier="area">Graph</a></li>
-                                                    <li><a href="#top5-domain-block" data-toggle="tab" data-identifier="donut">Top 5 Domains</a></li>
-                                                    <li><a href="#top5-cat-block" data-toggle="tab" data-identifier="donut">Top 5 Categories</a></li>
-                                                    <li class="pull-left header"><i class="fa fa-area-chart"></i> Blocked</li>
+                                                    <li class="active"><a href="#blocked-chart" data-toggle="tab" data-identifier="area">Gr&aacute;fico(s)</a></li>
+                                                    <li><a href="#top5-domain-block" data-toggle="tab" data-identifier="donut">Dom&iacute;nios - Top 5</a></li>
+                                                    <li><a href="#top5-cat-block" data-toggle="tab" data-identifier="donut">Categorias - Top 5</a></li>
+                                                    <li class="pull-left header"><i class="fa fa-area-chart"></i> Bloqueados</li>
                                                 </ul>
                                                 <div class="tab-content no-padding">
                                                     <!-- Morris chart - trends -->
@@ -351,7 +343,7 @@ chk_new_version();
                             <div class="box box-solid">
                                 <div class="box-header">
                                     <i class="fa fa-table"></i>
-                                    <h3 class="box-title">Recent Blocked Activity</h3>
+                                    <h3 class="box-title">Bloqueios Recentes</h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                         <button class="btn btn-default btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
@@ -368,16 +360,16 @@ chk_new_version();
                                                     <table class="table table-hover">
                                                         <tr>
                                                             <th>Time</th>
-                                                            <th>Blocked</th>
-                                                            <th>Count</th>
-                                                            <th>Type</th>
-                                                            <th>Domain</th>
-                                                            <th>User</th>
-                                                            <th>Client IP</th>
-                                                            <th>Group</th>
-                                                            <th>Policy</th>
-                                                            <th>Category</th>
-                                                            <th>Reason Blocked</th>
+                                                            <th>Bloqueado</th>
+                                                            <th>Contagem</th>
+                                                            <th>Tipo</th>
+                                                            <th>Dom&iacute;nio</th>
+                                                            <th>Usu&aacute;rio</th>
+                                                            <th>IP Origem</th>
+                                                            <th>Grupo</th>
+                                                            <th>Pol&iacute;tica</th>
+                                                            <th>Categoria</th>
+                                                            <th>Motivo Bloqueio</th>
                                                         </tr>
 <%
 List<RequestData> data_list = request_dao.select_list();
