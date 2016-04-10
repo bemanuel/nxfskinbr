@@ -197,7 +197,7 @@ chk_new_version();
             <!-- Right side column. Contains the navbar and content of the page -->
             <aside class="right-side">
                 <!-- Content Header (Page header) -->
-	        <jsp:include page="../../include/content-header.jsp">
+	        <jsp:include page="include/content-header.jsp">
 		   <jsp:param name="page" value="Painel de Controle"/>
 	        </jsp:include>
 
