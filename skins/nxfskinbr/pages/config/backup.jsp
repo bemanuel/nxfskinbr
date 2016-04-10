@@ -29,15 +29,15 @@ if(!demo_flag && action_flag.equals("backup")){
 <html>
     <jsp:include page="../../include/header.jsp">
        <jsp:param name="page" value="Backup"/>
-       <jsp:param name="version" value="GlobalDao.get_nx_version()"/>
+       <jsp:param name="version" value="<%=GlobalDao.get_nx_version()%>"/>
     </jsp:include>
     <body class="skin-black">
 
         <!-- header logo: style can be found in header.less -->
         <header class="header">
 	    <jsp:include page="../../include/inside-header.jsp">
-		<jsp:param name="version" value="GlobalDao.get_nx_version()"/>
-		<jsp:param name="admin_name" value="get_admin_name()" />
+		<jsp:param name="version" value="<%=GlobalDao.get_nx_version()%>"/>
+		<jsp:param name="admin_name" value="<%=get_admin_name()%>" />
 	    </jsp:include>
         </header>
         <div class="wrapper row-offcanvas row-offcanvas-left">
