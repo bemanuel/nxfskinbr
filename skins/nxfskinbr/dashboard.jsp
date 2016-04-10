@@ -49,6 +49,15 @@ chk_new_version();
 
 // Get popup.
 //String popup_html = admin_login_dao.get_popup();
+//Formato da data
+String formatoPadrao = "MM/dd hh:mm"
+String formatoBrazil = "dd/MM HH24:mm"
+java.text.SimpleDateFormat sdfOrig = new java.text.SimpleDateFormat(formatoPadrao);
+java.text.SimpleDateFormat sdfBrazil = new java.text.SimpleDateFormat(formatoBrazil);
+Date dStart = sdfOrig.parse(report_dao.get_stime());
+Date dEnd = sdfOrig.parse(report_dao.get_etime());
+String dInicio = sdfBrazil.format(dStart);
+String dFim = sdfBrazil.format(dEnd);
 %>
 
 
@@ -79,7 +88,7 @@ chk_new_version();
                             <img src="img/avatar6.png" class="img-circle" alt="User Image" />
                         </div>
                         <div class="pull-left info">
-                            <p>Hello, <%= get_admin_name()%></p>
+                            <p>Ol&aacute;, <%= get_admin_name()%></p>
                         </div>
                     </div>
                     <!-- search form -->
@@ -210,6 +219,7 @@ chk_new_version();
                                 <div class="box-header">
                                     <i class="fa fa-calendar"></i>
                                     <h3 class="box-title">Dados de: <%= report_dao.get_stime()%> ~ <%= report_dao.get_etime()%></h3>
+                                    <h3 class="box-title">Dados de: <%= dInicio %> ~ <%= dFim %></h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                         <button class="btn btn-default btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
