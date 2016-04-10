@@ -159,14 +159,14 @@ ConfigData data = dao.select_one();
 <html>
     <jsp:include page="../../include/header.jsp">
        <jsp:param name="page" value="Propriedades"/>
-       <jsp:param name="version" value="GlobalDao.get_nx_version()"/>
+       <jsp:param name="version" value="${GlobalDao.get_nx_version()}"/>
     </jsp:include>
     <body class="skin-black">
 
         <!-- header logo: style can be found in header.less -->
         <header class="header">
 	    <jsp:include page="../../include/inside-header.jsp">
-		<jsp:param name="version" value="GlobalDao.get_nx_version()"/>
+		<jsp:param name="version" value="#{GlobalDao.get_nx_version()}"/>
 		<jsp:param name="admin_name" value="get_admin_name()" />
 	    </jsp:include>
         </header>
