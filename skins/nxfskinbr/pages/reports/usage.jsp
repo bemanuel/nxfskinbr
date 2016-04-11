@@ -35,6 +35,8 @@ String g_stime = strftime_add("yyyy/MM/dd", 86400 * -30);
     	<link href="../../css/tipue/tipuedrop.css" rel="stylesheet" type="text/css" />
         <!-- bootstrap table -->
         <link href="../../css/bootstrap-table/bootstrap-table.min.css" rel="stylesheet" type="text/css" />
+        <!-- bootstrap table localization -->
+        <link href="../../css/bootstrap-table/bootstrap-table-pt-BR.min.css" rel="stylesheet" type="text/css" />
         <!-- iCheck for checkboxes and radio inputs -->
         <link href="../../css/iCheck/all.css" rel="stylesheet" type="text/css" />
         <!-- Ionicons -->
