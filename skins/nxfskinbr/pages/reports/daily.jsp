@@ -30,7 +30,7 @@ String g_time_option = param_str("time_option", "yesterday");
 String g_user = param_str("user");
 
 //Formato da data
-Locale local = new Locale("pt","BR");
+java.util.Locale local = new java.util.Locale("pt","BR");
 String formatoPadrao = "yyyyMMdd";
 String formatoBrazil = "EEE, dd/MM/yyyy";
 java.text.SimpleDateFormat sdfOrig = new java.text.SimpleDateFormat(formatoPadrao);
