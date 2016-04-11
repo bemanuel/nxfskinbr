@@ -24,10 +24,22 @@ ReportChartData clt_ip_top = dao.get_clt_ip_top(5);
 
 // Global.
 String g_stime = strftime_add("yyyyMMdd", -86400);
-String g_stime_show = strftime_new_fmt("yyyyMMdd", "yyyy/MM/dd", dao.stime);
+String g_stime_show = strftime_new_fmt("yyyyMMdd", "dd/MM/yyyy", dao.stime);
 
 String g_time_option = param_str("time_option", "yesterday");
 String g_user = param_str("user");
+
+//Formato da data
+java.util.Locale local = new java.util.Locale("pt","BR");
+String formatoPadrao = "yyyyMMdd";
+String formatoBrazil = "EEE, dd/MM/yyyy";
+java.text.SimpleDateFormat sdfOrig = new java.text.SimpleDateFormat(formatoPadrao);
+java.text.SimpleDateFormat sdfBrazil = new java.text.SimpleDateFormat(formatoBrazil, local);
+
+Date dStart = sdfOrig.parse(dao.stime);
+//Date dEnd = sdfOrig.parse(report_dao.get_etime());
+g_stime_show = sdfBrazil.format(dStart);
+//String dFim = sdfBrazil.format(dEnd);
 %>
 
 
@@ -35,7 +47,7 @@ String g_user = param_str("user");
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>NxFilter v<%= GlobalDao.get_nx_version()%> | Daily</title>
+        <title>NxFilter v<%= GlobalDao.get_nx_version()%> | Di&aacute;rio</title>
         <meta http-equiv='Expires' content='-1'> 
         <meta http-equiv='Pragma' content='no-cache'> 
         <meta http-equiv='Cache-Control' content='no-cache'>
@@ -57,7 +69,7 @@ String g_user = param_str("user");
         <link href="../../css/NxF.css" rel="stylesheet" type="text/css" />
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!-- WARNING: Respond.js does not work if you view the page via file:// -->
         <!--[if lt IE 9]>
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
@@ -99,8 +111,8 @@ String g_user = param_str("user");
                                 <li class="user-header bg-light-blue">
                                     <img src="../../img/avatar6.png" class="img-circle" alt="User Image" />
                                     <p>
-                                        <%= get_admin_name()%> - NxF Admin
-                                        <small>Member since Oct. 2014</small>
+                                        <%= get_admin_name()%> - NxF Skin BR 
+                                        <small>Membro desde Fev. 2016</small>
                                     </p>
                                 </li>
                                 <!-- Menu Body -->
@@ -108,10 +120,10 @@ String g_user = param_str("user");
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
-                                        <a href="../../pages/config/profile.jsp" class="btn btn-default btn-flat">Profile</a>
+                                        <a href="../../pages/config/profile.jsp" class="btn btn-default btn-flat">Perfil</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a href="../../admin.jsp?action_flag=logout" class="btn btn-default btn-flat">Sign out</a>
+                                        <a href="../../admin.jsp?action_flag=logout" class="btn btn-default btn-flat">Sair</a>
                                     </div>
                                 </li>
                             </ul>
@@ -131,7 +143,7 @@ String g_user = param_str("user");
                             <img src="../../img/avatar6.png" class="img-circle" alt="User Image" />
                         </div>
                         <div class="pull-left info">
-                            <p>Hello, <%= get_admin_name()%></p>
+                            <p>Ol&aacute;, <%= get_admin_name()%></p>
                         </div>
                     </div>
                 	<!-- search form -->
@@ -153,7 +165,7 @@ String g_user = param_str("user");
                         </li>
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-gears"></i> <span>Configuration</span>
+                                <i class="fa fa-gears"></i> <span>Configura&ccedil;&atilde;o</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
@@ -170,7 +182,7 @@ String g_user = param_str("user");
                         </li>
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-user"></i> <span>Users & Groups</span>
+                                <i class="fa fa-user"></i> <span>Usu&aacute;rios/Grupos</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
@@ -182,7 +194,7 @@ String g_user = param_str("user");
                         </li>
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-pencil"></i> <span>Policies</span>
+                                <i class="fa fa-pencil"></i> <span>Pol&iacute;ticas</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
@@ -194,7 +206,7 @@ String g_user = param_str("user");
                         </li>
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-book"></i> <span>Categories</span>
+                                <i class="fa fa-book"></i> <span>Categorias</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
@@ -205,8 +217,8 @@ String g_user = param_str("user");
                                         <i class="fa fa-angle-left pull-right"></i>
                                     </a>
                                     <ul class="treeview-menu">
-                                        <li><a href="../../pages/categories/domain.jsp"><i class="fa fa-angle-double-right"></i> By Domain</a></li>
-                                        <li><a href="../../pages/categories/keyword.jsp"><i class="fa fa-angle-double-right"></i> By Keyword</a></li>
+                                        <li><a href="../../pages/categories/domain.jsp"><i class="fa fa-angle-double-right"></i> Por Dom&iacute;nio</a></li>
+                                        <li><a href="../../pages/categories/keyword.jsp"><i class="fa fa-angle-double-right"></i> Por Palavrax-Chave</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="../../pages/categories/system.jsp"><i class="fa fa-angle-double-right"></i> System</a></li>
@@ -216,13 +228,13 @@ String g_user = param_str("user");
                         <li class="treeview active">
                             <a href="#">
                                 <i class="fa fa-bar-chart"></i>
-                                <span>Reports</span>
+                                <span>Relat&oacute;rios</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li class="active"><a href="../../pages/reports/daily.jsp"><i class="fa fa-angle-double-right"></i> Daily</a></li>
-                                <li><a href="../../pages/reports/weekly.jsp"><i class="fa fa-angle-double-right"></i> Weekly</a></li>
-                                <li><a href="../../pages/reports/usage.jsp"><i class="fa fa-angle-double-right"></i> Usage</a></li>
+                                <li class="active"><a href="../../pages/reports/daily.jsp"><i class="fa fa-angle-double-right"></i> Di&aacute;rio</a></li>
+                                <li><a href="../../pages/reports/weekly.jsp"><i class="fa fa-angle-double-right"></i> Semanal</a></li>
+                                <li><a href="../../pages/reports/usage.jsp"><i class="fa fa-angle-double-right"></i> Uso</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
@@ -238,7 +250,7 @@ String g_user = param_str("user");
                         </li>
                         <li>
                             <a href="../../pages/system/restart.jsp">
-                                <i class="fa fa-power-off"></i> <span>Restart</span>
+                                <i class="fa fa-power-off"></i> <span>Reiniciar</span>
                             </a>
                         </li>
                     </ul>
@@ -251,13 +263,13 @@ String g_user = param_str("user");
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Reports
-                        <small>Daily</small>
+                        Relat&oacute;rios
+                        <small>Di&aacute;rio</small>
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="../../dashboard.jsp"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li><a href="#">Reports</a></li>
-                        <li class="active">Daily</li>
+                        <li><a href="#">Relat&oacute;rios</a></li>
+                        <li class="active">Di&aacute;rio</li>
                     </ol>
                 </section>
 
@@ -272,7 +284,7 @@ String g_user = param_str("user");
                             <div class="box box-blue">
                                 <div class="box-header">
                                     <i class="fa fa-clock-o"></i>
-                                    <h3 class="box-title">Daily Report</h3>
+                                    <h3 class="box-title">Relat&oacute;rio Di&aacute;rio</h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                     </div>
@@ -281,7 +293,7 @@ String g_user = param_str("user");
 
                    
                                         <div class="form-group">
-                                            <label class="control-label col-xs-12">Report From</label>
+                                            <label class="control-label col-xs-12">A partir de</label>
                                         </div>
 
                                         <div class="form-group">
@@ -293,26 +305,26 @@ String g_user = param_str("user");
                                                 </div>
                                             </div>
                                         </div> 
-                                        <p class="help-block">&nbsp;Time Format - YYYYMMDD</p>
+                                        <p class="help-block">&nbsp;Formato da data - AAAAMMDD</p>
                                         <div class="form-group">
                                             <div style="display: none;" class="radio-inline" id="intervals">
                                                 <label class="radio">
-                                                    <input type="radio" class="flat-green interval" name="time_option" value="userdef" <%if(g_time_option.equals("userdef")){out.print("checked");}%>>&nbsp;User Defined
+                                                    <input type="radio" class="flat-green interval" name="time_option" value="userdef" <%if(g_time_option.equals("userdef")){out.print("checked");}%>>&nbsp;Definido pelo Usu&aacute;rio
                                                 </label>
                                             </div>
                                             <div class="radio-inline">
                                                 <label class="radio">
-                                                    <input type="radio" class="flat-green interval" name="time_option" value="yesterday" <%if(g_time_option.equals("yesterday")){out.print("checked");}%>>&nbsp;Yesterday
+                                                    <input type="radio" class="flat-green interval" name="time_option" value="yesterday" <%if(g_time_option.equals("yesterday")){out.print("checked");}%>>&nbsp;Ontem
                                                 </label>
                                             </div>
                                             <div class="radio-inline">
                                                 <label class="radio">
-                                                    <input type="radio" class="flat-green interval" name="time_option" value="2days" <%if(g_time_option.equals("2days")){out.print("checked");}%>>&nbsp;2 Days Ago
+                                                    <input type="radio" class="flat-green interval" name="time_option" value="2days" <%if(g_time_option.equals("2days")){out.print("checked");}%>>&nbsp;2 Dias atr&aacute;s
                                                 </label>
                                             </div>
                                             <div class="radio-inline">
                                                 <label class="radio">
-                                                    <input type="radio" class="flat-green interval" name="time_option" value="3days" <%if(g_time_option.equals("3days")){out.print("checked");}%>>&nbsp;3 Days Ago
+                                                    <input type="radio" class="flat-green interval" name="time_option" value="3days" <%if(g_time_option.equals("3days")){out.print("checked");}%>>&nbsp;3 Dias atr&aacute;s 
                                                 </label>                                           
                                             </div><!-- /.checkbox-inline -->
                                         </div><!-- /.form-group -->
@@ -326,19 +338,19 @@ String g_user = param_str("user");
                                                 <div class="row">
                                                     <div class="col-xs-12">
                                                         <div class="callout callout-info">
-                                                            <h4>Refine Search Results By:</h4>
+                                                            <h4>Filtrar por:</h4>
                                                         </div>
                                                     </div>
                                                     <!-- 1st column -->
                                                     <div class="col-xs-8">
-                                                        <label class="control-label" for="user">User: </label>
+                                                        <label class="control-label" for="user">Usu&aacute;rio </label>
                                                         <input type="text" class="form-control" id="user" name="user" value="<%= g_user%>" >
                                                     </div>
                                                     <!-- 3rd column -->
                                                     <div class="col-xs-4">
                                                         <label class="control-label" for="selUser">Logged Users:</label>
                                                         <select class="form-control" id="selUser" name="selUser" onchange="javascript:this.form.user.value=this.value">
-			                                    <option value=''> Select user
+			                                    <option value=''> Escolha o usu&aacute;rio
 <%
 List<String> user_list = dao.get_log_user_list();
 for(String uname : user_list){
@@ -369,8 +381,8 @@ for(String uname : user_list){
 
                             <div class="box-footer">
                                 <div class="btn-group">
-                                    <button id="submitBtn" type="submit" form="search_form" class="btn btn-success margin">Submit</button>
-                                    <button id="resetBtn" class="btn btn-warning margin">Reset</button>
+                                    <button id="submitBtn" type="submit" form="search_form" class="btn btn-success margin">Enviar</button>
+                                    <button id="resetBtn" class="btn btn-warning margin">Limpar</button>
                                 </div>
                             </div>
 
@@ -386,7 +398,7 @@ for(String uname : user_list){
                                 <div class="box-header">
                                     <i class="fa fa-calendar"></i>
                                     <h3 class="box-title">
-                                        Daily Report from: <%= g_stime_show%>
+                                        Relat&oacute;rio de: <%= g_stime_show%>
                                         <%
                                         if(!is_empty(g_user)){
 	                                    out.print(" for " + g_user);
@@ -406,7 +418,7 @@ for(String uname : user_list){
                                            <!-- domains tile -->
                                            <div class="box box-solid bg-navy">
                                                <div class="box-body text-center">
-                                                   <h3><%= stats.domain_cnt%> Domains</h3>
+                                                   <h3><%= stats.domain_cnt%> Dom&iacute;nios</h3>
                                                </div><!-- /.box-body -->
                                            </div><!-- /.box -->
                                        </div><!-- /.col -->
@@ -414,7 +426,7 @@ for(String uname : user_list){
                                            <!-- users tile -->
                                            <div class="box box-solid bg-navy">
                                                <div class="box-body text-center">
-                                                   <h3><%= stats.user_cnt%> Users</h3>
+                                                   <h3><%= stats.user_cnt%> Usu&aacute;rios</h3>
                                                </div><!-- /.box-body -->
                                            </div><!-- /.box -->
                                        </div><!-- /.col -->
@@ -422,7 +434,7 @@ for(String uname : user_list){
                                             <!-- client-ip time -->
                                             <div class="box box-solid bg-navy">
                                                 <div class="box-body text-center">
-                                                    <h3><%= stats.clt_ip_cnt%> Client IP's</h3>
+                                                    <h3><%= stats.clt_ip_cnt%> IP's Cliente</h3>
                                                 </div><!-- /.box-body -->
                                             </div><!-- /.box -->
                                         </div><!-- /.col -->
@@ -432,19 +444,19 @@ for(String uname : user_list){
                                     <div class="row">
                                         <div class="col-xs-2 col-md-3 text-center">
                                             <input type="text" class="knob" data-readonly="true" value="<%= stats.req_sum%>" data-min="0" data-max="<%= stats.req_sum%>" data-width="120" data-height="120" data-fgColor="#3c8dbc"/>
-                                            <div class="knob-label">Total Requests</div>
+                                            <div class="knob-label">Total de Requisi&ccedil;&otilde;es</div>
                                         </div><!-- ./col -->
                                         <div class="col-xs-2 col-md-3 text-center">
                                             <input type="text" class="knob" data-readonly="true" value="<%= stats.req_cnt%>" data-min="0" data-max="<%= stats.req_cnt%>" data-width="120" data-height="120" data-fgColor="#85144b"/>
-                                            <div class="knob-label">Unique Requests</div>
+                                            <div class="knob-label">Requisi&ccedil;&otilde;es &Uacute;nicas</div>
                                         </div><!-- ./col -->
                                         <div class="col-xs-2 col-md-3 text-center">
                                             <input type="text" class="knob" data-readonly="true" value="<%= stats.block_sum%>" data-min="0" data-max="<%= stats.block_sum%>" data-width="120" data-height="120" data-fgColor="#f56954"/>
-                                            <div class="knob-label">Blocked Requests</div>
+                                            <div class="knob-label">Requisi&ccedil;&otilde;es Bloqueadas</div>
                                         </div><!-- ./col -->
                                         <div class="col-xs-2 col-md-3 text-center">
                                             <input type="text" class="knob" data-readonly="true" value="<%= stats.block_cnt%>" data-min="0" data-max="<%= stats.block_cnt%>" data-width="120" data-height="120" data-fgColor="#f012be"/>
-                                            <div class="knob-label">Blocked Domains</div>
+                                            <div class="knob-label">Dom&iacute;nios Bloqueados</div>
                                         </div><!-- ./col -->
                                     </div><!-- /.row -->
 
@@ -458,7 +470,7 @@ for(String uname : user_list){
                             <div class="box box-solid">
                                 <div class="box-header">
                                     <i class="fa fa-line-chart"></i>
-                                    <h3 class="box-title">Trend Charts</h3>
+                                    <h3 class="box-title">Gr&aacute;ficos Estat&iacute;sticos</h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                     </div>
@@ -474,7 +486,7 @@ for(String uname : user_list){
                                             <div class="box box-success">
                                                 <div class="box-header">
                                                     <i class="fa fa-area-chart"></i>
-                                                    <h3 class="box-title">Request Trend</h3>
+                                                    <h3 class="box-title">Requisi&ccedil;&otilde;es</h3>
                                                 </div>
                                                 <div class="box-body border-radius-none">
                                                     <div class="chart" id="trend-chart" style="height: 250px;"></div>                                    
@@ -491,7 +503,7 @@ for(String uname : user_list){
                                             <div class="box box-danger">
                                                 <div class="box-header">
                                                     <i class="fa fa-area-chart"></i>
-                                                    <h3 class="box-title">Block Trend</h3>
+                                                    <h3 class="box-title">Bloqueios</h3>
                                                 </div>
                                                 <div class="box-body border-radius-none">
                                                     <div class="chart" id="blocked-chart" style="height: 250px;"></div>                                    
@@ -511,7 +523,7 @@ for(String uname : user_list){
                             <div class="box box-solid">
                                 <div class="box-header">
                                     <i class="fa fa-globe"></i>
-                                    <h3 class="box-title">Top 5 Domains</h3>
+                                    <h3 class="box-title">Top 5 - Dom&iacute;nios</h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                     </div>
@@ -545,7 +557,7 @@ for(String uname : user_list){
                             <div class="box box-solid">
                                 <div class="box-header">
                                     <i class="fa fa-book"></i>
-                                    <h3 class="box-title">Top 5 Categories</h3>
+                                    <h3 class="box-title">Top 5 - Categorias</h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                     </div>
@@ -578,7 +590,7 @@ for(String uname : user_list){
                             <div class="box box-solid">
                                 <div class="box-header">
                                     <i class="fa fa-user"></i>
-                                    <h3 class="box-title">Top 5 Users</h3>
+                                    <h3 class="box-title">Top 5 - Usu&aacute;rios</h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                     </div>
@@ -611,7 +623,7 @@ for(String uname : user_list){
                             <div class="box box-solid">
                                 <div class="box-header">
                                     <i class="fa fa-desktop"></i>
-                                    <h3 class="box-title">Top 5 Client IP's</h3>
+                                    <h3 class="box-title">Top 5 - IP's Clientes</h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                     </div>
@@ -863,7 +875,7 @@ for(int i = 0; i < arr_list.size(); i++){
                     ],
                     xkey: 'y',
                     ykeys: ['requests'],
-                    labels: ['Requests'],
+                    labels: ['Requisi&ccedil;&otilde;es'],
                     lineColors: ['#3c8dbc'],
                     hideHover: 'auto'
                 });
@@ -885,7 +897,7 @@ for(int i = 0; i < arr_list.size(); i++){
                     ],
                     xkey: 'y',
                     ykeys: ['requests'],
-                    labels: ['Blocked'],
+                    labels: ['Bloqueado'],
                     lineColors: ['#bc3c3c'],
                     hideHover: 'auto'
                 });
@@ -912,7 +924,7 @@ for(int i = 0; i < arr_list.size(); i++){
 	]);
 
 	var options = {
-		title: 'Top 5 Domains Requested',
+		title: 'Top 5 Requisi\u00E7\u00F5es ( Dom\u00EDnio )',
         pieHole: 0.4
 	};
 
@@ -936,7 +948,7 @@ for(int i = 0; i < arr_list.size(); i++){
 	]);
 
 	var options = {
-		title: 'Top 5 Domains Blocked',
+		title: 'Top 5 Qtd Vezes Bloqueados',
         pieHole: 0.4
 	};
 
@@ -960,7 +972,7 @@ for(int i = 0; i < arr_list.size(); i++){
 	]);
 
 	var options = {
-		title: 'Top 5 category by request',
+		title: 'Top 5 Qtd de Requisi\u00E7\u00E3o',
         pieHole: 0.4
 	};
 
@@ -984,7 +996,7 @@ for(int i = 0; i < arr_list.size(); i++){
 	]);
 
 	var options = {
-		title: 'Top 5 category by block',
+		title: 'Top 5 Qtd Vezes bloqueadas',
         pieHole: 0.4
 	};
 
@@ -1008,7 +1020,7 @@ for(int i = 0; i < arr_list.size(); i++){
 	]);
 
 	var options = {
-		title: 'Top 5 user by request',
+		title: 'Top 5 requisi\u00E7\u00F5es por usu\u00E1rio',
         pieHole: 0.4
 	};
 
@@ -1032,7 +1044,7 @@ for(int i = 0; i < arr_list.size(); i++){
 	]);
 
 	var options = {
-		title: 'Top 5 user by block',
+		title: 'Top 5 bloqueios por usu\u00E1rio',
         pieHole: 0.4
 	};
 
@@ -1056,7 +1068,7 @@ for(int i = 0; i < arr_list.size(); i++){
 	]);
 
 	var options = {
-		title: 'Top 5 client-ip by request',
+		title: 'Top 5 requisi\u00E7\u00F5es por ip de cliente',
         pieHole: 0.4
 	};
 
@@ -1080,7 +1092,7 @@ for(int i = 0; i < arr_list.size(); i++){
 	]);
 
 	var options = {
-		title: 'Top 5 client-ip by block',
+		title: 'Top 5 bloqueios por ip de cliente',
         pieHole: 0.4
 	};
 
