@@ -24,7 +24,7 @@ String g_stime = strftime_add("yyyy/MM/dd", 86400 * -30);
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>NxFilter v<%= GlobalDao.get_nx_version()%> | Usage</title>
+        <title>NxFilter v<%= GlobalDao.get_nx_version()%> | Por Uso</title>
         <meta http-equiv='Expires' content='-1'> 
         <meta http-equiv='Pragma' content='no-cache'> 
         <meta http-equiv='Cache-Control' content='no-cache'>
@@ -44,7 +44,7 @@ String g_stime = strftime_add("yyyy/MM/dd", 86400 * -30);
         <link href="../../css/NxF.css" rel="stylesheet" type="text/css" />
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!-- WARNING: Respond.js does not work if you view the page via file:// -->
         <!--[if lt IE 9]>
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
@@ -140,7 +140,7 @@ String g_stime = strftime_add("yyyy/MM/dd", 86400 * -30);
                         </li>
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-gears"></i> <span>Configuration</span>
+                                <i class="fa fa-gears"></i> <span>Configura&ccedil;&atilde;o</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
@@ -157,7 +157,7 @@ String g_stime = strftime_add("yyyy/MM/dd", 86400 * -30);
                         </li>
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-user"></i> <span>Users & Groups</span>
+                                <i class="fa fa-user"></i> <span>Usu&aacute;rios/Grupos</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
@@ -169,7 +169,7 @@ String g_stime = strftime_add("yyyy/MM/dd", 86400 * -30);
                         </li>
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-pencil"></i> <span>Policies</span>
+                                <i class="fa fa-pencil"></i> <span>Pol&iacute;ticas</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
@@ -181,7 +181,7 @@ String g_stime = strftime_add("yyyy/MM/dd", 86400 * -30);
                         </li>
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-book"></i> <span>Categories</span>
+                                <i class="fa fa-book"></i> <span>Categorias</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
@@ -203,13 +203,13 @@ String g_stime = strftime_add("yyyy/MM/dd", 86400 * -30);
                         <li class="treeview active">
                             <a href="#">
                                 <i class="fa fa-bar-chart"></i>
-                                <span>Reports</span>
+                                <span>Relat&oacute;rios</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="../../pages/reports/daily.jsp"><i class="fa fa-angle-double-right"></i> Daily</a></li>
-                                <li><a href="../../pages/reports/weekly.jsp"><i class="fa fa-angle-double-right"></i> Weekly</a></li>
-                                <li class="active"><a href="../../pages/reports/usage.jsp"><i class="fa fa-angle-double-right"></i> Usage</a></li>
+                                <li><a href="../../pages/reports/daily.jsp"><i class="fa fa-angle-double-right"></i> Di&aacute;rio</a></li>
+                                <li><a href="../../pages/reports/weekly.jsp"><i class="fa fa-angle-double-right"></i> Semanal</a></li>
+                                <li class="active"><a href="../../pages/reports/usage.jsp"><i class="fa fa-angle-double-right"></i> Por uso</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
@@ -225,7 +225,7 @@ String g_stime = strftime_add("yyyy/MM/dd", 86400 * -30);
                         </li>
                         <li>
                             <a href="../../pages/system/restart.jsp">
-                                <i class="fa fa-power-off"></i> <span>Restart</span>
+                                <i class="fa fa-power-off"></i> <span>Reiniciar</span>
                             </a>
                         </li>
                     </ul>
@@ -238,13 +238,13 @@ String g_stime = strftime_add("yyyy/MM/dd", 86400 * -30);
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Reports
-                        <small>Usage</small>
+                        Relat&oacute;rios
+                        <small>Por uso</small>
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="../../dashboard.jsp"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li><a href="#">Reports</a></li>
-                        <li class="active">Usage</li>
+                        <li><a href="#">Relat&oacute;rios</a></li>
+                        <li class="active">Por uso</li>
                     </ol>
                 </section>
 
@@ -259,7 +259,7 @@ String g_stime = strftime_add("yyyy/MM/dd", 86400 * -30);
                             <div class="box box-primary">
                                 <div class="box-header">
                                     <i class="fa fa-sitemap"></i>
-                                    <h3 class="box-title">Usage Report</h3>
+                                    <h3 class="box-title">Relat&oacute;rio de Uso</h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                     </div>
@@ -275,14 +275,14 @@ String g_stime = strftime_add("yyyy/MM/dd", 86400 * -30);
 
                                                     <!-- 1st column -->
                                                     <div class="col-xs-8">
-                                                        <label class="control-label" for="user">User: </label>
+                                                        <label class="control-label" for="user">Usu&aacute;rio: </label>
                                                         <input type="text" class="form-control" id="user" name="user" value="<%= g_user%>" >
                                                     </div>
                                                     <!-- 2nd column -->
                                                     <div class="col-xs-4">
-                                                        <label class="control-label" for="selUser">Logged Users:</label>
+                                                        <label class="control-label" for="selUser">Usu&aacute;rios registrados no per&iacute;odo:</label>
                                                         <select class="form-control" id="selUser" name="selUser" onchange="javascript:this.form.user.value=this.value">
-			                                    <option value=''> Select User
+			                                    <option value=''> Escolha o usu&aacute;rio
 <%
 List<String> user_list = new D1ReportDao("20000101", "").get_log_user_list();
 for(String uname : user_list){
@@ -313,8 +313,8 @@ for(String uname : user_list){
 
                             <div class="box-footer">
                                 <div class="btn-group">
-                                    <button id="submitBtn" type="submit" form="search_form" class="btn btn-info margin">Submit</button>
-                                    <button id="resetBtn" class="btn btn-warning margin">Reset</button>
+                                    <button id="submitBtn" type="submit" form="search_form" class="btn btn-info margin">Enviar</button>
+                                    <button id="resetBtn" class="btn btn-warning margin">Limpar</button>
                                 </div>
                             </div>
 
@@ -330,7 +330,7 @@ for(String uname : user_list){
                                 <div class="box-header">
                                     <i class="fa fa-calendar"></i>
                                     <h3 class="box-title">
-                                        Usage Report from: <%= g_stime%> ~ <%= g_etime%>
+                                        Relat&oacute;rio de uso no per&iacute;odo entre: <%= g_stime%> ~ <%= g_etime%>
                                         <%
                                         if(!is_empty(g_user)){
 	                                    out.print(" for " + g_user);
@@ -346,14 +346,14 @@ for(String uname : user_list){
                                     <table id="table" data-classes="table table-hover" data-striped="true" data-show-columns="true" data-search="true" data-show-toggle="true" data-show-export="true" data-pagination="true">
                                         <thead>
                                         <tr>
-                                            <th data-field="time" data-sortable="false">Date</th>
-                                            <th data-field="req_sum" data-sortable="true">Total Requests</th>
-                                            <th data-field="req_cnt" data-sortable="true">Unique Requests</th>
-                                            <th data-field="block_sum" data-sortable="true">Total Blocked</th>
-                                            <th data-field="block_cnt" data-sortable="true">Unique Blocked</th>
-                                            <th data-field="domain_cnt" data-sortable="true">Domain Count</th>
-                                            <th data-field="user_cnt" data-sortable="true">User Count</th>
-                                            <th data-field="clt_ip_cnt" data-sortable="true">Client IP Count</th>
+                                            <th data-field="time" data-sortable="false">Data</th>
+                                            <th data-field="req_sum" data-sortable="true">Requisi&ccedil;&otilde;es</th>
+                                            <th data-field="req_cnt" data-sortable="true">Qtd Reqs &Uacute;nicas</th>
+                                            <th data-field="block_sum" data-sortable="true">Bloqueios</th>
+                                            <th data-field="block_cnt" data-sortable="true">Qtd Bloq &Uacute;nicos</th>
+                                            <th data-field="domain_cnt" data-sortable="true">Qtd Dom&iacute;nios</th>
+                                            <th data-field="user_cnt" data-sortable="true">Qtd Usu&aacute;rios</th>
+                                            <th data-field="clt_ip_cnt" data-sortable="true">Qtd IP Cliente</th>
                                         </tr>
                                         </thead>
                                     </table>
