@@ -486,7 +486,7 @@ for(String uname : user_list){
                                             <div class="box box-success">
                                                 <div class="box-header">
                                                     <i class="fa fa-area-chart"></i>
-                                                    <h3 class="box-title">Request Trend</h3>
+                                                    <h3 class="box-title">Requisi&ccedil;&otilde;es</h3>
                                                 </div>
                                                 <div class="box-body border-radius-none">
                                                     <div class="chart" id="trend-chart" style="height: 250px;"></div>                                    
@@ -503,7 +503,7 @@ for(String uname : user_list){
                                             <div class="box box-danger">
                                                 <div class="box-header">
                                                     <i class="fa fa-area-chart"></i>
-                                                    <h3 class="box-title">Block Trend</h3>
+                                                    <h3 class="box-title">Bloqueios</h3>
                                                 </div>
                                                 <div class="box-body border-radius-none">
                                                     <div class="chart" id="blocked-chart" style="height: 250px;"></div>                                    
@@ -523,7 +523,7 @@ for(String uname : user_list){
                             <div class="box box-solid">
                                 <div class="box-header">
                                     <i class="fa fa-globe"></i>
-                                    <h3 class="box-title">Top 5 Domains</h3>
+                                    <h3 class="box-title">Top 5 - Dom&iacute;nios</h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                     </div>
@@ -557,7 +557,7 @@ for(String uname : user_list){
                             <div class="box box-solid">
                                 <div class="box-header">
                                     <i class="fa fa-book"></i>
-                                    <h3 class="box-title">Top 5 Categories</h3>
+                                    <h3 class="box-title">Top 5 - Categorias</h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                     </div>
@@ -590,7 +590,7 @@ for(String uname : user_list){
                             <div class="box box-solid">
                                 <div class="box-header">
                                     <i class="fa fa-user"></i>
-                                    <h3 class="box-title">Top 5 Users</h3>
+                                    <h3 class="box-title">Top 5 - Usu&aacute;rios</h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                     </div>
@@ -623,7 +623,7 @@ for(String uname : user_list){
                             <div class="box box-solid">
                                 <div class="box-header">
                                     <i class="fa fa-desktop"></i>
-                                    <h3 class="box-title">Top 5 Client IP's</h3>
+                                    <h3 class="box-title">Top 5 - IP's Clientes</h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                     </div>
@@ -875,7 +875,7 @@ for(int i = 0; i < arr_list.size(); i++){
                     ],
                     xkey: 'y',
                     ykeys: ['requests'],
-                    labels: ['Requests'],
+                    labels: ['Requisi&ccedil;&otilde;es'],
                     lineColors: ['#3c8dbc'],
                     hideHover: 'auto'
                 });
@@ -897,7 +897,7 @@ for(int i = 0; i < arr_list.size(); i++){
                     ],
                     xkey: 'y',
                     ykeys: ['requests'],
-                    labels: ['Blocked'],
+                    labels: ['Bloqueado'],
                     lineColors: ['#bc3c3c'],
                     hideHover: 'auto'
                 });
