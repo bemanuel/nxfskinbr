@@ -278,13 +278,13 @@ g_etime_show = sdfBrazil.format(dEnd);
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Reports
-                        <small>Weekly</small>
+                        Relat&oacute;rios
+                        <small>Semanal</small>
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="../../dashboard.jsp"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li><a href="#">Reports</a></li>
-                        <li class="active">Weekly</li>
+                        <li><a href="#">Relat&oacute;rios</a></li>
+                        <li class="active">Semanal</li>
                     </ol>
                 </section>
 
@@ -370,7 +370,7 @@ g_etime_show = sdfBrazil.format(dEnd);
                                                     <div class="col-xs-4">
                                                         <label class="control-label" for="selUser">Usu&aacute;rios registrados:</label>
                                                         <select class="form-control" id="selUser" name="selUser" onchange="javascript:this.form.user.value=this.value">
-			                                    <option value=''> Select user
+			                                    <option value=''> Escolha o usu&aacute;rio 
 <%
 List<String> user_list = dao.get_log_user_list();
 for(String uname : user_list){

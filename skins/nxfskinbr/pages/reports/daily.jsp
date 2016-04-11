@@ -350,7 +350,7 @@ g_stime_show = sdfBrazil.format(dStart);
                                                     <div class="col-xs-4">
                                                         <label class="control-label" for="selUser">Logged Users:</label>
                                                         <select class="form-control" id="selUser" name="selUser" onchange="javascript:this.form.user.value=this.value">
-			                                    <option value=''> Escolha usu&aacute;rio
+			                                    <option value=''> Escolha o usu&aacute;rio
 <%
 List<String> user_list = dao.get_log_user_list();
 for(String uname : user_list){
