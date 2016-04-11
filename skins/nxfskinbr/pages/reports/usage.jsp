@@ -11,11 +11,23 @@ if(!check_permission()){
 
 // Global.
 String g_user = param_str("user");
-String g_etime = strftime_add("yyyy/MM/dd", 86400 * -1);
-String g_stime = strftime_add("yyyy/MM/dd", 86400 * -30);
+String g_etime = strftime_add("EEE, dd/MM/yyyy", 86400 * -1);
+String g_stime = strftime_add("EEE, dd/MM/yyyy", 86400 * -30);
 
 //String g_etime = strftime("MM/dd") + " 00:00";
 //String g_stime = strftime_add("MM/dd", 86400 * -30) + " 00:00";
+
+//Formato da data
+//java.util.Locale local = new java.util.Locale("pt","BR");
+//String formatoPadrao = "yyyyMMdd";
+//String formatoBrazil = "EEE, dd/MM/yyyy";
+//java.text.SimpleDateFormat sdfOrig = new java.text.SimpleDateFormat(formatoPadrao);
+//java.text.SimpleDateFormat sdfBrazil = new java.text.SimpleDateFormat(formatoBrazil, local);
+
+//Date dStart = sdfOrig.parse(dao.stime);
+//Date dEnd = sdfOrig.parse(dao.etime);
+//g_stime = sdfBrazil.format(dStart);
+//g_etime = sdfBrazil.format(dEnd);
 
 %>
 
