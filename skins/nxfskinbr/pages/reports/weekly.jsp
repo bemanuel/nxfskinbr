@@ -43,6 +43,18 @@ String g_time_option = param_str("time_option", "last7days");
 String g_user = param_str("user");
 */
 
+//Formato da data
+java.util.Locale local = new java.util.Locale("pt","BR");
+String formatoPadrao = "yyyyMMdd";
+String formatoBrazil = "EEE, dd/MM/yyyy";
+java.text.SimpleDateFormat sdfOrig = new java.text.SimpleDateFormat(formatoPadrao);
+java.text.SimpleDateFormat sdfBrazil = new java.text.SimpleDateFormat(formatoBrazil, local);
+
+Date dStart = sdfOrig.parse(dao.stime);
+Date dEnd = sdfOrig.parse(dao.etime);
+g_stime_show = sdfBrazil.format(dStart);
+g_etime_show = sdfBrazil.format(dEnd);
+
 %>
 
 
@@ -317,22 +329,22 @@ String g_user = param_str("user");
                                             </div>
                                             <div class="radio-inline">
                                                 <label class="radio">
-                                                    <input type="radio" class="flat-green interval" name="time_option" value="last7days" <%if(g_time_option.equals("last7days")){out.print("checked");}%>>&nbsp;Last 7 Days
+                                                    <input type="radio" class="flat-green interval" name="time_option" value="last7days" <%if(g_time_option.equals("last7days")){out.print("checked");}%>>&nbsp;&Uacute;ltimos 7 Dias
                                                 </label>
                                             </div>
                                             <div class="radio-inline">
                                                 <label class="radio">
-                                                    <input type="radio" class="flat-green interval" name="time_option" value="1week" <%if(g_time_option.equals("1week")){out.print("checked");}%>>&nbsp;1 Week Ago
+                                                    <input type="radio" class="flat-green interval" name="time_option" value="1week" <%if(g_time_option.equals("1week")){out.print("checked");}%>>&nbsp;1 Semana atr&aacute;s 
                                                 </label>
                                             </div>
                                             <div class="radio-inline">
                                                 <label class="radio">
-                                                    <input type="radio" class="flat-green interval" name="time_option" value="2weeks" <%if(g_time_option.equals("2weeks")){out.print("checked");}%>>&nbsp;2 Weeks Ago
+                                                    <input type="radio" class="flat-green interval" name="time_option" value="2weeks" <%if(g_time_option.equals("2weeks")){out.print("checked");}%>>&nbsp;2 Semanas Atr&aacute;s
                                                 </label>
                                             </div>
                                             <div class="radio-inline">
                                                 <label class="radio">
-                                                    <input type="radio" class="flat-green interval" name="time_option" value="3weeks" <%if(g_time_option.equals("3weeks")){out.print("checked");}%>>&nbsp;3 Weeks Ago
+                                                    <input type="radio" class="flat-green interval" name="time_option" value="3weeks" <%if(g_time_option.equals("3weeks")){out.print("checked");}%>>&nbsp;3 Semanas Atr&aacute;s 
                                                 </label>                                           
                                             </div><!-- /.checkbox-inline -->
                                         </div><!-- /.form-group -->
@@ -346,17 +358,17 @@ String g_user = param_str("user");
                                                 <div class="row">
                                                     <div class="col-xs-12">
                                                         <div class="callout callout-info">
-                                                            <h4>Refine Search Results By:</h4>
+                                                            <h4>Filtrar por:</h4>
                                                         </div>
                                                     </div>
                                                     <!-- 1st column -->
                                                     <div class="col-xs-8">
-                                                        <label class="control-label" for="user">User: </label>
+                                                        <label class="control-label" for="user">Usu&aacute;rio: </label>
                                                         <input type="text" class="form-control" id="user" name="user" value="<%= g_user%>" >
                                                     </div>
                                                     <!-- 3rd column -->
                                                     <div class="col-xs-4">
-                                                        <label class="control-label" for="selUser">Logged Users:</label>
+                                                        <label class="control-label" for="selUser">Usu&aacute;rios registrados:</label>
                                                         <select class="form-control" id="selUser" name="selUser" onchange="javascript:this.form.user.value=this.value">
 			                                    <option value=''> Select user
 <%
@@ -389,8 +401,8 @@ for(String uname : user_list){
 
                             <div class="box-footer">
                                 <div class="btn-group">
-                                    <button id="submitBtn" type="submit" form="search_form" class="btn btn-success margin">Submit</button>
-                                    <button id="resetBtn" class="btn btn-warning margin">Reset</button>
+                                    <button id="submitBtn" type="submit" form="search_form" class="btn btn-success margin">Enviar</button>
+                                    <button id="resetBtn" class="btn btn-warning margin">Limpar</button>
                                 </div>
                             </div>
 
@@ -406,7 +418,7 @@ for(String uname : user_list){
                                 <div class="box-header">
                                     <i class="fa fa-calendar"></i>
                                     <h3 class="box-title">
-                                        Weekly Report from: <%= g_stime_show%> ~ <%= g_etime_show%>
+                                        Relat&oacute;rio Semanal de: <%= g_stime_show%> a <%= g_etime_show%>
                                         <%
                                         if(!is_empty(g_user)){
 	                                    out.print(" for " + g_user);
