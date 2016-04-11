@@ -1020,7 +1020,7 @@ for(int i = 0; i < arr_list.size(); i++){
 	]);
 
 	var options = {
-		title: 'Top 5 requisi\u00E7\u00D5es por usu\u00E1rio',
+		title: 'Top 5 requisi\u00E7\u00F5es por usu\u00E1rio',
         pieHole: 0.4
 	};
 
