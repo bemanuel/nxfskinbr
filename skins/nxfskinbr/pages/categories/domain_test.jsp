@@ -21,7 +21,7 @@ DomainTestData data = dao.test(param_str("domain"));
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>NxFilter v<%= GlobalDao.get_nx_version()%> | Domain Test</title>
+        <title>NxFilter v<%= GlobalDao.get_nx_version()%> | Testar Dom&iacute;nio</title>
         <meta http-equiv='Expires' content='-1'> 
         <meta http-equiv='Pragma' content='no-cache'> 
         <meta http-equiv='Cache-Control' content='no-cache'>
@@ -113,7 +113,7 @@ DomainTestData data = dao.test(param_str("domain"));
                             <img src="../../img/avatar6.png" class="img-circle" alt="User Image" />
                         </div>
                         <div class="pull-left info">
-                            <p>Hello, <%= get_admin_name() %></p>
+                            <p>Ol&aacute;, <%= get_admin_name() %></p>
                         </div>
                     </div>
                     <!-- search form -->
@@ -135,7 +135,7 @@ DomainTestData data = dao.test(param_str("domain"));
                         </li>
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-gears"></i> <span>Configuration</span>
+                                <i class="fa fa-gears"></i> <span>Configura&ccedil;&atilde;o</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
@@ -176,7 +176,7 @@ DomainTestData data = dao.test(param_str("domain"));
                         </li>
                         <li class="treeview active">
                             <a href="#">
-                                <i class="fa fa-book"></i> <span>Categories</span>
+                                <i class="fa fa-book"></i> <span>Categorias</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
@@ -192,13 +192,13 @@ DomainTestData data = dao.test(param_str("domain"));
                                     </ul>
                                 </li>
                                 <li><a href="../../pages/categories/system.jsp"><i class="fa fa-angle-double-right"></i> System</a></li>
-                                <li class="active"><a href="../../pages/categories/domain_test.jsp"><i class="fa fa-angle-double-right"></i> Domain Test</a></li>
+                                <li class="active"><a href="../../pages/categories/domain_test.jsp"><i class="fa fa-angle-double-right"></i> Testar Dom&iacute;nio</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
                             <a href="#">
                                 <i class="fa fa-bar-chart"></i>
-                                <span>Reports</span>
+                                <span>Relat&oacute;rios</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
@@ -220,7 +220,7 @@ DomainTestData data = dao.test(param_str("domain"));
                         </li>
                         <li>
                             <a href="../../pages/system/restart.jsp">
-                                <i class="fa fa-power-off"></i> <span>Restart</span>
+                                <i class="fa fa-power-off"></i> <span>Reiniciar</span>
                             </a>
                         </li>
                     </ul>
@@ -233,13 +233,13 @@ DomainTestData data = dao.test(param_str("domain"));
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Categories
-                        <small>Domain Test</small>
+                        Categorias
+                        <small>Testar Dom&iacute;nio</small>
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="../../dashboard.jsp"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li><a href="#">Categories</a></li>
-                        <li class="active">Domain Test</li>
+                        <li><a href="#">Categorias</a></li>
+                        <li class="active">Testar Dom&iacute;nio</li>
                     </ol>
                 </section>
 
@@ -253,7 +253,7 @@ DomainTestData data = dao.test(param_str("domain"));
                             <div class="box box-solid">
                                 <div class="box-header">
                                     <i class="fa fa-search"></i>
-                                    <h3 class="box-title">Domain Test</h3>
+                                    <h3 class="box-title">Testar Dom&iacute;nio</h3>
                                 </div><!-- /.box-header -->
                                 <div class="box-body">
 
@@ -264,22 +264,22 @@ DomainTestData data = dao.test(param_str("domain"));
                                         <div class="form-group">
                                             <div class="alert alert-info alert-dismissable">
                                                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                                <b>Result:&nbsp;&nbsp;</b><%= data.domain%>&nbsp;&nbsp;-&nbsp;&nbsp;<%= data.category%>
+                                                <b>Resultado:&nbsp;&nbsp;</b><%= data.domain%>&nbsp;&nbsp;-&nbsp;&nbsp;<%= data.category%>
                                             </div>
                                         </div>
 <%}%>
                                         <div class="form-group">
                                             <div class="input-group col-xs-3">
-                                                <label class="control-label" for="domain">Domain</label>
+                                                <label class="control-label" for="domain">Dom&iacute;nio</label>
                                                 <input type="text" class="form-control" id="domain" name="domain" placeholder="ex) google.com...">
                                             </div>
-                                            <p class="help-block">Find categories for a domain.</p>
+                                            <p class="help-block">Localiza catergorias de um determinado dom&iacute;nio.</p>
                                         </div>
                                     </form><!-- end form -->
 
                                 </div><!-- /.box-body -->
                                 <div class="box-footer">
-                                    <button id="submitBtn" type="submit" form="test" class="btn btn-info">Submit</button>
+                                    <button id="submitBtn" type="submit" form="test" class="btn btn-info">Enviar</button>
                                 </div>
                             </div><!-- /.box -->
                         </div><!-- /.col -->
