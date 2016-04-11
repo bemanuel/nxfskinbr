@@ -273,7 +273,7 @@ DomainTestData data = dao.test(param_str("domain"));
                                                 <label class="control-label" for="domain">Dom&iacute;nio</label>
                                                 <input type="text" class="form-control" id="domain" name="domain" placeholder="ex) google.com...">
                                             </div>
-                                            <p class="help-block">Localiza catergorias de um determinado dom&iacute;nio.</p>
+                                            <p class="help-block">Localiza categorias de um determinado dom&iacute;nio.</p>
                                         </div>
                                     </form><!-- end form -->
 
