@@ -324,6 +324,15 @@ if(g_blacklist_type < 3 && !dao.is_blacklist_imported()
 
                                         <div class="form-group">
                                             <div class="input-group">
+                                                <label class="control-label pull-right" for="blacklist_type">&nbsp;Jahaslist - Auto-classifica&ccedil;&atilde;o com NxClassifier</label>
+                                                <input type="radio" class="flat-green" id="blacklist_type5" name="blacklist_type" value="5" <%if(g_blacklist_type == 5){out.print("checked");}%> >
+                                            </div>
+                                        </div>
+                                        <%if(g_blacklist_type == 5){%>
+                                        <p class="help-block">Validade = <%= g_license_end_date%> : Max users = <%= g_license_max_user%></p>
+                                        <%}%>
+                                        <div class="form-group">
+                                            <div class="input-group">
                                                 <label class="control-label pull-right" for="blacklist_type">&nbsp;Shallalist</label>
                                                 <input type="radio" class="flat-green" id="blacklist_type1" name="blacklist_type" value="1" <%if(g_blacklist_type == 1){out.print("checked");}%> >
                                             </div>
