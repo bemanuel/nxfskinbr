@@ -948,7 +948,7 @@ for(int i = 0; i < arr_list.size(); i++){
 	]);
 
 	var options = {
-		title: 'Top 5 Dom\u00EDnios Bloqueados',
+		title: 'Top 5 Qtd Vezes Bloqueados',
         pieHole: 0.4
 	};
 
@@ -972,7 +972,7 @@ for(int i = 0; i < arr_list.size(); i++){
 	]);
 
 	var options = {
-		title: 'Top 5 categorias por requisi\u00E7\u00E3o',
+		title: 'Top 5 Qtd de Requisi\u00E7\u00E3o',
         pieHole: 0.4
 	};
 
@@ -996,7 +996,7 @@ for(int i = 0; i < arr_list.size(); i++){
 	]);
 
 	var options = {
-		title: 'Top 5 categoria por bloqueio',
+		title: 'Top 5 Qtd Vezes bloqueadas',
         pieHole: 0.4
 	};
 
