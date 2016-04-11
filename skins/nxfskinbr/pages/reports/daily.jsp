@@ -924,7 +924,7 @@ for(int i = 0; i < arr_list.size(); i++){
 	]);
 
 	var options = {
-		title: 'Top 5 Requisi&ccedil;&oacute;es ( Dom&iacute;nio )',
+		title: 'Top 5 Requisi\u00E7\u00F5es ( Dom\u00EDnio )',
         pieHole: 0.4
 	};
 
@@ -948,7 +948,7 @@ for(int i = 0; i < arr_list.size(); i++){
 	]);
 
 	var options = {
-		title: 'Top 5 Dom&iacute;nios Bloqueados',
+		title: 'Top 5 Dom\u00EDnios Bloqueados',
         pieHole: 0.4
 	};
 
@@ -1020,7 +1020,7 @@ for(int i = 0; i < arr_list.size(); i++){
 	]);
 
 	var options = {
-		title: 'Top 5 requisi&ccedil;&otilde;es por usu&aacute;rio',
+		title: 'Top 5 requisi\u00E7\u00D5es por usu\u00E1rio',
         pieHole: 0.4
 	};
 
@@ -1044,7 +1044,7 @@ for(int i = 0; i < arr_list.size(); i++){
 	]);
 
 	var options = {
-		title: 'Top 5 bloqueios por usu&aacute;rio',
+		title: 'Top 5 bloqueios por usu\u00E1rio',
         pieHole: 0.4
 	};
 
@@ -1068,7 +1068,7 @@ for(int i = 0; i < arr_list.size(); i++){
 	]);
 
 	var options = {
-		title: 'Top 5 requisi&ccedil;&otilde;es por ip de cliente',
+		title: 'Top 5 requisi\u00E7\u00F5es por ip de cliente',
         pieHole: 0.4
 	};
 
