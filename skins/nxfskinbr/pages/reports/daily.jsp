@@ -418,7 +418,7 @@ for(String uname : user_list){
                                            <!-- domains tile -->
                                            <div class="box box-solid bg-navy">
                                                <div class="box-body text-center">
-                                                   <h3><%= stats.domain_cnt%> Domains</h3>
+                                                   <h3><%= stats.domain_cnt%> Dom&iacute;nios</h3>
                                                </div><!-- /.box-body -->
                                            </div><!-- /.box -->
                                        </div><!-- /.col -->
@@ -426,7 +426,7 @@ for(String uname : user_list){
                                            <!-- users tile -->
                                            <div class="box box-solid bg-navy">
                                                <div class="box-body text-center">
-                                                   <h3><%= stats.user_cnt%> Users</h3>
+                                                   <h3><%= stats.user_cnt%> Usu&aacute;rios</h3>
                                                </div><!-- /.box-body -->
                                            </div><!-- /.box -->
                                        </div><!-- /.col -->
@@ -434,7 +434,7 @@ for(String uname : user_list){
                                             <!-- client-ip time -->
                                             <div class="box box-solid bg-navy">
                                                 <div class="box-body text-center">
-                                                    <h3><%= stats.clt_ip_cnt%> Client IP's</h3>
+                                                    <h3><%= stats.clt_ip_cnt%> IP's Cliente</h3>
                                                 </div><!-- /.box-body -->
                                             </div><!-- /.box -->
                                         </div><!-- /.col -->
@@ -444,19 +444,19 @@ for(String uname : user_list){
                                     <div class="row">
                                         <div class="col-xs-2 col-md-3 text-center">
                                             <input type="text" class="knob" data-readonly="true" value="<%= stats.req_sum%>" data-min="0" data-max="<%= stats.req_sum%>" data-width="120" data-height="120" data-fgColor="#3c8dbc"/>
-                                            <div class="knob-label">Total Requests</div>
+                                            <div class="knob-label">Total de Requisi&ccedil;&otilde;es</div>
                                         </div><!-- ./col -->
                                         <div class="col-xs-2 col-md-3 text-center">
                                             <input type="text" class="knob" data-readonly="true" value="<%= stats.req_cnt%>" data-min="0" data-max="<%= stats.req_cnt%>" data-width="120" data-height="120" data-fgColor="#85144b"/>
-                                            <div class="knob-label">Unique Requests</div>
+                                            <div class="knob-label">Requisi&ccedil;&otilde;es &Uacute;nicas</div>
                                         </div><!-- ./col -->
                                         <div class="col-xs-2 col-md-3 text-center">
                                             <input type="text" class="knob" data-readonly="true" value="<%= stats.block_sum%>" data-min="0" data-max="<%= stats.block_sum%>" data-width="120" data-height="120" data-fgColor="#f56954"/>
-                                            <div class="knob-label">Blocked Requests</div>
+                                            <div class="knob-label">Requisi&ccedil;&otilde;es Bloqueadas</div>
                                         </div><!-- ./col -->
                                         <div class="col-xs-2 col-md-3 text-center">
                                             <input type="text" class="knob" data-readonly="true" value="<%= stats.block_cnt%>" data-min="0" data-max="<%= stats.block_cnt%>" data-width="120" data-height="120" data-fgColor="#f012be"/>
-                                            <div class="knob-label">Blocked Domains</div>
+                                            <div class="knob-label">Dom&iacute;nios Bloqueados</div>
                                         </div><!-- ./col -->
                                     </div><!-- /.row -->
 
@@ -470,7 +470,7 @@ for(String uname : user_list){
                             <div class="box box-solid">
                                 <div class="box-header">
                                     <i class="fa fa-line-chart"></i>
-                                    <h3 class="box-title">Trend Charts</h3>
+                                    <h3 class="box-title">Gr&aacute;ficos Estat&iacute;sticos</h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                     </div>
