@@ -62,7 +62,7 @@ g_etime_show = sdfBrazil.format(dEnd);
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>NxFilter v<%= GlobalDao.get_nx_version()%> | Weekly</title>
+        <title>NxFilter v<%= GlobalDao.get_nx_version()%> | Semanal</title>
         <meta http-equiv='Expires' content='-1'> 
         <meta http-equiv='Pragma' content='no-cache'> 
         <meta http-equiv='Cache-Control' content='no-cache'>
@@ -180,7 +180,7 @@ g_etime_show = sdfBrazil.format(dEnd);
                         </li>
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-gears"></i> <span>Configuration</span>
+                                <i class="fa fa-gears"></i> <span>Configura&ccedil;&atilde;o</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
@@ -197,7 +197,7 @@ g_etime_show = sdfBrazil.format(dEnd);
                         </li>
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-user"></i> <span>Users & Groups</span>
+                                <i class="fa fa-user"></i> <span>Usu&aacute;rios/Grupos</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
@@ -209,7 +209,7 @@ g_etime_show = sdfBrazil.format(dEnd);
                         </li>
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-pencil"></i> <span>Policies</span>
+                                <i class="fa fa-pencil"></i> <span>Pol&iacute;ticas</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
@@ -221,14 +221,14 @@ g_etime_show = sdfBrazil.format(dEnd);
                         </li>
                         <li class="treeview">
                             <a href="#">
-                                <i class="fa fa-book"></i> <span>Categories</span>
+                                <i class="fa fa-book"></i> <span>Categorias</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
                                 <li><a href="../../pages/categories/custom.jsp"><i class="fa fa-angle-double-right"></i> Custom</a></li>
                                 <li class="treeview">
                                     <a href="#">
-                                        <i class="fa fa-angle-double-right"></i> <span>Whitelists</span>
+                                        <i class="fa fa-angle-double-right"></i> <span>Listas Branca</span>
                                         <i class="fa fa-angle-left pull-right"></i>
                                     </a>
                                     <ul class="treeview-menu">
@@ -299,7 +299,7 @@ g_etime_show = sdfBrazil.format(dEnd);
                             <div class="box box-yellow">
                                 <div class="box-header">
                                     <i class="fa fa-clock-o"></i>
-                                    <h3 class="box-title">Weekly Report</h3>
+                                    <h3 class="box-title">Relat&oacute;rio Semanal</h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                     </div>
@@ -308,7 +308,7 @@ g_etime_show = sdfBrazil.format(dEnd);
 
                    
                                         <div class="form-group">
-                                            <label class="control-label col-xs-12">Report Start</label>
+                                            <label class="control-label col-xs-12">Inicio do Relat&oacute;rio</label>
                                         </div>
 
                                         <div class="form-group">
@@ -320,11 +320,11 @@ g_etime_show = sdfBrazil.format(dEnd);
                                                 </div>
                                             </div>
                                         </div> 
-                                        <p class="help-block">&nbsp;Time Format - YYYYMMDD</p>
+                                        <p class="help-block">&nbsp;Formato da Data - AAAAMMDD</p>
                                         <div class="form-group">
                                             <div style="display: none;" class="radio-inline" id="intervals">
                                                 <label class="radio">
-                                                    <input type="radio" class="flat-green interval" name="time_option" value="userdef" <%if(g_time_option.equals("userdef")){out.print("checked");}%>>&nbsp;User Defined
+                                                    <input type="radio" class="flat-green interval" name="time_option" value="userdef" <%if(g_time_option.equals("userdef")){out.print("checked");}%>>&nbsp;Definido pelo usu&aacute;rio
                                                 </label>
                                             </div>
                                             <div class="radio-inline">
@@ -490,7 +490,7 @@ for(String uname : user_list){
                             <div class="box box-solid">
                                 <div class="box-header">
                                     <i class="fa fa-line-chart"></i>
-                                    <h3 class="box-title">Trend Charts</h3>
+                                    <h3 class="box-title">Gr&aacute;ficos Estat&iacute;sticos</h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                     </div>
@@ -506,7 +506,7 @@ for(String uname : user_list){
                                             <div class="box box-success">
                                                 <div class="box-header">
                                                     <i class="fa fa-area-chart"></i>
-                                                    <h3 class="box-title">Request Trend</h3>
+                                                    <h3 class="box-title">Requisi&ccedil;&otilde;es</h3>
                                                 </div>
                                                 <div class="box-body border-radius-none">
                                                     <div class="chart" id="trend-chart" style="height: 250px;"></div>                                    
@@ -523,7 +523,7 @@ for(String uname : user_list){
                                             <div class="box box-danger">
                                                 <div class="box-header">
                                                     <i class="fa fa-area-chart"></i>
-                                                    <h3 class="box-title">Block Trend</h3>
+                                                    <h3 class="box-title">Bloqueios</h3>
                                                 </div>
                                                 <div class="box-body border-radius-none">
                                                     <div class="chart" id="blocked-chart" style="height: 250px;"></div>                                    
@@ -543,7 +543,7 @@ for(String uname : user_list){
                             <div class="box box-solid">
                                 <div class="box-header">
                                     <i class="fa fa-globe"></i>
-                                    <h3 class="box-title">Top 5 Domains</h3>
+                                    <h3 class="box-title">Top 5 Dom&iacute;nios</h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                     </div>
@@ -577,7 +577,7 @@ for(String uname : user_list){
                             <div class="box box-solid">
                                 <div class="box-header">
                                     <i class="fa fa-book"></i>
-                                    <h3 class="box-title">Top 5 Categories</h3>
+                                    <h3 class="box-title">Top 5 Categorias</h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                     </div>
@@ -610,7 +610,7 @@ for(String uname : user_list){
                             <div class="box box-solid">
                                 <div class="box-header">
                                     <i class="fa fa-user"></i>
-                                    <h3 class="box-title">Top 5 Users</h3>
+                                    <h3 class="box-title">Top 5 Usu&aacute;rio</h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                     </div>
@@ -643,7 +643,7 @@ for(String uname : user_list){
                             <div class="box box-solid">
                                 <div class="box-header">
                                     <i class="fa fa-desktop"></i>
-                                    <h3 class="box-title">Top 5 Client IP's</h3>
+                                    <h3 class="box-title">Top 5 IP's Cliente</h3>
                                     <div class="box-tools pull-right">
                                         <button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                     </div>
