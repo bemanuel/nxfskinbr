@@ -124,7 +124,7 @@ String g_stime = strftime_add("yyyy/MM/dd", 86400 * -30);
                 	<!-- search form -->
                 	<form action="../search.jsp" method="get" class="sidebar-form" name="search">
                     	<div class="input-group">
-                        	<input type="text" name="q" class="form-control" placeholder="Search..." id="tipue_drop_input" autocomplete="off" required/>
+                        	<input type="text" name="q" class="form-control" placeholder="Pesquisar..." id="tipue_drop_input" autocomplete="off" required/>
                         	<span class="input-group-btn">
                             	<button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
                         	</span>
