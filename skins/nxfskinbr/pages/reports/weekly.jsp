@@ -54,7 +54,6 @@ Date dStart = sdfOrig.parse(dao.stime);
 Date dEnd = sdfOrig.parse(dao.etime);
 g_stime_show = sdfBrazil.format(dStart);
 g_etime_show = sdfBrazil.format(dEnd);
-
 %>
 
 
