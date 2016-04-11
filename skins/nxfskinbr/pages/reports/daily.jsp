@@ -36,7 +36,7 @@ String formatoBrazil = "EEE, dd/MM/yyyy";
 java.text.SimpleDateFormat sdfOrig = new java.text.SimpleDateFormat(formatoPadrao);
 java.text.SimpleDateFormat sdfBrazil = new java.text.SimpleDateFormat(formatoBrazil, local);
 
-Date dStart = sdfOrig.parse(dao.stime());
+Date dStart = sdfOrig.parse(dao.stime);
 //Date dEnd = sdfOrig.parse(report_dao.get_etime());
 g_stime_show = sdfBrazil.format(dStart);
 //String dFim = sdfBrazil.format(dEnd);
