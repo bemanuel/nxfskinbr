@@ -247,9 +247,9 @@ g_etime_show = sdfBrazil.format(dEnd);
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="../../pages/reports/daily.jsp"><i class="fa fa-angle-double-right"></i> Daily</a></li>
-                                <li class="active"><a href="../../pages/reports/weekly.jsp"><i class="fa fa-angle-double-right"></i> Weekly</a></li>
-                                <li><a href="../../pages/reports/usage.jsp"><i class="fa fa-angle-double-right"></i> Usage</a></li>
+                                <li><a href="../../pages/reports/daily.jsp"><i class="fa fa-angle-double-right"></i> Di&aacute;rio</a></li>
+                                <li class="active"><a href="../../pages/reports/weekly.jsp"><i class="fa fa-angle-double-right"></i> Semanal</a></li>
+                                <li><a href="../../pages/reports/usage.jsp"><i class="fa fa-angle-double-right"></i> Uso</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
@@ -265,7 +265,7 @@ g_etime_show = sdfBrazil.format(dEnd);
                         </li>
                         <li>
                             <a href="../../pages/system/restart.jsp">
-                                <i class="fa fa-power-off"></i> <span>Restart</span>
+                                <i class="fa fa-power-off"></i> <span>Reiniciar</span>
                             </a>
                         </li>
                     </ul>
@@ -438,7 +438,7 @@ for(String uname : user_list){
                                            <!-- domains tile -->
                                            <div class="box box-solid bg-blue">
                                                <div class="box-body text-center">
-                                                   <h3><%= stats.domain_cnt%> Domains</h3>
+                                                   <h3><%= stats.domain_cnt%> Dom&iacute;nios</h3>
                                                </div><!-- /.box-body -->
                                            </div><!-- /.box -->
                                        </div><!-- /.col -->
@@ -446,7 +446,7 @@ for(String uname : user_list){
                                            <!-- users tile -->
                                            <div class="box box-solid bg-blue">
                                                <div class="box-body text-center">
-                                                   <h3><%= stats.user_cnt%> Users</h3>
+                                                   <h3><%= stats.user_cnt%> Usu&aacute;rios</h3>
                                                </div><!-- /.box-body -->
                                            </div><!-- /.box -->
                                        </div><!-- /.col -->
@@ -454,7 +454,7 @@ for(String uname : user_list){
                                             <!-- client-ip time -->
                                             <div class="box box-solid bg-blue">
                                                 <div class="box-body text-center">
-                                                    <h3><%= stats.clt_ip_cnt%> Client IP's</h3>
+                                                    <h3><%= stats.clt_ip_cnt%> IP's Clientes</h3>
                                                 </div><!-- /.box-body -->
                                             </div><!-- /.box -->
                                         </div><!-- /.col -->
@@ -464,7 +464,7 @@ for(String uname : user_list){
                                     <div class="row">
                                         <div class="col-xs-2 col-md-3 text-center">
                                             <input type="text" class="knob" data-readonly="true" value="<%= stats.req_sum%>" data-min="0" data-max="<%= stats.req_sum%>" data-width="120" data-height="120" data-fgColor="#3c8dbc"/>
-                                            <div class="knob-label">Total Requests</div>
+                                            <div class="knob-label">Total de Requisi&ccedil;&otilde;es</div>
                                         </div><!-- ./col -->
                                         <div class="col-xs-2 col-md-3 text-center">
                                             <input type="text" class="knob" data-readonly="true" value="<%= stats.req_cnt%>" data-min="0" data-max="<%= stats.req_cnt%>" data-width="120" data-height="120" data-fgColor="#85144b"/>
@@ -897,7 +897,7 @@ for(int i = 0; i < arr_list.size(); i++){
                     ],
                     xkey: 'y',
                     ykeys: ['requests'],
-                    labels: ['Requests'],
+                    labels: ['Requisi&ccedil;&otilde;es'],
                     lineColors: ['#3c8dbc'],
                     hideHover: 'auto'
                 });
@@ -919,7 +919,7 @@ for(int i = 0; i < arr_list.size(); i++){
                     ],
                     xkey: 'y',
                     ykeys: ['requests'],
-                    labels: ['Blocked'],
+                    labels: ['Bloqueado'],
                     lineColors: ['#bc3c3c'],
                     hideHover: 'auto'
                 });
@@ -945,7 +945,7 @@ for(int i = 0; i < arr_list.size(); i++){
 	]);
 
 	var options = {
-		title: 'Top 5 Domains Requested',
+		title: 'Top 5 Requisi\u00E7\u00F5es ( Dom\u00EDnio )',
         pieHole: 0.4
 	};
 
@@ -969,7 +969,7 @@ for(int i = 0; i < arr_list.size(); i++){
 	]);
 
 	var options = {
-		title: 'Top 5 Domains Blocked',
+		title: 'Top 5 Qtd Vezes Bloqueados',
         pieHole: 0.4
 	};
 
@@ -993,7 +993,7 @@ for(int i = 0; i < arr_list.size(); i++){
 	]);
 
 	var options = {
-		title: 'Top 5 category by request',
+		title: 'Top 5 Qtd de Requisi\u00E7\u00E3o',
         pieHole: 0.4
 	};
 
@@ -1017,7 +1017,7 @@ for(int i = 0; i < arr_list.size(); i++){
 	]);
 
 	var options = {
-		title: 'Top 5 category by block',
+		title: 'Top 5 Qtd Vezes bloqueadas',
         pieHole: 0.4
 	};
 
@@ -1041,7 +1041,7 @@ for(int i = 0; i < arr_list.size(); i++){
 	]);
 
 	var options = {
-		title: 'Top 5 user by request',
+		title: 'Top 5 requisi\u00E7\u00F5es por usu\u00E1rio',
         pieHole: 0.4
 	};
 
@@ -1065,7 +1065,7 @@ for(int i = 0; i < arr_list.size(); i++){
 	]);
 
 	var options = {
-		title: 'Top 5 user by block',
+		title: 'Top 5 bloqueios por usu\u00E1rio',
         pieHole: 0.4
 	};
 
@@ -1089,7 +1089,7 @@ for(int i = 0; i < arr_list.size(); i++){
 	]);
 
 	var options = {
-		title: 'Top 5 client-ip by request',
+		title: 'Top 5 requisi\u00E7\u00F5es por ip de cliente',
         pieHole: 0.4
 	};
 
@@ -1113,7 +1113,7 @@ for(int i = 0; i < arr_list.size(); i++){
 	]);
 
 	var options = {
-		title: 'Top 5 client-ip by block',
+		title: 'Top 5 bloqueios por ip de cliente',
         pieHole: 0.4
 	};
 
