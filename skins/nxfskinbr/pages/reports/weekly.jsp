@@ -468,15 +468,15 @@ for(String uname : user_list){
                                         </div><!-- ./col -->
                                         <div class="col-xs-2 col-md-3 text-center">
                                             <input type="text" class="knob" data-readonly="true" value="<%= stats.req_cnt%>" data-min="0" data-max="<%= stats.req_cnt%>" data-width="120" data-height="120" data-fgColor="#85144b"/>
-                                            <div class="knob-label">Unique Requests</div>
+                                            <div class="knob-label">Requisi&ccedil;&otilde;es &Uacute;nicas</div>
                                         </div><!-- ./col -->
                                         <div class="col-xs-2 col-md-3 text-center">
                                             <input type="text" class="knob" data-readonly="true" value="<%= stats.block_sum%>" data-min="0" data-max="<%= stats.block_sum%>" data-width="120" data-height="120" data-fgColor="#f56954"/>
-                                            <div class="knob-label">Blocked Requests</div>
+                                            <div class="knob-label">Requisi&ccedil;&otilde;es Bloqueadas</div>
                                         </div><!-- ./col -->
                                         <div class="col-xs-2 col-md-3 text-center">
                                             <input type="text" class="knob" data-readonly="true" value="<%= stats.block_cnt%>" data-min="0" data-max="<%= stats.block_cnt%>" data-width="120" data-height="120" data-fgColor="#f012be"/>
-                                            <div class="knob-label">Blocked Domains</div>
+                                            <div class="knob-label">Dom&iacute;nios Bloqueados</div>
                                         </div><!-- ./col -->
                                     </div><!-- /.row -->
 
