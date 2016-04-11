@@ -217,8 +217,8 @@ g_stime_show = sdfBrazil.format(dStart);
                                         <i class="fa fa-angle-left pull-right"></i>
                                     </a>
                                     <ul class="treeview-menu">
-                                        <li><a href="../../pages/categories/domain.jsp"><i class="fa fa-angle-double-right"></i> By Domain</a></li>
-                                        <li><a href="../../pages/categories/keyword.jsp"><i class="fa fa-angle-double-right"></i> By Keyword</a></li>
+                                        <li><a href="../../pages/categories/domain.jsp"><i class="fa fa-angle-double-right"></i> Por Dom&iacute;nio</a></li>
+                                        <li><a href="../../pages/categories/keyword.jsp"><i class="fa fa-angle-double-right"></i> Por Palavrax-Chave</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="../../pages/categories/system.jsp"><i class="fa fa-angle-double-right"></i> System</a></li>
@@ -924,7 +924,7 @@ for(int i = 0; i < arr_list.size(); i++){
 	]);
 
 	var options = {
-		title: 'Top 5 Requisições ( Dom&iacute;nio )',
+		title: 'Top 5 Requisi&ccedil;&oacute;es ( Dom&iacute;nio )',
         pieHole: 0.4
 	};
 
@@ -972,7 +972,7 @@ for(int i = 0; i < arr_list.size(); i++){
 	]);
 
 	var options = {
-		title: 'Top 5 categorias por requisi&ccedil;&atilde;o',
+		title: 'Top 5 categorias por requisi\u00E7\u00E3o',
         pieHole: 0.4
 	};
 
