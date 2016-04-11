@@ -924,7 +924,7 @@ for(int i = 0; i < arr_list.size(); i++){
 	]);
 
 	var options = {
-		title: 'Top 5 Domains Requested',
+		title: 'Top 5 Requisições ( Dom&iacute;nio )',
         pieHole: 0.4
 	};
 
@@ -948,7 +948,7 @@ for(int i = 0; i < arr_list.size(); i++){
 	]);
 
 	var options = {
-		title: 'Top 5 Domains Blocked',
+		title: 'Top 5 Dom&iacute;nios Bloqueados',
         pieHole: 0.4
 	};
 
@@ -972,7 +972,7 @@ for(int i = 0; i < arr_list.size(); i++){
 	]);
 
 	var options = {
-		title: 'Top 5 category by request',
+		title: 'Top 5 categorias por requisi&ccedil;&atilde;o',
         pieHole: 0.4
 	};
 
@@ -996,7 +996,7 @@ for(int i = 0; i < arr_list.size(); i++){
 	]);
 
 	var options = {
-		title: 'Top 5 category by block',
+		title: 'Top 5 categoria por bloqueio',
         pieHole: 0.4
 	};
 
@@ -1020,7 +1020,7 @@ for(int i = 0; i < arr_list.size(); i++){
 	]);
 
 	var options = {
-		title: 'Top 5 user by request',
+		title: 'Top 5 requisi&ccedil;&otilde;es por usu&aacute;rio',
         pieHole: 0.4
 	};
 
@@ -1044,7 +1044,7 @@ for(int i = 0; i < arr_list.size(); i++){
 	]);
 
 	var options = {
-		title: 'Top 5 user by block',
+		title: 'Top 5 bloqueios por usu&aacute;rio',
         pieHole: 0.4
 	};
 
@@ -1068,7 +1068,7 @@ for(int i = 0; i < arr_list.size(); i++){
 	]);
 
 	var options = {
-		title: 'Top 5 client-ip by request',
+		title: 'Top 5 requisi&ccedil;&otilde;es por ip de cliente',
         pieHole: 0.4
 	};
 
@@ -1092,7 +1092,7 @@ for(int i = 0; i < arr_list.size(); i++){
 	]);
 
 	var options = {
-		title: 'Top 5 client-ip by block',
+		title: 'Top 5 bloqueios por ip de cliente',
         pieHole: 0.4
 	};
 
