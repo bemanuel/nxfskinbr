@@ -24,19 +24,21 @@ ReportChartData clt_ip_top = dao.get_clt_ip_top(5);
 
 // Global.
 String g_stime = strftime_add("yyyyMMdd", -86400);
-String g_stime_show = strftime_new_fmt("yyyyMMdd", "dd/MMM/yyyy", dao.stime);
+String g_stime_show = strftime_new_fmt("yyyyMMdd", "dd/MM/yyyy", dao.stime);
 
 String g_time_option = param_str("time_option", "yesterday");
 String g_user = param_str("user");
 
 //Formato da data
-//String formatoPadrao = "MM/dd hh:mm";
-//String formatoBrazil = "dd/MM HH:mm";
-//java.text.SimpleDateFormat sdfOrig = new java.text.SimpleDateFormat(formatoPadrao);
-//java.text.SimpleDateFormat sdfBrazil = new java.text.SimpleDateFormat(formatoBrazil);
-//Date dStart = sdfOrig.parse(report_dao.get_stime());
+Locale local = new Locale("pt","BR");
+String formatoPadrao = "yyyyMMdd";
+String formatoBrazil = "EEE, dd/MM/yyyy";
+java.text.SimpleDateFormat sdfOrig = new java.text.SimpleDateFormat(formatoPadrao);
+java.text.SimpleDateFormat sdfBrazil = new java.text.SimpleDateFormat(formatoBrazil, local);
+
+Date dStart = sdfOrig.parse(dao.stime());
 //Date dEnd = sdfOrig.parse(report_dao.get_etime());
-//String dInicio = sdfBrazil.format(dStart);
+g_stime_show = sdfBrazil.format(dStart);
 //String dFim = sdfBrazil.format(dEnd);
 %>
 
